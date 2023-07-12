@@ -1,9 +1,10 @@
 import React from "react"
+import Menu from "../components/menu"
 
 export default function Home() {
   return (
     <main>
-      <h1 className='bg-gray-background'>Ola</h1>
+      <Menu />
     </main>
     
   )
