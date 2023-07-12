@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Painel de Custo da Microsoft',
 }
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="pt-br">
       <body className={inter.className}>{children}</body>

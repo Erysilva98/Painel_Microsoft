@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         gray: {
           background: '#EBF2FF',
-        }
+        },
     },
     plugins: [],
   }

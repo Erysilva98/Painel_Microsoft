@@ -5,10 +5,10 @@ import logoMoura from '/public/assets/logo.svg';
 
 export default function Logotipo() {
     return (
-        <div className="flex items-center">
+        <div className="flex">
             <Image
             src={logoMoura}
-            className="h-25 mr-5"
+            className="w-64"
             alt="Logo Moura"
             />
         </div>
