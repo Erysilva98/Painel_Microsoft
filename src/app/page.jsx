@@ -6,21 +6,20 @@ import Data from '@/components/data.jsx';
 import Logotipo from '@/components/logotipo.jsx';
 import Usuario from '@/components/usuario.jsx';
 import Sidebar from "@/components/sidebar";
+import Container from "@/components/container";
+import CustoTotal from "@/components/custoTotal";
 
 export default function Home() {
-
-  const teste = "Teste de propriedade";
-
   return (
     <Layout>
-      <header className="bg-gray-background">
+      <header >
         <nav className="flex w-full">
           <div className="flex flex-1 justify-between">
             {/* Componente Logotipo.jsx */}
-            <div>
+            <div className="ml-16 mt-3 mb-3">
               <Logotipo />
             </div>
-            <div className="flex">
+            <div className="flex space-x-24 items-center mr-16">
                {/* Componente data.jsx */}
               <Data />
               {/* Componente usuario.jsx */}
@@ -29,16 +28,19 @@ export default function Home() {
           </div>
         </nav>
       </header>
-      <aside>
-        <Sidebar />
-      </aside>
-      <main>
-        <div className="container mx-auto px-6 py-8">
-          <h3 className="text-gray-700 text-3xl font-medium">Painel Geral Grupo Moura</h3>
-        </div>
-        {/* Teste de Adicionar um contéudo ao compomente Custo Total */}
-        {/* <CustoTotal props={teste}/> */}
+      
+      <main className="bg-blue-background">
+        <aside className="bg-white w-48 h-screen">
+              <Sidebar />
+        </aside>
+        <section className="flex flex-1 justify-center">
+          <div>
+           {/* // <CustoTotal valor={teste} /> */}
+          </div>
+        </section>
+        
       </main>
+     
     </Layout>
   )
 }

@@ -7,29 +7,27 @@ import Link from 'next/link';
 
 export default function Sidebar() {
     return (
-        <div className="sidebar">
-            <div className="sidebar__menu">
-                <ul>
-                    <li>
-                        <Link className='flex flex-row' href="/">
-                            <Image src={iconeHome} alt="Icone da Tela Inicial" />
-                            <span>Início</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className='flex flex-row' href="/distribuidora">
-                            <Image src={iconeUsers} alt="Icone de Pessoas" />
-                            <span>Distribuidora</span>
-                        </Link>
-                    </li>   
-                    <li>
-                        <Link className='flex flex-row' href="/upload">
-                            <Image src={iconeUpload} alt="Icone de Upload" />
-                            <span>Upload</span>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
+        <div>
+            <ul className='flex flex-col mt-5 items-center space-y-6'>
+                <li>
+                    <Link className='flex flex-row' href="/">
+                        <Image className='w-5 h-5 mr-2' src={iconeHome} alt="Icone da Tela Inicial" />
+                        <span className='text-gray-900 text-base'>Início</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link className='flex flex-row' href="/distribuidora">
+                        <Image className='w-5 h-5 mr-2' src={iconeUsers} alt="Icone de Pessoas" />
+                        <span className='text-gray-900'>Distribuidoras</span>
+                    </Link>
+                </li>   
+                <li>
+                    <Link className='flex flex-row' href="/upload">
+                        <Image className='w-5 h-5 mr-2' src={iconeUpload} alt="Icone de Upload" />
+                        <span className='text-gray-900'>Importar Dados</span>
+                    </Link>
+                </li>
+            </ul>
         </div>
     )
 }

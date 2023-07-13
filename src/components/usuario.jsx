@@ -4,15 +4,15 @@ import iconeUser from '/public/assets/user.svg';
 
 export default function Usuario() {
     return (
-        <div className="flex items-center md:order-2">
+        <div className="flex items-center md:order-2 space-x-2 mr-5">
           <Image
-            className="w-8 h-8 rounded-full"
+            className="w-10 h-10 mr-2 rounded-full"
             src={iconeUser}
             alt="Icone de usuário"
           />
           <div className=''>
-            <p>User Name</p>
-            <p>User E-mail</p>
+            <p>Nome Sobrenome</p>
+            <p>User@gmail.com</p>
           </div>
         </div>
     )

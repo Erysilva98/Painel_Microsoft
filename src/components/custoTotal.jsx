@@ -1,12 +1,11 @@
 import React from 'react';
 import Container from "./container";
 
-export default function CustoTotal({ props } ) {
+export default function CustoTotal() {
     return (
         <Container>
-             <div className="bg-white rounded-lg shadow p-4">
-                <h1 className="text-2xl font-bold mb-4">Propriedade "teste" recebida:</h1>
-                <p>{props}</p>
+             <div className="bg-red">
+                <h1>"teste" recebida:</h1>
             </div>
         </Container>
     )
