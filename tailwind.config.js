@@ -40,6 +40,27 @@ module.exports = {
             inverted: "#ffffff", // white
           },
         },
+        ery: '#3edfcd',
+        black: '#000000',
+        orange: '#E4572E',
+        red: '#CE3B3B',
+        green: '#5AAF6B',
+        white: '#FFFFFF',
+
+        gray: {
+          900: '#06070E',
+          600: '#5B5E71',
+          500: '#BBBDC9',
+          400: '#E8E9F3',
+          300: '#DCE2E5',
+          200: '#F5F5F5',
+        },
+
+        blue: {
+          background: '#EBF2FF',
+          blueMedium: '#0033AB',
+          blueDarkOne: '#00205C',
+        },
         // dark mode
         "dark-tremor": {
           brand: {
@@ -91,6 +112,10 @@ module.exports = {
         "tremor-default": ["0.875rem", { lineHeight: "1.25rem" }],
         "tremor-title": ["1.125rem", { lineHeight: "1.75rem" }],
         "tremor-metric": ["1.875rem", { lineHeight: "2.25rem" }],
+        sm: '14px',
+        base: '16px',
+        lg: '24px',
+        xl: '40px',
       },
     },
   },

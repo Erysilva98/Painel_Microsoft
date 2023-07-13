@@ -1,11 +1,11 @@
-import CustoTotal from "@/components/custoTotal";
+import NumUsuarios from "@/components/numUsuarios";
 import React from "react";
 
 export default function Upload() {
 
     return (
         <div>
-            <CustoTotal />
+            <NumUsuarios />
         </div>
     )
 }

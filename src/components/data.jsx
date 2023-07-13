@@ -7,10 +7,10 @@ export default function data() {
     const ano = dataAtual.getFullYear();
 
     return (
-        <div className='text-gray-700'>
-            <span className='font-bold'>{dia}</span>/
-            <span className='font-bold'>{mes}</span>/
-            <span className='font-bold'>{ano}</span>
+        <div className='text-gray-700 text-sm'>
+            <span>{dia}</span>/
+            <span>{mes}</span>/
+            <span>{ano}</span>
         </div>
     )
 }

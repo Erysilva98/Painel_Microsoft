@@ -10,6 +10,7 @@ export default function CustoTotal() {
     const valor = 'R$ 3.600,00';
     const texto = "Custo Total";
     const status = "12% de Aumento em Relação ao Mês Anterior"; 
+    const seta = "moderateIncrease";
 
     return (
         <Card className="max-w-lg mx-auto my-auto">
@@ -20,10 +21,10 @@ export default function CustoTotal() {
                 <Flex alignItems="start">
                     <div>
                         <Text>{texto}</Text>
-                        <Metric>{valor}</Metric>
+                        <Metric className='mb-2.5'>{valor}</Metric>
                     </div>
                 </Flex>
-                <BadgeDelta deltaType="moderateIncrease">{status}</BadgeDelta>
+                <BadgeDelta deltaType={seta}>{status}</BadgeDelta>
             </Link>
         </Card>
     );

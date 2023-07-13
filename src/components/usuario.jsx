@@ -10,8 +10,8 @@ export default function Usuario() {
             src={iconeUser}
             alt="Icone de usuário"
           />
-          <div className=''>
-            <p>Nome Sobrenome</p>
+          <div className='text-sm'>
+            <p className="font-bold">Nome Sobrenome</p>
             <p>User@gmail.com</p>
           </div>
         </div>

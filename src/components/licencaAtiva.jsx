@@ -1,26 +1,36 @@
-import React from "react";
-import Grafico from "@assets/IconGrafico.svg";
+import React from 'react';
+import Icone from "@assets/licencaIcon.svg";
 import Image from 'next/image';
 import Link from 'next/link';
+import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
 
-export default function LicencaAtiva() {
+
+const dados =
+{
+    valor: '3.100,00',
+    texto: "Licenças Ativas",
+    status: "2% de Redução em Relação ao Mês Anterior",
+    seta: "moderateDecrease",
+}
+
+export default function Teste() {
 
     // Tratamento de dados para o componente Custo Total
-    const valor = 'R$ 3.100';
-    const texto = "Licenças Ativas";
-
+    
     return (
-        <div className="flex bg-white h-48 w-64">
-            <div>
-                <Link href="/distribuidora">
-                    <Image src={Grafico} alt="Icone de Grafico"
-                        className='w-10 h-10'
-                    />
-                    <p className='text-gray-600'>Licenças Ativas</p>
-                    <p>{valor}</p>
-                    <p>{texto}</p>
-                </Link>
-            </div>
-        </div>
+        <Card className="max-w-lg mx-auto my-auto">
+            <Link href="/licenca">
+                <div>
+                    <Image className='w-10 h-10' src={Icone} alt="Gráfico"/>
+                </div>
+                <Flex alignItems="start">
+                    <div>
+                        <Text>{dados.texto}</Text>
+                        <Metric className='mb-2.5'>{dados.valor}</Metric>
+                    </div>
+                </Flex>
+                <BadgeDelta deltaType={dados.seta}>{dados.status}</BadgeDelta>
+            </Link>
+        </Card>
     );
 };
