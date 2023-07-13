@@ -8,7 +8,7 @@ export default function Logotipo() {
         <div className="flex">
             <Image
             src={logoMoura}
-            className="w-64"
+            className="w-44 h-12"
             alt="Logo Moura"
             />
         </div>
