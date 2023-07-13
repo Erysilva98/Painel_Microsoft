@@ -8,8 +8,8 @@ import Usuario from '@/components/usuario.jsx';
 import Sidebar from "@/components/sidebar";
 import CustoTotal from "@/components/custoTotal";
 import NumUsuarios from "@/components/numUsuarios";
-import CustoUsuario from "@/components/custoUsuario";
 import LicencaAtiva from "@/components/licencaAtiva";
+import CustoUsuario from "@/components/custoUsuario";
 
 export default function Home() {
   return (
@@ -57,10 +57,10 @@ export default function Home() {
               <div className="flex">
                 <div className="flex-col ml-20">
                   <NumUsuarios />
-                  <CustoUsuario />
+
                 </div>
                 <div className="flex-1 ml-48">
-                  <CustoTotal />
+                  <CustoUsuario />
                 </div>
               </div>
             </div>
