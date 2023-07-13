@@ -8,7 +8,7 @@ import Usuario from '@/components/usuario.jsx';
 import Sidebar from "@/components/sidebar";
 import CustoTotal from "@/components/custoTotal";
 import LicencaAtiva from "@/components/licencaAtiva";
-import NumUsuarios from "@/components/custoUsuario";
+import NumUsuarios from "@/components/numUsuarios";
 import CustoUsuario from "@/components/custoUsuario";
 import TabelaLicenca from "@/components/tabelaLicenca";
 
@@ -56,8 +56,8 @@ export default function Home() {
             </div>
             <div className="flex ml-24">
               {/* Componente de Usuários */}
-              <div className="flex flex-col">
-                <div className="mt-10 mb-8">
+              <div className="flex flex-col mt-10 ">
+                <div className="mb-8">
                   <NumUsuarios />
                 </div>
                 <div>  
@@ -66,9 +66,10 @@ export default function Home() {
               </div>
               <div>
                 {/* Componente de Gráfico Mensal */}
+                
               </div>
             </div>
-            <div className="flex ml-24 mt-10">
+            <div className="flex ml-24 mt-10 mb-11">
                 {/* Componente Tabela de Licença */}
                 <TabelaLicenca />
             </div>
