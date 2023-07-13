@@ -1,12 +1,11 @@
-import Container from "@/components/container";
 import CustoTotal from "@/components/custoTotal";
 import React from "react";
 
-export default function Geral() {
+export default function Upload() {
+
     return (
-        <>
-            <h1>Teste</h1>
+        <div>
             <CustoTotal />
-        </>
+        </div>
     )
 }

@@ -12,18 +12,23 @@ export default function Geral() {
     return (
         <>
             <header>
-                <nav className="border-gray-200 dark:bg-gray-900">
-                    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <nav className="flex w-full">
+                    <div className="flex flex-1 justify-between">
                         {/* Componente Logotipo.jsx */}
-                        <div>
+                        <div className="ml-16 mt-3 mb-3">
                             <Logotipo />
                         </div>
-                        {/* Componente Pesquisar */}
-                        <Pesquisar />
+                        <div>
+                            {/* Componente Pesquisar */}
+                            <Pesquisar />
+                        </div>
                         {/* Componente data.jsx */}
-                        <Data />
-                        {/* Componente usuario.jsx */}
-                        <Usuario />
+                        <div className="flex space-x-24 items-center mr-16">
+                            {/* Componente data.jsx */}
+                            <Data />
+                            {/* Componente usuario.jsx */}
+                            <Usuario />
+                        </div>
                     </div>
                 </nav>
             </header>

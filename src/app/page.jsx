@@ -6,8 +6,10 @@ import Data from '@/components/data.jsx';
 import Logotipo from '@/components/logotipo.jsx';
 import Usuario from '@/components/usuario.jsx';
 import Sidebar from "@/components/sidebar";
-import Container from "@/components/container";
 import CustoTotal from "@/components/custoTotal";
+import NumUsuarios from "@/components/numUsuarios";
+import CustoUsuario from "@/components/custoUsuario";
+import LicencaAtiva from "@/components/licencaAtiva";
 
 export default function Home() {
   return (
@@ -30,15 +32,40 @@ export default function Home() {
       </header>
       
       <main className="bg-blue-background">
-        <aside className="bg-white w-48 h-screen">
-              <Sidebar />
-        </aside>
-        <section className="flex flex-1 justify-center">
-          <div>
-           {/* // <CustoTotal valor={teste} /> */}
-          </div>
-        </section>
-        
+        <div className="flex">
+          <aside className="bg-white w-48 h-screen">
+            <Sidebar />
+          </aside>
+          <section className="flex-1">
+            {/* Titulo da Página */}
+            <div>
+              <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
+            </div>
+            
+            <div className="flex">
+              {/* Componente de Custo Total */}
+              <div className="flex mx-auto ml-20">
+                <CustoTotal />
+              </div>
+              {/* Componente de Licenças */}
+              <div className="flex container ml-48">
+                <LicencaAtiva />
+              </div>
+            </div>
+
+            <div className="mt-5 space-y-8">
+              <div className="flex">
+                <div className="flex-col ml-20">
+                  <NumUsuarios />
+                  <CustoUsuario />
+                </div>
+                <div className="flex-1 ml-48">
+                  <CustoTotal />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
      
     </Layout>
