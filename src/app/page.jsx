@@ -9,6 +9,7 @@ import LicencaAtiva from "@/components/licencaAtiva";
 import NumUsuarios from "@/components/numUsuarios";
 import CustoUsuario from "@/components/custoUsuario";
 import TabelaLicenca from "@/components/tabelaLicenca";
+import GraficoMensal from "@/components/graficoMensal";
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       
       <main className="bg-blue-background">
         <div className="flex">
+          {/* Componente do Sidebar */}
           <aside>
             <Sidebar />
           </aside>
@@ -50,9 +52,11 @@ export default function Home() {
                   <CustoUsuario />
                 </div>
               </div>
-              <div>
+              <div className="flex flex-row ">
                 {/* Componente de Gráfico Mensal */}
-                
+                <div className="flex w-full">
+                  <GraficoMensal />
+                </div>
               </div>
             </div>
             <div className="flex ml-24 mt-10 mb-11">

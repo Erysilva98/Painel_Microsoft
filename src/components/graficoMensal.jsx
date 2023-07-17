@@ -1,41 +1,59 @@
-import { Card, Title, BarChart, Subtitle } from "@tremor/react";
+"use client";
+import React from "react";
+import { Card, AreaChart, Title, Text } from "@tremor/react";
 
-const chartdata = [
+const data = [
   {
-    name: "Amphibians",
-    "Number of threatened species": 2488,
+    Month: "Jan",
+    Sales: 7890,
+    Profit: 4400,
   },
   {
-    name: "Birds",
-    "Number of threatened species": 1445,
+    Month: "Feb",
+    Sales: 4890,
+    Profit: 5398,
   },
   {
-    name: "Crustaceans",
-    "Number of threatened species": 743,
+    Month: "Març 21",
+    Sales: 5890,
+    Profit: 7398,
+  },
+  {
+    Month: "Abr 21",
+    Sales: 5690,
+    Profit: 1398,
+  },
+  {
+    Month: "Mai 21",
+    Sales: 1890,
+    Profit: 4398,
+  },
+  {
+    Month: "Jun 21",
+    Sales: 1890,
+    Profit: 1398,
   },
 ];
 
-const dataFormatter = (number) => {
-  return "$ " + Intl.NumberFormat("us").format(number).toString();
-};
 
-export default function MyBarChart () {
+export default function GraficoMensal() {
+
   return (
-    <Card>
-      <Title>Number of species threatened with extinction (2021)</Title>
-      <Subtitle>
-        The IUCN Red List has assessed only a small share of the total known species in the world.
-      </Subtitle>
-      <BarChart
-        className="mt-6"
-        data={chartdata}
-        index="name"
-        categories={["Number of threatened species"]}
-        colors={["blue"]}
-        valueFormatter={dataFormatter}
-        yAxisWidth={48}
-      />
-    </Card>
-  )
+    <>
+      <Card>
+        <Title>Custo</Title>
+        <AreaChart
+          className="w-96 mt-4 h-80"
+          data={data}
+          categories={["Sales", "Profit"]}
+          index="Month"
+          colors={["indigo", "fuchsia"]}
+          yAxisWidth={60}
+          valueFormatter={(number) =>
+            `$ ${Intl.NumberFormat("pt-br").format(number).toString()}`
+          }
+        />
+      </Card>
+    </>
+  );
 }
-

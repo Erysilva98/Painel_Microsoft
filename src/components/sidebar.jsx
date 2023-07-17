@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import iconeHome from '@assets/home.svg';
-import iconeHomeW from '@assets/casa-w.png';
+import iconeHomeW from '@assets/homeW.svg';
 import iconeUsers from '@assets/users.svg';
-import iconeUsersW from '@assets/users-w.png'
+import iconeUsersW from '@assets/usersW.svg';
 import iconeUpload from '@assets/FileArrowUp-r.svg';
-import iconeUploadW from '@assets/FileArrowUp-w.png';
+import iconeUploadW from '@assets/FileArrowUpW.svg';
 import Link from 'next/link';
 
 export default function Sidebar() {
