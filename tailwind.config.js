@@ -60,7 +60,10 @@ module.exports = {
           background: '#EBF2FF',
           blueMedium: '#0033AB',
           blueDarkOne: '#00205C',
+          m100: '#0A60C4',
+          m200: '#101FA8',
         },
+
         // dark mode
         "dark-tremor": {
           brand: {

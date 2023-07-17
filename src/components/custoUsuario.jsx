@@ -16,7 +16,7 @@ export default function CustoUsuario() {
             <Text>Valor médio por usuário</Text>
             <div className='flex flex-row space-x-4'>
               <Metric>{dados.numero}</Metric>
-              <BadgeDelta deltaType={dados.status} isIncreaseNegative={true} size="xs">
+              <BadgeDelta deltaType={dados.status} isIncreasePositive={true} size="xs">
                 {dados.valor}
               </BadgeDelta>
             </div>
