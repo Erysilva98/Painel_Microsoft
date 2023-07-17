@@ -2,40 +2,28 @@ import React from "react"
 import Layout from "./layout"
 
 // Componentes
-import Data from '@/components/data.jsx';
-import Logotipo from '@/components/logotipo.jsx';
-import Usuario from '@/components/usuario.jsx';
+import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import CustoTotal from "@/components/custoTotal";
 import LicencaAtiva from "@/components/licencaAtiva";
-import NumUsuarios from "@/components/custoUsuario";
+import NumUsuarios from "@/components/numUsuarios";
 import CustoUsuario from "@/components/custoUsuario";
 import TabelaLicenca from "@/components/tabelaLicenca";
+import GraficoMensal from "@/components/graficoMensal";
 
 
 export default function Home() {
   return (
     <Layout>
+      {/* Componente do Header */}
       <header >
-        <nav className="flex w-full h-20">
-          <div className="flex flex-1 justify-between">
-            {/* Componente Logotipo.jsx */}
-            <div className="ml-16 mt-3 mb-3">
-              <Logotipo />
-            </div>
-            <div className="flex space-x-24 items-center mr-6">
-               {/* Componente data.jsx */}
-              <Data />
-              {/* Componente usuario.jsx */}
-              <Usuario />
-            </div>
-          </div>
-        </nav>
+        <Header />
       </header>
       
       <main className="bg-blue-background">
         <div className="flex">
-          <aside className="bg-white w-48 min-w-fit">
+          {/* Componente do Sidebar */}
+          <aside>
             <Sidebar />
           </aside>
           <section className="flex-1">
@@ -56,19 +44,22 @@ export default function Home() {
             </div>
             <div className="flex ml-24">
               {/* Componente de Usuários */}
-              <div className="flex flex-col">
-                <div className="mt-10 mb-8">
+              <div className="flex flex-col mt-10 ">
+                <div className="mb-8">
                   <NumUsuarios />
                 </div>
                 <div>  
                   <CustoUsuario />
                 </div>
               </div>
-              <div>
+              <div className="flex flex-row ">
                 {/* Componente de Gráfico Mensal */}
+                <div className="flex w-full">
+                  <GraficoMensal />
+                </div>
               </div>
             </div>
-            <div className="flex ml-24 mt-10">
+            <div className="flex ml-24 mt-10 mb-11">
                 {/* Componente Tabela de Licença */}
                 <TabelaLicenca />
             </div>

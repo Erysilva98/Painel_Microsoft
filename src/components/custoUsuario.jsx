@@ -1,25 +1,27 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Flex, Metric, Text } from "@tremor/react";
-
-const dados =
-{
-    numero: 3000,
-}
+import { Card, Flex, Metric, Text, BadgeDelta } from "@tremor/react";
 
 export default function CustoUsuario() {
-
-  return (
-    <Card className="max-w-lg mx-auto my-auto">
+    const dados = {
+      numero: 'R$'+103.44,
+      status: "moderateDecrease",
+      valor: 18.7 + '%',
+    };
+  
+    return (
+      <Card className="max-w-lg mx-auto my-auto">
         <Link href="/licenca">
-            <Flex alignItems="start">
-                <div>
-                    <Text>Usuário</Text>
-                    <Metric>{dados.numero}</Metric>
-                </div>
-            </Flex>
-            
+          <div className='flex flex-col'>
+            <Text>Valor médio por usuário</Text>
+            <div className='flex flex-row space-x-4'>
+              <Metric>{dados.numero}</Metric>
+              <BadgeDelta deltaType={dados.status} isIncreasePositive={true} size="xs">
+                {dados.valor}
+              </BadgeDelta>
+            </div>
+          </div>
         </Link>
-    </Card>
-  );
-}
+      </Card>
+    );
+  }
