@@ -3,7 +3,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@assets*": ["./public/assets*"],
-      "@icon*": ["./public/icon*"]
+      "@icon*": ["./public/icon*"],
+      "@docs*": ["./public/docs*"],
+      "@api": ["./src/api"],
     }
   }
 }

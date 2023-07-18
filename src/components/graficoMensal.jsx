@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, AreaChart, Title,} from "@tremor/react";
 
-const data = [
+const dados = [
   {
     Month: "Jan",
     Sales: 7890,
@@ -43,8 +43,8 @@ export default function GraficoMensal() {
       <Card>
         <Title>Custo</Title>
         <AreaChart
-          className="flex max-w-2xl max-h-56"
-          data={data}
+          className="max-w-2xl max-h-64"
+          data={dados}
           categories={["Sales", "Profit"]}
           index="Month"
           colors={["indigo", "fuchsia"]}

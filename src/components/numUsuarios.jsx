@@ -9,7 +9,7 @@ export default function Teste() {
   };
 
   return (
-    <Card className="max-w-lg mx-auto my-auto">
+    <Card className="max-w-lg">
       <Link href="/licenca">
         <div className='flex flex-col'>
         <Text>Usuários</Text>

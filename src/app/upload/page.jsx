@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Sidebar from "@/components/sidebar";
 
@@ -5,8 +6,9 @@ import Sidebar from "@/components/sidebar";
 import Data from '/src/components/data.jsx';
 import Logotipo from 'src/components/logotipo.jsx';
 import Usuario from 'src/components/usuario.jsx';
-import Pesquisar from 'src/components/inputPesquisar.jsx';
+import ArqUpload from "@/components/arqUpload";
 
+// Pagina Upload
 export default function Upload() {
 
     return (
@@ -30,11 +32,18 @@ export default function Upload() {
             </header>
 
             <main className="bg-blue-background">
-                <aside className="bg-white w-48 h-screen">
-                    <Sidebar />
-                </aside>
+                <div className="flex">
+                    {/* Componente do Sidebar */}
+                    <aside className="static">
+                        <Sidebar />
+                    </aside>
+                    <section>
+                            <div className="flex">
+                                <ArqUpload />
+                            </div>
+                    </section>
+                </div>
             </main>
-
             <footer className="flex justify-center items-center bg-white h-24">
                 <p>Desenvolvido por <a href="#" target="_blank" className="">Erimilson SIlva & Igor Nayan</a></p>
             </footer>

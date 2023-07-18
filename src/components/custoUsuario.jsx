@@ -10,7 +10,7 @@ export default function CustoUsuario() {
     };
   
     return (
-      <Card className="max-w-lg mx-auto my-auto">
+      <Card className="max-w-lg">
         <Link href="/licenca">
           <div className='flex flex-col'>
             <Text>Valor médio por usuário</Text>
