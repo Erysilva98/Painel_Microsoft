@@ -34,6 +34,9 @@ export default function Geral() {
                         </div>
                     </section>
                 </div>
+                <footer className="flex justify-center items-center bg-white h-24">
+                    <p>Desenvolvido por <a href="#" target="_blank" className="">Erimilson SIlva & Igor Nayan</a></p>
+                </footer>
             </main>
         </>
     )}
