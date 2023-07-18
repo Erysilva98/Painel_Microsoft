@@ -15,7 +15,7 @@ const dataFormatter = (number) => {
   return "" + Intl.NumberFormat("pt-br").format(number).toString();
 };
 
-export default function QuantidLicenca () {
+export default function QuantiLicenca () {
   return (
     <Card>
       <Title>Licenças</Title>

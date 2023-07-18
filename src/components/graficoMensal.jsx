@@ -39,7 +39,6 @@ const dados = [
 export default function GraficoMensal() {
 
   return (
-    <>
       <Card>
         <Title>Custo</Title>
         <AreaChart
@@ -54,6 +53,5 @@ export default function GraficoMensal() {
           }
         />
       </Card>
-    </>
   );
 }

@@ -18,7 +18,7 @@ export default function Teste() {
     // Tratamento de dados para o componente Custo Total
     
     return (
-        <Card className="max-w-lg">
+        <Card className="w-fit">
             <Link href="/licenca">
                 <div>
                     <Image className='w-10 h-10' src={Icone} alt="Gráfico"/>

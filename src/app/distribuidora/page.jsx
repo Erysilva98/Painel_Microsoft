@@ -16,9 +16,9 @@ export default function Geral() {
 
             <main className="bg-blue-background">
                 <div className="flex">
-                    <aside className="bg-white w-48 h-screen">
+                    <div>
                         <Sidebar />
-                    </aside>
+                    </div>
 
                     <section>
                         {/* Titulo da Página com botão de ordenamento*/}
@@ -34,9 +34,6 @@ export default function Geral() {
                         </div>
                     </section>
                 </div>
-                <footer className="flex justify-center items-center bg-white h-24">
-                    <p>Desenvolvido por <a href="#" target="_blank" className="">Erimilson SIlva & Igor Nayan</a></p>
-                </footer>
             </main>
         </>
     )}

@@ -10,8 +10,7 @@ import NumUsuarios from "@/components/numUsuarios";
 import CustoUsuario from "@/components/custoUsuario";
 import TabelaLicenca from "@/components/tabelaLicenca";
 import GraficoMensal from "@/components/graficoMensal";
-import QuantidLicenca from "@/components/quantiLicenca";
-
+import QuantiLicenca from "@/components/quantiLicenca";
 
 export default function Home() {
   return (
@@ -24,52 +23,47 @@ export default function Home() {
         <main className="bg-blue-background">
           <div className="flex">
             {/* Componente do Sidebar */}
-            <aside className="static">
+            <div>
               <Sidebar />
-            </aside>
+            </div>
             <section className="flex-1">
               {/* Titulo da Página */}
               <div>
                 <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
               </div>
               
-              <div className="flex ml-20 mr-20 mt-10">  
-                <div className="flex w-full justify-between space-x-10">
+              <div className="flex ml-20 mr-20 mt-10 space-x-24">
                   {/* Componente de Custo Total */}
                   <CustoTotal />
                 
                   {/* Componente de Licenças */}
                   <LicencaAtiva />
-                </div>
               </div>
 
-              <div className="flex ml-20 mr-20 mt-10 justify-between space-x-10">
+              <div className="flex ml-20 mr-44 mt-10">
                 {/* Componente de Usuários */}
-                <div className="flex flex-col w-3/12 justify-center space-y-10">
+                <div className="flex flex-col w-fit justify-center space-y-10">
                     <NumUsuarios />
                     <CustoUsuario />
                 </div>
                 {/* Componente de Gráfico Mensal */}
-                <div className="w-8/12">      
+                <div className="min-w-fit w-6/12 ml-56">
                   <GraficoMensal />
                 </div>
               </div>
 
-              <div className="flex ml-20 mr-20 mt-10 space-x-10">
-                <div className="flex w-3/12 mr-24">
+              <div className="flex ml-20 mr-44 mt-10 mb-10">
+                <div className="flex">
                   {/* Componente Tabela de Licenças */}
                   <TabelaLicenca />
                 </div>
-                <div className="flex w-8/12">
-                  {/* Componente Tabela de Licenças */}
-                  <QuantidLicenca />  
+                <div className="min-w-fit w-6/12 ml-56">
+                  {/* Componente Quantidade de Licença */}
+                  <QuantiLicenca />
                 </div>
               </div>
             </section>
           </div>
-          <footer className="flex justify-center items-center bg-white h-24">
-            <p>Desenvolvido por <a href="#" target="_blank" className="">Erimilson SIlva & Igor Nayan</a></p>
-          </footer>
         </main>
       </Layout>
   )

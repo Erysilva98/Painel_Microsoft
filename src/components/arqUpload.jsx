@@ -1,4 +1,4 @@
-"use cliente";
+"use client";
 import { useState } from "react";
 
 export default function ArqUpload () {
@@ -35,9 +35,9 @@ export default function ArqUpload () {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Enviar</button>
+      <button onClick={handleUpload} className="mt-8 w-32 border-2 border-blue-m200 rounded-lg px-3 py-2 hover:bg-gradient-to-r from-blue-m100 to-blue-m200 hover:text-white">Enviar</button>
     </div>
   );
 };
