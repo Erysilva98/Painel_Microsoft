@@ -4,35 +4,51 @@ import { Card, AreaChart, Title,} from "@tremor/react";
 
 const dados = [
   {
-    Month: "Jan",
-    Sales: 7890,
-    Profit: 4400,
+    Month: "01 Jan",
+    Atual: 4000,
+    Anterior: 12800,
   },
   {
-    Month: "Feb",
-    Sales: 4890,
-    Profit: 5398,
+    Month: "01 Feb",
+    Atual: 23400,
+    Anterior: 18000,
   },
   {
-    Month: "Març 21",
-    Sales: 5890,
-    Profit: 7398,
+    Month: "01 Marc",
+    Atual: 24670,
+    Anterior: 21580,
   },
   {
-    Month: "Abr 21",
-    Sales: 5690,
-    Profit: 1398,
+    Month: "01 Abr",
+    Atual: 28000,
+    Anterior: 23980,
   },
   {
-    Month: "Mai 21",
-    Sales: 1890,
-    Profit: 4398,
+    Month: "01 Mai",
+    Atual: 17100,
+    Anterior: 13980,
   },
   {
-    Month: "Jun 21",
-    Sales: 1890,
-    Profit: 1398,
+    Month: "01 Jun",
+    Atual: 17600,
+    Anterior: 12980,
   },
+  {
+    Month: "01 Jul",
+    Atual: 20000,
+    Anterior: 19080,
+  },
+  {
+    Month: "01 Ago",
+    Atual: 27100,
+    Anterior: 24480,
+  },
+  {
+    Month: "01 Set",
+    Atual: 24100,
+    Anterior: 29080,
+  },
+
 ];
 
 
@@ -40,16 +56,16 @@ export default function GraficoMensal() {
 
   return (
       <Card>
-        <Title>Custo</Title>
+        <Title>Gráfico Mensal</Title>
         <AreaChart
           className="max-w-2xl max-h-64"
           data={dados}
-          categories={["Sales", "Profit"]}
+          categories={["Atual", "Anterior"]}
           index="Month"
           colors={["indigo", "fuchsia"]}
           yAxisWidth={60}
           valueFormatter={(number) =>
-            `$ ${Intl.NumberFormat("pt-br").format(number).toString()}`
+            `${Intl.NumberFormat("pt-br").format(number).toString()}`
           }
         />
       </Card>
