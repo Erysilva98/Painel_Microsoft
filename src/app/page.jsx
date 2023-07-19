@@ -15,10 +15,10 @@ import QuantLicenca from "@/components/quantLicenca";
 export default function Home() {
   return (
     <Layout>
-        {/* Componente do Header */}
-        <header className="sticky">
-          <Header />
-        </header>
+      {/* Componente do Header */}
+      <header className="sticky">
+        <Header />
+      </header>
         
         <main className="bg-blue-background">
           <div className="flex">
@@ -57,14 +57,14 @@ export default function Home() {
                   {/* Componente Tabela de Licenças */}
                   <TabelaLicenca />
                 </div>
-                <div className="min-w-fit w-6/12 ml-56">
+                <div className="min-w-fit w-3/4">
                   {/* Componente Quantidade de Licença */}
                   <QuantLicenca />
                 </div>
               </div>
             </section>
           </div>
-        </main>
-      </Layout>
+      </main>
+    </Layout>
   )
 }
