@@ -55,7 +55,7 @@ export default function TabelaLicenca() {
                   </div>
                   <ProgressBar
                     value={(infoDado.amount /valorTotal * 200)}
-                    color={"amber", "indigo", "sky", "rose"}
+                    color={["amber"]}
                   />
                 </div>
               </ListItem>
