@@ -8,7 +8,6 @@ const dados = [
     "Microsoft Office 365 E3": 1350,
     "Microsoft Office EMS E3": 900,
     "Microsoft Exchange P1": 500,
-    "Lorem Ipsum": 1000,
   },
 ];
 

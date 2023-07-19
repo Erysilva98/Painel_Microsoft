@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from 'next/router';
 
 // Componentes
 import Header from "@/components/header";
@@ -18,7 +19,7 @@ const Matriz = () => {
           </div>
           <section className="flex-1">
             <p>
-              Painel Geral Matriz 
+              Painel Geral Matriz +Home
             </p>
           </section>
 
