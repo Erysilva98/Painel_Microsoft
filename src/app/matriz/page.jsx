@@ -1,19 +1,11 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/router";
 
 // Componentes
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 
-export async function getServerSideProps({ query}) {
-  const { nomeDistribuidora } = query;
-  return {
-    props: { nomeDistribuidora },
-  };
-}
-
-const Matriz = ({nomeDistribuidora}) => {
+const Matriz = () => {
   return (
     <>
       <header>
@@ -26,7 +18,7 @@ const Matriz = ({nomeDistribuidora}) => {
           </div>
           <section className="flex-1">
             <p>
-              Painel Geral Matriz {nomeDistribuidora}
+              Painel Geral Matriz 
             </p>
           </section>
 
