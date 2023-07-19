@@ -10,7 +10,7 @@ import NumUsuarios from "@/components/numUsuarios";
 import CustoUsuario from "@/components/custoUsuario";
 import TabelaLicenca from "@/components/tabelaLicenca";
 import GraficoMensal from "@/components/graficoMensal";
-import QuantiLicenca from "@/components/quantiLicenca";
+import QuantLicenca from "@/components/quantLicenca";
 
 export default function Home() {
   return (
@@ -57,9 +57,9 @@ export default function Home() {
                   {/* Componente Tabela de Licenças */}
                   <TabelaLicenca />
                 </div>
-                <div className="min-w-fit bg-red  ml-56">
+                <div className="min-w-fit w-6/12 ml-56">
                   {/* Componente Quantidade de Licença */}
-                  <QuantiLicenca />
+                  <QuantLicenca />
                 </div>
               </div>
             </section>
