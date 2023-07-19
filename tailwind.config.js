@@ -40,6 +40,21 @@ module.exports = {
             inverted: "#ffffff", // white
           },
         },
+
+        graficos: {
+          amber: "#f59e0b",
+          indigo: "#6366f1",
+          sky: "#0ea5e9",
+          rose: "#f43f5e",
+          emerald: "#10b981",
+          violet: "#8b5cf6",
+          yellow: "#eab308",
+          blue: "#3b82f6",
+          lime: "#84cc16",        
+          slate: "#64748b",
+        },
+
+
         ery: '#3edfcd',
         black: '#000000',
         orange: '#E4572E',
