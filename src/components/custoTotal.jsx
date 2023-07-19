@@ -1,22 +1,38 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Grafico from "@assets/IconGrafico.svg";
 import Image from 'next/image';
 import Link from 'next/link';
 import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
 
 export default function CustoTotal() {
+    const [data, setData] = useState(null);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/');
+                setData(response.data);
+            } catch (error) {
+                console.error('Erro ao obter os valores calculados:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+    
     // Tratamento de dados para o componente Custo Total
-    const valor = 'R$ 3.600,00';
+    const valor = `R$ ${data?.mediaIdCustoLicenca || 0}`;
     const texto = "Custo Total";
-    const status = "12% de Aumento em Relação ao Mês Anterior"; 
+    const status = "12% de Aumento em Relação ao Mês Anterior";
     const seta = "moderateIncrease";
 
     return (
         <Card className="w-fit">
             <Link href="/distribuidora">
                 <div>
-                    <Image className='w-10 h-10' src={Grafico} alt="Gráfico"/>
+                    <Image className='w-10 h-10' src={Grafico} alt="Gráfico" />
                 </div>
                 <Flex alignItems="start">
                     <div>
@@ -28,4 +44,4 @@ export default function CustoTotal() {
             </Link>
         </Card>
     );
-};
+}
