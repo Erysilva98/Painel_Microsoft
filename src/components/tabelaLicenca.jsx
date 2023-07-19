@@ -40,7 +40,7 @@ export default function TabelaLicenca() {
   return (
     <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
       {tabela.map((dados) => (
-        <Card key={dados.title} style={{ width: '325px', height: '360px'}}>
+        <Card key={dados.title} style={{ width: '325px', height: '365px'}}>
           <p className="font-bold">{dados.title}</p>
           <Text>{dados.tipo}</Text>
 

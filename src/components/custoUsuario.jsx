@@ -10,11 +10,11 @@ export default function CustoUsuario() {
     };
   
     return (
-      <Card className="max-w-lg mx-auto my-auto">
+      <Card className="w-64 h-28">
         <Link href="/licenca">
           <div className='flex flex-col'>
             <Text>Valor médio por usuário</Text>
-            <div className='flex flex-row space-x-4'>
+            <div className='flex flex-row space-x-2'>
               <Metric>{dados.numero}</Metric>
               <BadgeDelta deltaType={dados.status} isIncreasePositive={true} size="xs">
                 {dados.valor}

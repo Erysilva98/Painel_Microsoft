@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { Card, AreaChart, Title, Text } from "@tremor/react";
+import { Card, AreaChart, Title,} from "@tremor/react";
 
-const data = [
+const dados = [
   {
     Month: "Jan",
     Sales: 7890,
@@ -39,12 +39,11 @@ const data = [
 export default function GraficoMensal() {
 
   return (
-    <>
       <Card>
         <Title>Custo</Title>
         <AreaChart
-          className="w-96 mt-4 h-80"
-          data={data}
+          className="max-w-2xl max-h-64"
+          data={dados}
           categories={["Sales", "Profit"]}
           index="Month"
           colors={["indigo", "fuchsia"]}
@@ -54,6 +53,5 @@ export default function GraficoMensal() {
           }
         />
       </Card>
-    </>
   );
 }

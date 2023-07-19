@@ -16,9 +16,9 @@ export default function Geral() {
 
             <main className="bg-blue-background">
                 <div className="flex">
-                    <aside className="bg-white w-48 h-screen">
+                    <div>
                         <Sidebar />
-                    </aside>
+                    </div>
 
                     <section>
                         {/* Titulo da Página com botão de ordenamento*/}

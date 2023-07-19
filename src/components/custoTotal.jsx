@@ -13,7 +13,7 @@ export default function CustoTotal() {
     const seta = "moderateIncrease";
 
     return (
-        <Card className="max-w-lg mx-auto my-auto">
+        <Card className="w-fit">
             <Link href="/distribuidora">
                 <div>
                     <Image className='w-10 h-10' src={Grafico} alt="Gráfico"/>
