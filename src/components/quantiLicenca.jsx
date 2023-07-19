@@ -20,7 +20,7 @@ export default function QuantiLicenca () {
     <Card>
       <Title>Licenças</Title>
       <BarChart
-        className="max-w-2xl max-h-72 justify-center"
+        className="max-w-2xl max-h-64"
         data={dados}
         index="licenca"
         categories={["Microsoft Office 365 E3", "Microsoft EMS E3", "Microsoft Exchange P1", "Lorem Ipsum"]}
