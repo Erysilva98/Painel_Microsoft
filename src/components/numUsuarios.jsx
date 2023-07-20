@@ -10,7 +10,7 @@ export default function Teste() {
 
   return (
     <Card className="w-64 h-28">
-      <Link href="/licenca">
+      <div>
         <div className='flex flex-col'>
         <Text>Usuários</Text>
             <div className='flex flex-row space-x-4'>
@@ -20,7 +20,7 @@ export default function Teste() {
                 </BadgeDelta>
             </div>
         </div>
-      </Link>
+      </div>
     </Card>
   );
 }

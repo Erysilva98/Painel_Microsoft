@@ -11,7 +11,7 @@ export default function CustoUsuario() {
   
     return (
       <Card className="w-64 h-28">
-        <Link href="/licenca">
+        <div>
           <div className='flex flex-col'>
             <Text>Valor médio por usuário</Text>
             <div className='flex flex-row space-x-2'>
@@ -21,7 +21,7 @@ export default function CustoUsuario() {
               </BadgeDelta>
             </div>
           </div>
-        </Link>
+        </div>
       </Card>
     );
   }
