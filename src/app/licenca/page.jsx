@@ -1,11 +1,11 @@
 import React from 'react';
 
-import tableTest from "@/components/1test";
+import ListaLicenca from '@/components/listaLicenca';
 
 export default function Test() {
     return (
        <>
-         <tableTest />
+            <ListaLicenca />
         </>
     )
 }
