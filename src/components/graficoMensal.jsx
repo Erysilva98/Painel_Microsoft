@@ -40,11 +40,6 @@ const dados = [
   },
   {
     Month: "01 Ago",
-    Atual: 27100,
-    Anterior: 24480,
-  },
-  {
-    Month: "01 Set",
     Atual: 24100,
     Anterior: 29080,
   },
@@ -56,7 +51,7 @@ export default function GraficoMensal() {
 
   return (
       <Card>
-        <Title>Gráfico Mensal</Title>
+        <Title>Custo Mensal</Title>
         <AreaChart
           className="max-w-2xl max-h-64"
           data={dados}

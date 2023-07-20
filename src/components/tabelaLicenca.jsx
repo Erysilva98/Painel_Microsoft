@@ -3,44 +3,32 @@ import { Card, Metric, Text, List, ListItem, ProgressBar, Grid } from "@tremor/r
 
 const dados = [
   {
-    name: "Microsoft Office 365 E3",
+    name: "Office 365 E3",
     amount: 1000.0,
   },
   {
-    name:  "Microsoft Office EMS E3",
+    name:  "Enterprise Mobility",
     amount: 900.0,
   }, 
   {
-    name: "Microsoft Exchange P1",
+    name: "Security E3",
     amount: 800.0,
   },
   {
-    name: "Test4",
+    name: "Exchange Online (Plan 1 )",
     amount: 700.0,
   },
   {
-    name: "Test5",
+    name: "Microsoft Power Automate Free",
     amount: 600.0,
   },
   {
-    name: "Test6",
+    name: "Power BI (free)",
     amount: 500.0,
   }, 
   {
-    name: "Test7",
+    name: "Microsoft Teams Exploratory Mobility",
     amount: 400.0,
-  },
-  {
-    name: "Test8",
-    amount: 300.0,
-  },
-  {
-    name: "Test9",
-    amount: 200.0,
-  },
-  {
-    name: "Test10",
-    amount: 100.0,
   },
 ];
 

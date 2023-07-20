@@ -5,82 +5,82 @@ import Link from "next/link";
 const cards = [
     {
         titulo: 'Palacio',
-        subtitulo: 'P Matriz',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     },
     {
-        titulo: 'aaaaaaaa',
-        subtitulo: 'bbbbbbbb',
+        titulo: 'Palacio ',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     },
     {
-        titulo: 'aaaaaaaa',
-        subtitulo: 'bbbbbbbb',
+        titulo: 'Palacio ',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     },
     {
-        titulo: 'aaaaaaaa',
-        subtitulo: 'bbbbbbbb',
+        titulo: 'Palacio ',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     },
     {
-        titulo: 'aaaaaaaa',
-        subtitulo: 'bbbbbbbb',
+        titulo: 'Palacio ',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     },
     {
-        titulo: 'aaaaaaaa',
-        subtitulo: 'bbbbbbbb',
+        titulo: 'Palacio ',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     },
     {
-        titulo: 'aaaaaaaa',
-        subtitulo: 'bbbbbbbb',
+        titulo: 'Palacio ',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     },
     {
-        titulo: 'aaaaaaaa',
-        subtitulo: 'bbbbbbbb',
+        titulo: 'Palacio ',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 30.060,00'
     },
     {
-        titulo: 'xxxxxxx',
-        subtitulo: 'yyyyyyy',
+        titulo: 'Palacio',
+        subtitulo: 'Palacio Matriz',
         valor: 'R$ 12.500,00'
     }
 ]
