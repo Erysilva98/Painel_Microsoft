@@ -4,43 +4,43 @@ import { Card, Metric, Text, List, ListItem, ProgressBar, Grid } from "@tremor/r
 const dados = [
   {
     name: "Microsoft Office 365 E3",
-    amount: 100.0,
+    amount: 1000.0,
   },
   {
     name:  "Microsoft Office EMS E3",
-    amount: 90.0,
+    amount: 900.0,
   }, 
   {
     name: "Microsoft Exchange P1",
-    amount: 80.0,
+    amount: 800.0,
   },
   {
     name: "Test4",
-    amount: 70.0,
+    amount: 700.0,
   },
   {
     name: "Test5",
-    amount: 60.0,
+    amount: 600.0,
   },
   {
     name: "Test6",
-    amount: 50.0,
+    amount: 500.0,
   }, 
   {
     name: "Test7",
-    amount: 40.0,
+    amount: 400.0,
   },
   {
     name: "Test8",
-    amount: 30.0,
+    amount: 300.0,
   },
   {
     name: "Test9",
-    amount: 20.0,
+    amount: 200.0,
   },
   {
     name: "Test10",
-    amount: 10.0,
+    amount: 100.0,
   },
 ];
 
@@ -61,7 +61,7 @@ export default function TabelaLicenca() {
   const corArray = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue" , "lime", "slate"]; 
 
   return (
-    <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
+    <Grid numItemsSm={1} className="gap-6">
       {tabela.map((dadosTabela) => (
         <Card key={dadosTabela.title} style={{ width: '325px', height: 'fit-content'}}>
           <p className="font-bold">{dadosTabela.title}</p>

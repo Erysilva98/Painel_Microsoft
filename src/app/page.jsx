@@ -1,3 +1,4 @@
+"use client";
 import React from "react"
 import Layout from "./layout"
 import Link from "next/link"
@@ -27,7 +28,7 @@ export default function Home() {
             <div>
               <Sidebar />
             </div>
-            <section className="flex-1">
+            <section className="flex-1"> 
               {/* Titulo da Página */}
               <div>
                 <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
@@ -46,23 +47,30 @@ export default function Home() {
               </div>
 
               <div className="flex ml-20 mr-44 mt-10">
-                {/* Componente de Usuários */}
                 <div className="flex flex-col w-fit justify-center space-y-10">
-                    <NumUsuarios />
-                    <CustoUsuario />
+                    {/* Componente de Número de Usuários */}
+                    <Link href="/licenca">
+                      <NumUsuarios />
+                    </Link>
+
+                    {/* Componente de Custo por Usuário */}
+                    <Link href="/licenca">
+                      <CustoUsuario />
+                    </Link>
+                    
                 </div>
-                {/* Componente de Gráfico Mensal */}
-                <div className="min-w-fit w-6/12 ml-56">
+                {/* Componente Gráfico Mensal */}
+                <div className="min-w-fit w-3/4 ml-56">
                   <GraficoMensal />
                 </div>
               </div>
 
-              <div className="flex ml-20 mr-44 mt-10 mb-10">
-                <div className="flex">
+              <div className="flex ml-20 mt-10 mb-10">
+                <div className="mr-3">
                   {/* Componente Tabela de Licenças */}
                   <TabelaLicenca />
                 </div>
-                <div className="min-w-fit w-3/4">
+                <div className="min-w-fit ml-36 w-1/2">
                   {/* Componente Quantidade de Licença */}
                   <QuantLicenca />
                 </div>
