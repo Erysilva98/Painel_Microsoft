@@ -7,7 +7,7 @@ import HeaderPesquisa from "@/components/headerPesquisa";
 import Image from "next/image";
 import Card from "@/components/cards";
 
-export default function Geral() {
+export default function Distribuidora() {
     return (
         <>
             <header>

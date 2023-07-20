@@ -19,7 +19,7 @@ export default function Teste() {
     
     return (
         <Card className="w-fit">
-            <Link href="/licenca">
+            <div>
                 <div>
                     <Image className='w-10 h-10' src={Icone} alt="Gráfico"/>
                 </div>
@@ -30,7 +30,7 @@ export default function Teste() {
                     </div>
                 </Flex>
                 <BadgeDelta deltaType={dados.seta}>{dados.status}</BadgeDelta>
-            </Link>
+            </div>
         </Card>
     );
 };

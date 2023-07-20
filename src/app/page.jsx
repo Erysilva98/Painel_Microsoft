@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "./layout"
+import Link from "next/link"
 
 // Componentes
 import Header from "@/components/header";
@@ -34,10 +35,14 @@ export default function Home() {
               
               <div className="flex ml-20 mr-20 mt-10 space-x-24">
                   {/* Componente de Custo Total */}
-                  <CustoTotal />
+                  <Link href="/distribuidora">
+                    <CustoTotal />
+                  </Link>
                 
                   {/* Componente de Licenças */}
-                  <LicencaAtiva />
+                  <Link href="/licenca">
+                    <LicencaAtiva />
+                  </Link>
               </div>
 
               <div className="flex ml-20 mr-44 mt-10">

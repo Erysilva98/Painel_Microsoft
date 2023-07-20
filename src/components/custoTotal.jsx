@@ -30,7 +30,7 @@ export default function CustoTotal() {
 
     return (
         <Card className="w-fit">
-            <Link href="/distribuidora">
+            <div>
                 <div>
                     <Image className='w-10 h-10' src={Grafico} alt="Gráfico" />
                 </div>
@@ -41,7 +41,7 @@ export default function CustoTotal() {
                     </div>
                 </Flex>
                 <BadgeDelta deltaType={seta}>{status}</BadgeDelta>
-            </Link>
+            </div>
         </Card>
     );
 }
