@@ -7,7 +7,7 @@ import HeaderPesquisa from "@/components/headerPesquisa";
 import Image from "next/image";
 import Card from "@/components/cards";
 
-export default function Geral() {
+export default function Distribuidora() {
     return (
         <>
             <header>
@@ -19,15 +19,10 @@ export default function Geral() {
                     <div>
                         <Sidebar />
                     </div>
-
                     <section>
                         {/* Titulo da Página com botão de ordenamento*/}
                         <div className="flex justify-between h-9 w-full mr-8 mt-8 mb-8">
                             <h1 className="ml-24 mb-10 text-3xl font-bold text-black ">Distribuidoras</h1>
-                            <button className="flex mr-44 items-center">
-                                <Image src={orderList} className="mr-2 pt-0.5"/>
-                                Ordenar por
-                            </button>
                         </div>
                         <div>
                             <Card />
