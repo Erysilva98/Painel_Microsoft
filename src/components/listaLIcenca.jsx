@@ -1,97 +1,35 @@
-"use client";
-import { StatusOnlineIcon } from "@heroicons/react/outline";
-import {
-  Card,
-  Table,
-  TableHead,
-  TableRow,
-  TableHeaderCell,
-  TableBody,
-  TableCell,
-  Text,
-  Title,
-  Badge,
-} from "@tremor/react";
+import React from 'react';
+import { Card, Title, Table, TableHead, TableHeaderCell, TableRow, TableBody, TableCell } from '@tremor/react';
 
-const data = [
-  {
-    name: "Viola Amherd",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Defence, Civil Protection and Sport (DDPS)",
-    status: "active",
-  },
-  {
-    name: "Simonetta Sommaruga",
-    Role: "Federal Councillor",
-    departement:
-      "The Federal Department of the Environment, Transport, Energy and Communications (DETEC)",
-    status: "active",
-  },
-  {
-    name: "Alain Berset",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Home Affairs (FDHA)",
-    status: "active",
-  },
-  {
-    name: "Ignazio Cassis",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Foreign Affairs (FDFA)",
-    status: "active",
-  },
-  {
-    name: "Ueli Maurer",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Finance (FDF)",
-    status: "active",
-  },
-  {
-    name: "Guy Parmelin",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Economic Affairs, Education and Research (EAER)",
-    status: "active",
-  },
-  {
-    name: "Karin Keller-Sutter",
-    Role: "Federal Councillor",
-    departement: "The Federal Department of Justice and Police (FDJP)",
-    status: "active",
-  },
-];
+export default function ListaLicenca ( { data }) {
 
-export default function ListaLicenca () {
-
-    return (
-        <Card>
-        <Title>List of Swiss Federal Councillours</Title>
-        <Table className="mt-5">
-          <TableHead>
-            <TableRow>
-              <TableHeaderCell>Name</TableHeaderCell>
-              <TableHeaderCell>Position</TableHeaderCell>
-              <TableHeaderCell>Department</TableHeaderCell>
-              <TableHeaderCell>Status</TableHeaderCell>
+  // Modelo
+  // https://www.tremor.so/docs/components/table
+  return (
+    <Card>
+      <Title>Lsta de Licenca</Title>
+      <Table className='mt-5'>
+        <TableHead className='bg-slate-300'>
+          <TableRow >
+            <TableHeaderCell>Campus ID</TableHeaderCell>
+            <TableHeaderCell>Usuário</TableHeaderCell>
+            <TableHeaderCell>Licenças</TableHeaderCell>
+            <TableHeaderCell>Custo</TableHeaderCell>
+            <TableHeaderCell>Data/Hora</TableHeaderCell>
+          </TableRow>
+        </TableHead>
+        <TableBody className='bg-emerald-300'>
+          {data.map((item, index) => (
+            <TableRow key={index}>
+              <TableCell>{item.campusId}</TableCell>
+              <TableCell>{item.usuario}</TableCell>
+              <TableCell>{item.licencas}</TableCell>
+              <TableCell>{"R$ "+item.custo}</TableCell>
+              <TableCell>{item.dataHora}</TableCell>
             </TableRow>
-          </TableHead>
-          <TableBody>
-            {data.map((item) => (
-              <TableRow key={item.name}>
-                <TableCell>{item.name}</TableCell>
-                <TableCell>
-                  <Text>{item.Role}</Text>
-                </TableCell>
-                <TableCell>
-                  <Text>{item.departement}</Text>
-                </TableCell>
-                <TableCell>
-                  <Badge color="emerald" >
-                    {item.status}
-                  </Badge>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Card>
-    );
-} 
+          ))}
+        </TableBody>
+      </Table> 
+    </Card>
+  );
+};
