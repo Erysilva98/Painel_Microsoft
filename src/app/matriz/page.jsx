@@ -20,26 +20,27 @@ import QuantLicenca from "@/components/quantLicenca";
 export default function Matriz() {
   return (
     <>
-      <header>
-      {/* Componente Header */}
+      {/* Componente do Header */}
+      <header className="sticky">
         <Header />
       </header>
-      <main className="bg-blue-background">
-        <div className="flex">
-          <div>
-          {/* Componente SideBar */}
-            <Sidebar />
-          </div>
-          <section className="flex-1">
-          {/* Titulo da Página */}
-            <div className="flex ml-20 mt-14 mb-10 items-center">
-              <Link href="/distribuidora">
-                <Image src={Voltar} className="flex w-10 h-10 mr-6" />
-              </Link>
-              <h1 className="flex text-3xl font-bold text-black">Painel Geral RM Pálacio Matriz</h1>
+        
+        <main className="bg-blue-background">
+          <div className="flex">
+            {/* Componente do Sidebar */}
+            <div>
+              <Sidebar />
             </div>
-
-            <div className="flex ml-20 mr-20 mt-10 space-x-24">
+            <section className="flex-1"> 
+              {/* Titulo da Página */}
+              <div className="flex ml-20 mt-14 mb-10 items-center">
+                <Link href="/distribuidora">
+                  <Image src={Voltar} className="flex w-10 h-10 mr-6" />
+                </Link>
+                <h1 className="flex text-3xl font-bold text-black">Painel Geral RM Pálacio Matriz</h1>
+              </div>
+              
+              <div className="flex ml-20 mr-20 mt-10 space-x-24">
                   {/* Componente de Custo Total */}
                   <Link href="/licenca">
                     <CustoTotal />
@@ -49,10 +50,9 @@ export default function Matriz() {
                   <Link href="/licenca">
                     <LicencaAtiva />
                   </Link>
-            </div>
+              </div>
 
-            <div className="flex ml-20 mr-44 mt-10">
-                {/* Componente de Usuários */}
+              <div className="flex ml-20 mr-44 mt-10">
                 <div className="flex flex-col w-fit justify-center space-y-10">
                     {/* Componente de Número de Usuários */}
                     <Link href="/licenca">
@@ -63,27 +63,26 @@ export default function Matriz() {
                     <Link href="/licenca">
                       <CustoUsuario />
                     </Link>
+                    
                 </div>
-
-                {/* Componente de Gráfico Mensal */}
-                <div className="min-w-fit w-6/12 ml-56">
+                {/* Componente Gráfico Mensal */}
+                <div className="min-w-fit w-3/4 ml-40">
                   <GraficoMensal />
                 </div>
-            </div>
+              </div>
 
-            <div className="flex ml-20 mt-10 mb-10">
+              <div className="flex ml-20 mt-10 mb-10">
                 <div className="mr-3">
                   {/* Componente Tabela de Licenças */}
                   <TabelaLicenca />
                 </div>
-                <div className="min-w-fit ml-36 1/2">
+                <div className="min-w-fit ml-36 w-1/2">
                   {/* Componente Quantidade de Licença */}
                   <QuantLicenca />
                 </div>
-            </div>
-
-          </section>
-        </div>
+              </div>
+            </section>
+          </div>
       </main>
     </>
   );
