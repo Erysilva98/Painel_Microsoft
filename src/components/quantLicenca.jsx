@@ -5,16 +5,13 @@ const dados = [
 
   {
     tipo: "Office 365",
-    "Microsoft Office 365 E3": 100,
-    "Microsoft Office EMS E3": 90,
-    "Microsoft Exchange P1": 80,
-    "Test4": 70,
-    "Test5": 60,
-    "Test6": 50,
-    "Test7": 40,
-    "Test8": 30,
-    "Test9": 20,
-    "Test10": 10,
+    "Office 365 E3": 15,
+    "Enterprise Mobility": 5,
+    "Security E3": 10,
+    "Exchange Online (Plan 1 )": 4,
+    "Microsoft Power Automate Free": 2,
+    "Power BI (free)": 8,
+    "Microsoft Teams Exploratory Mobility": 1,
   },
 ];
 

@@ -1,15 +1,32 @@
-import React from 'react';
-import Link from 'next/link';
-import { BadgeDelta, Card, Flex, Metric, Text } from '@tremor/react';
+"use client";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BadgeDelta, Card, Metric, Text } from '@tremor/react';
 
-export default function Teste() {
+export default function NumUsuarios() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await axios.get('http://localhost:4000/');
+              setData(response.data);
+          } catch (error) {
+              console.error('Erro ao obter os valores calculados:', error);
+          }
+      };
+
+      fetchData();
+  }, []);
+
+
   const dados = {
-    numero: 3000,
+    numero: `${(data?.quantidadeLicencas || 0)}`,
     status: 12 + '%',
   };
 
   return (
-    <Card className="w-64 h-28">
+    <Card className="w-80 h-28">
       <div>
         <div className='flex flex-col'>
         <Text>Usuários</Text>

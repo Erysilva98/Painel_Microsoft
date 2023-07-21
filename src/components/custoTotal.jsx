@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Grafico from "@assets/IconGrafico.svg";
 import Image from 'next/image';
-import Link from 'next/link';
 import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
 
 export default function CustoTotal() {
