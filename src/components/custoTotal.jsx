@@ -13,17 +13,16 @@ export default function CustoTotal() {
             try {
                 const response = await axios.get('http://localhost:4000/');
                 setData(response.data);
-                console.log("Dados obtidos:", response.data);
             } catch (error) {
-                console.error('Error, nenhum dado recebido', error);
+                console.error('Erro ao obter os valores calculados:', error);
             }
         };
+
         fetchData();
     }, []);
     
     // Tratamento de dados para o componente Custo Total
-    // const valor = `R$ ${data?.mediaIdCustoLicenca?.toFixed(2) || 0}`;
-    const valor = "R$ 24.100.00"
+    const valor = `R$ ${data?.mediaIdCustoLicenca || 0}`;
     const texto = "Custo Total";
     const status = "12% de Aumento em Relação ao Mês Anterior";
     const seta = "moderateIncrease";

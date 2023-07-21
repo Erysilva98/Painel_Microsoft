@@ -60,7 +60,7 @@ export default function Home() {
                     
                 </div>
                 {/* Componente Gráfico Mensal */}
-                <div className="min-w-fit w-3/4 ml-56">
+                <div className="min-w-fit w-3/4 ml-40">
                   <GraficoMensal />
                 </div>
               </div>

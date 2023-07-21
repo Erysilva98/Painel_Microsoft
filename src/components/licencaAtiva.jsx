@@ -1,21 +1,34 @@
-import React from 'react';
-import Icone from "@assets/licencaIcon.svg";
+"use client";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Image from 'next/image';
-import Link from 'next/link';
 import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
 
+//Icones 
+import Icone from "@assets/licencaIcon.svg";
 
-const dados =
-{
-    valor: '3.100,00',
-    texto: "Licenças Ativas",
-    status: "2% de Redução em Relação ao Mês Anterior",
-    seta: "moderateDecrease",
-}
+export default function LicencaAtiva() {
+    const [data, setData] = useState(null);
 
-export default function Teste() {
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/');
+                setData(response.data);
+            } catch (error) {
+                console.error('Erro ao obter os valores calculados:', error);
+            }
+        };
 
-    // Tratamento de dados para o componente Custo Total
+        fetchData();
+    }, []);
+
+    const dados = {
+        valor: `${(data?.quantidadeNomeExibicao || 0)}`,
+        texto: "Licenças Ativas",
+        status: "Aumentou 2% em Relação ao Mês Anterior",
+        seta: "moderateIncrease",
+    }
     
     return (
         <Card className="w-fit">

@@ -4,31 +4,31 @@ import { Card, Metric, Text, List, ListItem, ProgressBar, Grid } from "@tremor/r
 const dados = [
   {
     name: "Office 365 E3",
-    amount: 1000.0,
+    amount: 300.0,
   },
   {
     name:  "Enterprise Mobility",
-    amount: 900.0,
+    amount: 250.0,
   }, 
   {
     name: "Security E3",
-    amount: 800.0,
+    amount: 280.0,
   },
   {
     name: "Exchange Online (Plan 1 )",
-    amount: 700.0,
+    amount: 120.0,
   },
   {
     name: "Microsoft Power Automate Free",
-    amount: 600.0,
+    amount: 237.0,
   },
   {
     name: "Power BI (free)",
-    amount: 500.0,
+    amount: 100.0,
   }, 
   {
     name: "Microsoft Teams Exploratory Mobility",
-    amount: 400.0,
+    amount: 80.0,
   },
 ];
 
@@ -45,6 +45,7 @@ export default function TabelaLicenca() {
   const ordernaDados = dados.sort((a, b) => b.amount - a.amount);
   const dadosOrdenados = ordernaDados.slice(0, 5);
   const valorTotal = dados.reduce((soma, valor) => soma + valor.amount, 0);
+  console.log(valorTotal);
 
   const corArray = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue" , "lime", "slate"]; 
 

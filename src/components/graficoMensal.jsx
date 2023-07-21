@@ -5,45 +5,49 @@ import { Card, AreaChart, Title,} from "@tremor/react";
 const dados = [
   {
     Month: "01 Jan",
-    Atual: 4000,
-    Anterior: 12800,
+    Atual: 0,
+    Anterior: 0,
   },
   {
     Month: "01 Feb",
-    Atual: 23400,
-    Anterior: 18000,
+    Atual: 0,
+    Anterior: 0,
   },
   {
     Month: "01 Marc",
-    Atual: 24670,
-    Anterior: 21580,
+    Atual: 0,
+    Anterior: 0,
   },
   {
     Month: "01 Abr",
-    Atual: 28000,
-    Anterior: 23980,
+    Atual: 0,
+    Anterior: 0,
   },
   {
     Month: "01 Mai",
-    Atual: 17100,
-    Anterior: 13980,
+    Atual: 0,
+    Anterior: 0,
   },
   {
     Month: "01 Jun",
-    Atual: 17600,
-    Anterior: 12980,
+    Atual: 1505.0,
+    Anterior: 1070.0,
   },
   {
     Month: "01 Jul",
-    Atual: 20000,
-    Anterior: 19080,
+    Atual: 1659.9,
+    Anterior: 1505.0,
   },
   {
     Month: "01 Ago",
-    Atual: 24100,
-    Anterior: 29080,
+    Atual: 0,
+    Anterior: 0,
   },
-
+  {
+    Month: "01 Set",
+    Atual: 0,
+    Anterior: 0,
+  },
 ];
 
 
