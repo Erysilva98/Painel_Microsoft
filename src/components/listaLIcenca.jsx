@@ -6,18 +6,18 @@ export default function ListaLicenca ( { data }) {
     <Card>
       <Title>Lsta de Licenca</Title>
       <Table className='mt-5'>
-        <TableHead className='bg-gray-500'>
+        <TableHead className='bg-tremor-brand-emphasis'>
           <TableRow>
-            <TableHeaderCell className="border">ID</TableHeaderCell>
-            <TableHeaderCell className="border">Usuário</TableHeaderCell>
-            <TableHeaderCell className="border">Licenças</TableHeaderCell>
-            <TableHeaderCell className="border">Custo</TableHeaderCell>
-            <TableHeaderCell className="border">Data</TableHeaderCell>
+            <TableHeaderCell className="border text-white">ID</TableHeaderCell>
+            <TableHeaderCell className="border text-white">Usuário</TableHeaderCell>
+            <TableHeaderCell className="border text-white">Licenças</TableHeaderCell>
+            <TableHeaderCell className="border text-white">Custo</TableHeaderCell>
+            <TableHeaderCell className="border text-white">Data</TableHeaderCell>
           </TableRow>
         </TableHead>
         <TableBody className='bg-gray-400'>
           {data.map((item, index) => (
-            <TableRow key={index} className='hover:bg-gray-500'>
+            <TableRow key={index} className='hover:bg-tremor-brand-emphasis hover:text-white'>
               <TableCell className="border">{item.Id}</TableCell>
               <TableCell className="border">{item.usuario}</TableCell>
               <TableCell className="border">{item.licencas}</TableCell>
