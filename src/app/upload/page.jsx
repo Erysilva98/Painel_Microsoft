@@ -1,12 +1,14 @@
 "use client"
 import React from "react";
-import Sidebar from "@/components/sidebar";
+import Image from "next/image";
 
 // Componentes
-import Image from "next/image";
-import IconeUp from "@assets/upload.svg"
 import Header from "@/components/header";
 import ArqUpload from "@/components/arqUpload";
+import Sidebar from "@/components/sidebar";
+
+//Imagens
+import IconeUp from "@assets/upload.svg"
 
 // Pagina Upload
 export default function Upload() {

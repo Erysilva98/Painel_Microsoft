@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
+// Imagens
 import iconeHome from '@assets/home.svg';
 import iconeHomeW from '@assets/homeW.svg';
 import iconeUsers from '@assets/users.svg';
 import iconeUsersW from '@assets/usersW.svg';
 import iconeUpload from '@assets/FileArrowUp-r.svg';
 import iconeUploadW from '@assets/FileArrowUpW.svg';
-import Link from 'next/link';
+import iconeValores from '@assets/valores.svg';
 
 export default function Sidebar() {
   return (
@@ -36,6 +39,15 @@ export default function Sidebar() {
               <Image className='w-5 h-5 mr-2 group-hover:hidden' src={iconeUpload} alt="Icone de Upload" />
               <Image className='w-5 h-5 mr-2 hidden group-hover:block animate-[pulse_0.3s_ease-in-out]' src={iconeUploadW} alt='Icone de Upload'/>
               <span className='text-gray-900 text-base group-hover:text-white group-hover:animate-[pulse_0.3s_ease-in-out]'>Importar Dados</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/valores">
+            <div className='group flex px-2 py-2 hover:bg-gradient-to-r from-blue-m100 to-blue-m200 rounded-lg'>
+              <Image className='w-9 h-9 mr-2 group-hover:hidden' src={iconeValores} alt="Icone de Upload" />
+              <Image className='w-9 h-9 mr-2 hidden group-hover:block animate-[pulse_0.3s_ease-in-out]' src={iconeValores} alt='Icone de Upload'/>
+              <span className='text-gray-900 text-base group-hover:text-white group-hover:animate-[pulse_0.3s_ease-in-out]'>Alterar Valores</span>
             </div>
           </Link>
         </li>
