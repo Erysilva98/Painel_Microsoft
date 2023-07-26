@@ -2,7 +2,6 @@
 import { Card, Title, BarChart} from "@tremor/react";
 
 const dados = [
-
   {
     tipo: "Office 365",
     "Office 365 E3": 15,

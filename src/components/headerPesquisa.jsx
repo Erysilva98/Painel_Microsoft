@@ -21,7 +21,7 @@ export default function HeaderPesquisa() {
                     {/* Componente data.jsx */}
                     <Data />
                     {/* Componente usuario.jsx */}
-                    <Usuario />
+                    {/* <Usuario /> */}
                 </div>
             </div>
         </nav>

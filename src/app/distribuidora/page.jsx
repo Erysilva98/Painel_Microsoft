@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 // Componentes
@@ -11,6 +11,18 @@ import Card from "@/components/cards";
 import Voltar from "@assets/Circle.svg";
 
 export default function Distribuidora() {
+
+    const [distribuidoras, setDistribuidoras] = useState([]);
+
+    useEffect(() => {
+        axios
+        .get("http://localhost:4000/distribuidoras")
+        .then((response) => setDistribuidoras(response.data))
+        .catch((error) => {
+            console.error("Erro ao buscar as distribuidoras:", error);
+        });
+    }, []);
+
     return (
         <>
             <header>
@@ -31,7 +43,7 @@ export default function Distribuidora() {
                             <h1 className="text-3xl font-bold text-black ">Distribuidoras</h1>   
                         </div>
                         <div>
-                            <Card />
+                            <Card distribuidoras={distribuidoras}/>
                         </div>
                     </section>
                 </div>

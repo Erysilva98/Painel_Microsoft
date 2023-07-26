@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Card, Metric, Text, List, ListItem, ProgressBar, Grid } from "@tremor/react";
+import { Card, Text, List, ListItem, ProgressBar, Grid } from "@tremor/react";
 
 const dados = [
   {
