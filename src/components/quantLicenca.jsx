@@ -20,7 +20,7 @@ export default function QuantLicenca () {
 
   return (
     <Card>
-      <Title>As Licenças mais Utilizadas (É possivel retorna s 10?)</Title>
+      <Title>As Licenças mais Utilizadas</Title>
       <BarChart
         className="max-w-2xl max-h-72 justify-center"
         data={dados}

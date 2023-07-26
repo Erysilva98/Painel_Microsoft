@@ -98,7 +98,7 @@ export default function Licenca() {
               <Link href="/matriz">
                 <Image src={Voltar} className="w-10 h-10" />
               </Link>
-              <h1 className='ml-6'>Licenca Grupo Moura</h1>
+              <h1 className='ml-6 text-3xl font-bold text-black'>Licenca Grupo Moura</h1>
             </div>
             <div className="flex justify-center items-center bg-white ml-20 mr-20 mt-10 h-16 rounded-lg">
               <form>
