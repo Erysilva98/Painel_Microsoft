@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "@tremor/react";
 import Image from 'next/image';
 import axios from "axios";
@@ -8,7 +8,20 @@ import axios from "axios";
 import Moeda from "@assets/moeda.svg";
 
 export default function AlterarValor() {
-    const [licencas, setLicencas] = useState([{ nome: "", valor: "" }]);
+    const [licencas, setLicencas] = useState([]);
+    const [enviado, setEnviado] = useState(false);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get("http://localhost:4000/valoreslicenca"); // Substitua pela URL correta do back-end que fornece os dados
+                setLicencas(response.data);
+            } catch (error) {
+                console.error("Erro ao obter os dados:", error);
+            }
+        }
+        fetchData();
+    }, []);
 
     const adicionarLicenca = () => {
         setLicencas([...licencas, { nome: "", valor: "" }]);
@@ -34,8 +47,9 @@ export default function AlterarValor() {
                 console.log(licencas);
                 console.log("formulário enviado")
                 // Substitua a URL abaixo pela rota 'enviardados' correta
-                const response = await axios.post("http://localhost:4000/enviardados", licencas);
+                const response = await axios.post("http://localhost:4000/valoreslicenca", { licencas });
                 console.log(response.data); // Resposta da API (opcional, você pode fazer o que desejar com a resposta)
+                setEnviado(true); // Atualiza o estado para indicar que os dados foram enviados
             } catch (error) {
                 console.error("Erro ao enviar os dados:", error);
             }
@@ -53,57 +67,61 @@ export default function AlterarValor() {
                         </div>
                     </div>
                     <div>
-                        <form className="justify-center" onSubmit={enviarDados}>
-                            {licencas.map((licenca, index) => (
-                                <div key={index}>
-                                    <label htmlFor={`nome-${index}`} className="block text-sm font-medium text-gray-700 mt-2">
-                                        Nome da Licença
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id={`nome-${index}`}
-                                        name={`nome-${index}`}
-                                        value={licenca.nome}
-                                        onChange={(e) => atualizarLicenca(index, 'nome', e.target.value)}
-                                        required
-                                        className="mt-2 border border-black rounded-md w-full"
-                                        placeholder=" Ex: Licença 1 "
-                                    />
+                        {enviado ? (
+                            <div className="flex justify-center mt-4">
+                                <h2 className="text-green-600 text-xl font-bold">Dados enviados com sucesso!</h2>
+                            </div>
+                        ) : (
+                            <form className="justify-center" onSubmit={enviarDados}>
+                                {licencas.map((licenca, index) => (
+                                    <div key={index}>
+                                        <label htmlFor={`nome-${index}`} className="block text-sm font-medium text-gray-700 mt-2">
+                                            Nome da Licença
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id={`nome-${index}`}
+                                            name={`nome-${index}`}
+                                            value={licenca.nome}
+                                            onChange={(e) => atualizarLicenca(index, 'nome', e.target.value)}
+                                            required
+                                            className="mt-2 border border-black rounded-md w-full"
+                                            placeholder=" Ex: Licença 1 "
+                                        />
 
-                                    <label htmlFor={`valor-${index}`} className="block text-sm font-medium text-gray-700 mt-2">
-                                        Valor da Licença
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id={`valor-${index}`}
-                                        name={`valor-${index}`}
-                                        value={licenca.valor}
-                                        onChange={(e) => atualizarLicenca(index, 'valor', e.target.value)}
-                                        required
-                                        className="mt-2 border border-black rounded-md w-full"
-                                        placeholder="  Ex: 100"
-                                    />
+                                        <label htmlFor={`valor-${index}`} className="block text-sm font-medium text-gray-700 mt-2">
+                                            Valor da Licença
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id={`valor-${index}`}
+                                            name={`valor-${index}`}
+                                            value={licenca.valor}
+                                            onChange={(e) => atualizarLicenca(index, 'valor', e.target.value)}
+                                            required
+                                            className="mt-2 border border-black rounded-md w-full"
+                                            placeholder="  Ex: 100"
+                                        />
 
-                                    {index > 0 && (
                                         <button 
                                             type="button" onClick={() => removerLicenca(index)} 
-                                            className="text-red-600 bg-red hover:text-red-800 font-bold py-1 px-3 rounded m-2 ">
+                                            className="text-white bg-red hover:text-red-800 font-bold py-1 px-3 rounded m-2 ">
                                             Remover
                                         </button>
-                                    )}
+                                    </div>
+                                ))}
+                                <div className="flex justify-center mt-4">
+                                    <button onClick={adicionarLicenca} className="text-blue-600 hover:text-blue-800">
+                                        <span className="text-2xl">+</span> Adicionar Licença
+                                    </button>
                                 </div>
-                            ))}
-                            <div className="flex justify-center mt-4">
-                                <button onClick={adicionarLicenca} className="text-blue-600 hover:text-blue-800">
-                                    <span className="text-2xl">+</span> Adicionar Licença
-                                </button>
-                            </div>
-                            <div className="flex justify-center mt-4">
-                                <button type="submit" className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
-                                    Enviar
-                                </button>
-                            </div>
-                        </form>
+                                <div className="flex justify-center mt-4">
+                                    <button type="submit" className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        )}
                     </div>  
                 </Card>
             </div>
