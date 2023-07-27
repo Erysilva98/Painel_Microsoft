@@ -18,7 +18,7 @@ export default function Card({ distribuidoras }) {
                 {distribuidora.idDistribuidora}
               </p>
               <p className="text-gray-700 text-base">
-                Valor Total: R$ {distribuidora.valorTotal.toFixed(2)}
+                Valor Total: R$ {distribuidora.valorTotal}
               </p>
             </div>
           </div>
