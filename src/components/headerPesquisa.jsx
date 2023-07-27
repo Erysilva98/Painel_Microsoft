@@ -1,7 +1,6 @@
 import React from "react"
 import Data from '@/components/data.jsx';
 import Logotipo from '@/components/logotipo.jsx';
-import Usuario from '@/components/usuario.jsx';
 import Pesquisar from "./inputPesquisar";
 
 export default function HeaderPesquisa() {
@@ -12,10 +11,12 @@ export default function HeaderPesquisa() {
                 <div className="ml-16">
                     <Logotipo />
                 </div>
-                <div>
-                    {/* Componente Pesquisar */}
+                {/*  <div>
+                    {/* Componente Pesquisar 
                     <Pesquisar />
+                
                 </div>
+                */}
                 {/* Componente data.jsx */}
                 <div className="flex space-x-24 items-center mr-6">
                     {/* Componente data.jsx */}

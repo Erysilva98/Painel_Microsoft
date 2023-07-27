@@ -1,37 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, Metric, Text, BadgeDelta } from "@tremor/react";
 
-export default function CustoUsuario() {
-    const [data, setData] = useState(null);
+export default function CustoUsuario( {data} ) {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:4000/');
-                setData(response.data);
-            } catch (error) {
-                console.error('Erro ao obter os valores calculados:', error);
-            }
-        };
-        fetchData();
-    }, []);
-
-    const dados = {
-      numero: `R$ ${(data?.divisaoLicencasPorMedia || 0).toFixed(2)}`,
-      status: "moderateDecrease",
-      valor: 18.7+'%',
-    };
+    const numero =`${(data?.divisaoLicencasPorMedia || 0).toFixed(2)}`;
+    const status = "moderateDecrease";
+    const valor = 18.7+'%';
   
     return (
-      <Card className="w-80 h-28">
+      <Card className="w-80 h-28 hover:shadow-lg">
         <div>
           <div className='flex flex-col'>
             <Text>Valor médio por usuário</Text>
             <div className='flex space-x-3'>
-              <Metric>{dados.numero}</Metric>
-              <BadgeDelta deltaType={dados.status} isIncreasePositive={true} size="xs">
-                {dados.valor}
+              <Metric>{numero}</Metric>
+              <BadgeDelta deltaType={status} isIncreasePositive={true} size="xs">
+                {valor}
               </BadgeDelta>
             </div>
           </div>
@@ -39,3 +24,10 @@ export default function CustoUsuario() {
       </Card>
     );
   }
+
+// Defina os tipos das props utilizando PropTypes
+CustoUsuario.propTypes = {
+  params: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+};

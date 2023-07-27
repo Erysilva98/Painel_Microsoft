@@ -58,7 +58,7 @@ module.exports = {
         ery: '#3edfcd',
         black: '#000000',
         orange: '#E4572E',
-        red: '#CE3B3B',
+        redd: '#E53935',
         green: '#5AAF6B',
         white: '#FFFFFF',
 

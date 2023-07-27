@@ -61,8 +61,8 @@ export default function AlterarValor() {
             <div className="bg-blue-background">
                 <Card className=" mx-auto mt-10 max-w-4xl mb-40">
                     <div className="flex justify-center">
-                        <div className="flex flex-col justify-center">
-                            <Image className='w-10 h-10' src={Moeda} alt="Simbolo do Real" />
+                        <div className="flex items-center">
+                            <Image className='w-10 h-10 mr-2' src={Moeda} alt="Simbolo do Real" />
                             <h1 className="text-2xl">Valores das Licenças</h1>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ export default function AlterarValor() {
                                             value={licenca.nome}
                                             onChange={(e) => atualizarLicenca(index, 'nome', e.target.value)}
                                             required
-                                            className="mt-2 border border-black rounded-md w-full"
+                                            className="mt-2 border border-black rounded-md w-full pl-3 pt-2 pb-2"
                                             placeholder=" Ex: Licença 1 "
                                         />
 
@@ -99,30 +99,31 @@ export default function AlterarValor() {
                                             value={licenca.valor}
                                             onChange={(e) => atualizarLicenca(index, 'valor', e.target.value)}
                                             required
-                                            className="mt-2 border border-black rounded-md w-full"
+                                            className="mt-2 border border-black rounded-md w-full  pl-3 pt-2 pb-2"
                                             placeholder="  Ex: 100"
                                         />
-
-                                        <button 
-                                            type="button" onClick={() => removerLicenca(index)} 
-                                            className="text-white bg-red hover:text-red-800 font-bold py-1 px-3 rounded m-2 ">
-                                            Remover
-                                        </button>
+                                        <div className="flex justify-end">
+                                            <button
+                                                type="button" onClick={() => removerLicenca(index)}
+                                                className="mt-4 mr-5 text-white bg-red-500 hover:bg-red-600 font-bold py-1 px-3 rounded m-2 ">
+                                                <span>Remover</span>
+                                            </button>
+                                        </div>
                                     </div>
                                 ))}
                                 <div className="flex justify-center mt-4">
-                                    <button onClick={adicionarLicenca} className="text-blue-600 hover:text-blue-800">
+                                    <button onClick={adicionarLicenca} className="text-blue-600 hover:text-blue-800 hover:underline">
                                         <span className="text-2xl">+</span> Adicionar Licença
                                     </button>
                                 </div>
                                 <div className="flex justify-center mt-4">
                                     <button type="submit" className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
-                                        Enviar
+                                        <span>Confirmar alterações</span>
                                     </button>
                                 </div>
                             </form>
                         )}
-                    </div>  
+                    </div>
                 </Card>
             </div>
         </>

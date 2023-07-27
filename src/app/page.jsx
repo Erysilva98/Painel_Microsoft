@@ -1,7 +1,8 @@
 "use client";
-import React, {useEffect, useState} from "react"
-import Layout from "./layout"
-import Link from "next/link"
+import React, {useEffect, useState} from "react";
+import Layout from "./layout";
+import Link from "next/link";
+import axios from "axios";
 
 // Componentes
 import Header from "@/components/header";
@@ -14,7 +15,24 @@ import TabelaLicenca from "@/components/tabelaLicenca";
 import GraficoMensal from "@/components/graficoMensal";
 import QuantLicenca from "@/components/quantLicenca";
 
+
+
 export default function Home() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:4000"); 
+        setData(response.data);
+      } catch (error) {
+        console.error('Erro ao obter os dados:', error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <Layout>
       {/* Componente do Header */}
@@ -37,12 +55,12 @@ export default function Home() {
               <div className="flex ml-20 mr-20 mt-10 space-x-24">
                   {/* Componente de Custo Total */}
                   <Link href="/distribuidora">
-                    <CustoTotal/>
+                    <CustoTotal data={data}/>
                   </Link>
                 
                   {/* Componente de Licenças */}
                   <Link href="/licenca">
-                    <LicencaAtiva />
+                    <LicencaAtiva data={data} />
                   </Link>
               </div>
 
@@ -50,12 +68,12 @@ export default function Home() {
                 <div className="flex flex-col w-fit justify-center space-y-10">
                     {/* Componente de Número de Usuários */}
                     <Link href="/licenca">
-                      <NumUsuarios />
+                      <NumUsuarios data={data} />
                     </Link>
 
                     {/* Componente de Custo por Usuário */}
                     <Link href="/licenca">
-                      <CustoUsuario />
+                      <CustoUsuario data={data} />
                     </Link>
                     
                 </div>

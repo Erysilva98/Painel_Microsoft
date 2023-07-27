@@ -2,20 +2,20 @@
 import { useState } from "react";
 
 export default function ArqUpload () {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [arquivo, setarquivo] = useState(null);
 
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+  const atualizarArq = (event) => {
+    setarquivo(event.target.files[0]);
   };
 
-  const handleUpload = async () => {
-    if (!selectedFile) {
+  const selecionarArq = async () => {
+    if (!arquivo) {
       console.log("Nenhum arquivo selecionado.");
       return;
     }
 
-    const formData = new FormData();
-    formData.append("file", selectedFile);
+    const formDados = new FormDados();
+    formDados.append("file", arquivo);
 
     try {
       const response = await fetch("/api/upload", {
@@ -25,7 +25,7 @@ export default function ArqUpload () {
 
       if (response.ok) {
         console.log("Arquivo enviado com sucesso!");
-        setSelectedFile(null);
+        setarquivo(null);
       } else {
         console.log("Erro ao enviar o arquivo.");
       }
@@ -36,8 +36,10 @@ export default function ArqUpload () {
 
   return (
     <div className="flex flex-col items-center">
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload} className="mt-8 w-32 border-2 border-blue-m200 rounded-lg px-3 py-2 hover:bg-gradient-to-r from-blue-m100 to-blue-m200 hover:text-white">Enviar</button>
+      <input type="file" onChange={atualizarArq} />
+      <button onClick={selecionarArq} className="mt-8 w-32 border-2 border-blue-m200 rounded-lg px-3 py-2 hover:bg-gradient-to-r from-blue-m100 to-blue-m200 hover:text-white">
+        Enviar
+      </button>
     </div>
   );
 };

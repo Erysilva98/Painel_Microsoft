@@ -45,9 +45,9 @@ export default function Sidebar() {
         </li>
         <li>
           <Link href="/valores">
-            <div className='group flex px-2 py-2 hover:bg-gradient-to-r from-blue-m100 to-blue-m200 rounded-lg'>
-              <Image className='w-9 h-9 mr-2 group-hover:hidden' src={iconeMoeda} alt="Icone de Upload" />
-              <Image className='w-9 h-9 mr-2 hidden group-hover:block animate-[pulse_0.3s_ease-in-out]' src={iconeMoeda} alt='Icone de Upload'/>
+            <div className='group flex items-center px-2 py-2 hover:bg-gradient-to-r from-blue-m100 to-blue-m200 rounded-lg'>
+              <Image className='w-5 h-5 mr-2 mb-1 group-hover:hidden' src={iconeMoeda} alt="Icone de Upload" />
+              <Image className='w-5 h-5 mr-2 mb-1 hidden group-hover:block animate-[pulse_0.3s_ease-in-out]' src={iconeMoeda} alt='Icone de Upload'/>
               <span className='text-gray-900 text-base group-hover:text-white group-hover:animate-[pulse_0.3s_ease-in-out]'>Alterar Valores</span>
             </div>
           </Link>

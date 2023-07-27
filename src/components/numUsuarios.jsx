@@ -1,39 +1,22 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import PropTypes from 'prop-types';
 import { BadgeDelta, Card, Metric, Text } from '@tremor/react';
 
-export default function NumUsuarios() {
-  const [data, setData] = useState(null);
+export default function NumUsuarios({data}) {
 
-  useEffect(() => {
-      const fetchData = async () => {
-          try {
-              const response = await axios.get('http://localhost:4000/');
-              setData(response.data);
-          } catch (error) {
-              console.error('Erro ao obter os valores calculados:', error);
-          }
-      };
-
-      fetchData();
-  }, []);
-
-
-  const dados = {
-    numero: `${(data?.quantidadeLicencas || 0)}`,
-    status: 12 + '%',
-  };
+  const numero =`${(data?.quantidadeNomeExibicao || 0)}`;
+  const status = 12 + '%';
 
   return (
-    <Card className="w-80 h-28">
+    <Card className="w-80 h-28 hover:shadow-lg">
       <div>
         <div className='flex flex-col'>
         <Text>Usuários</Text>
             <div className='flex flex-row space-x-4'>
-                <Metric>{dados.numero}</Metric>
+                <Metric>{numero}</Metric>
                 <BadgeDelta deltaType="moderateIncrease" isIncreasePositive={true} size="xs">
-                    {dados.status}
+                    {status}
                 </BadgeDelta>
             </div>
         </div>
@@ -41,3 +24,10 @@ export default function NumUsuarios() {
     </Card>
   );
 }
+
+// Defina os tipos das props utilizando PropTypes
+NumUsuarios.propTypes = {
+  params: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+};
