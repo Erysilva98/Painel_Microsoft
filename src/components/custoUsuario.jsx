@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, Metric, Text, BadgeDelta } from "@tremor/react";
@@ -15,7 +14,6 @@ export default function CustoUsuario() {
                 console.error('Erro ao obter os valores calculados:', error);
             }
         };
-
         fetchData();
     }, []);
 

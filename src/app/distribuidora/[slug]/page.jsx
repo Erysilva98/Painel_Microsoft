@@ -2,17 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
-import useClient from '@/app/useClient';
 
 export default function DistribuidoraSlug({ params }) {
-  const isClient = useClient();
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(params);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!isClient) return;
-
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:4000/distribuidora/${params.slug}`);
@@ -26,29 +21,40 @@ export default function DistribuidoraSlug({ params }) {
     if (params.slug) {
       fetchData();
     }
-  }, [isClient, params.slug]);
+  }, [params.slug]);
 
-  if (loading) {
+  if (!loading) {
     return <div>Carregando...</div>;
   }
 
-  if (!data) {
+  if (data) {
     return <div>Não foram encontrados dados para o slug informado.</div>;
   }
 
   return (
     <>
-      <header>{/* Renderize o componente Header aqui (caso necessário) */}</header>
-      <main>
-        {/* Renderize os componentes necessários com base nos dados recebidos */}
-        <div>
-          <h1>Distribuidora: {params.slug}</h1>
-          <p>Média do ID Custo Licença: {data.mediaIdCustoLicenca}</p>
-          <p>Quantidade de Nome Exibição: {data.quantidadeNomeExibicao}</p>
-          <p>Quantidade de Licenças: {data.quantidadeLicencas}</p>
-          <p>Divisão Licenças por Média: {data.divisaoLicencasPorMedia.toFixed(2)}</p>
+      {/* Componente do Header */}
+      <header className="sticky">
+        <Header />
+      </header>
+
+      <main className="bg-blue-background">
+
+        <div className="flex">
+            {/* Componente do Sidebar */}
+            <div>
+              <Sidebar />
+            </div>
+            {/* Renderize os componentes necessários com base nos dados recebidos */}
+            <div>
+              <h1>Distribuidora: {params.slug}</h1>
+              <p>Média do ID Custo Licença: {data.mediaIdCustoLicenca}</p>
+              <p>Quantidade de Nome Exibição: {data.quantidadeNomeExibicao}</p>
+              <p>Quantidade de Licenças: {data.quantidadeLicencas}</p>
+              <p>Divisão Licenças por Média: {data.divisaoLicencasPorMedia.toFixed(2)}</p>
+            </div>
+            {/* Renderize os outros componentes aqui (caso necessário) */}
         </div>
-        {/* Renderize os outros componentes aqui (caso necessário) */}
       </main>
     </>
   );

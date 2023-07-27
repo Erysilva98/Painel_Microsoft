@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Grafico from "@assets/IconGrafico.svg";
 import Image from 'next/image';
 import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
+
+// Imagens
+import Grafico from "@assets/IconGrafico.svg";
 
 export default function CustoTotal() {
     const [data, setData] = useState(null);

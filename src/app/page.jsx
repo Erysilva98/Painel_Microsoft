@@ -1,5 +1,5 @@
 "use client";
-import React from "react"
+import React, {useEffect, useState} from "react"
 import Layout from "./layout"
 import Link from "next/link"
 
@@ -37,7 +37,7 @@ export default function Home() {
               <div className="flex ml-20 mr-20 mt-10 space-x-24">
                   {/* Componente de Custo Total */}
                   <Link href="/distribuidora">
-                    <CustoTotal />
+                    <CustoTotal/>
                   </Link>
                 
                   {/* Componente de Licenças */}

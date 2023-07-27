@@ -1,6 +1,8 @@
+import React from "react";
 import Link from "next/link";
 
 export default function Card({ distribuidoras }) {
+
   return (
     <div className="flex flex-wrap h-screen ml-24 mr-16">
       {distribuidoras.map((distribuidora) => (
@@ -16,7 +18,7 @@ export default function Card({ distribuidoras }) {
                 {distribuidora.idDistribuidora}
               </p>
               <p className="text-gray-700 text-base">
-                Valor Total: R$ {distribuidora.valorTotal}
+                Valor Total: R$ {distribuidora.valorTotal.toFixed(2)}
               </p>
             </div>
           </div>
