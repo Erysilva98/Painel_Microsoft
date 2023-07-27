@@ -10,7 +10,7 @@ import Moeda from "@assets/moeda.svg";
 export default function AlterarValor() {
     const [licencas, setLicencas] = useState([{ nome: "", valor: "" }]);
 
-    const handleAddLicenca = () => {
+    const adicionarLicenca = () => {
         setLicencas([...licencas, { nome: "", valor: "" }]);
     };
 
@@ -28,12 +28,17 @@ export default function AlterarValor() {
 
     const enviarDados = async (event) => {
         event.preventDefault();
-        // Envia os dados das licenças para a URL especificada em formato JSON
-        try {
-            const response = await axios.post("URL_DA_API", licencas);
-            console.log(response.data); // Resposta da API (opcional, você pode fazer o que desejar com a resposta)
-        } catch (error) {
-            console.error("Erro ao enviar os dados:", error);
+        // Verifica se há dados no formulário antes de enviar
+        if (licencas.length > 0) {
+            try {
+                console.log(licencas);
+                console.log("formulário enviado")
+                // Substitua a URL abaixo pela rota 'enviardados' correta
+                const response = await axios.post("http://localhost:4000/enviardados", licencas);
+                console.log(response.data); // Resposta da API (opcional, você pode fazer o que desejar com a resposta)
+            } catch (error) {
+                console.error("Erro ao enviar os dados:", error);
+            }
         }
     };
 
@@ -88,18 +93,18 @@ export default function AlterarValor() {
                                     )}
                                 </div>
                             ))}
+                            <div className="flex justify-center mt-4">
+                                <button onClick={adicionarLicenca} className="text-blue-600 hover:text-blue-800">
+                                    <span className="text-2xl">+</span> Adicionar Licença
+                                </button>
+                            </div>
+                            <div className="flex justify-center mt-4">
+                                <button type="submit" className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+                                    Enviar
+                                </button>
+                            </div>
                         </form>
-                    </div>
-                    <div className="flex justify-center mt-4">
-                        <button onClick={handleAddLicenca} className="text-blue-600 hover:text-blue-800">
-                            <span className="text-2xl">+</span> Adicionar Licença
-                        </button>
-                    </div>
-                    <div className="flex justify-center mt-4">
-                        <button type="submit" form="licencasForm" className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
-                            Enviar
-                        </button>
-                    </div>
+                    </div>  
                 </Card>
             </div>
         </>
