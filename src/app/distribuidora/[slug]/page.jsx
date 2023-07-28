@@ -57,7 +57,7 @@ export default function DistribuidoraSlug({ params }) {
               
               <div className="flex ml-20 mr-20 mt-10 space-x-24">
                   {/* Componente de Custo Total */}
-                  <Link href="/distribuidora">
+                  <Link href="/licenca">
                     <CustoTotal data={data}/>
                   </Link>
                 
