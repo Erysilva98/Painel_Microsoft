@@ -15,8 +15,6 @@ import TabelaLicenca from "@/components/tabelaLicenca";
 import GraficoMensal from "@/components/graficoMensal";
 import QuantLicenca from "@/components/quantLicenca";
 
-
-
 export default function Home() {
 
   const [data, setData] = useState([]);
@@ -49,10 +47,10 @@ export default function Home() {
             <section className="flex-1"> 
               {/* Titulo da Página */}
               <div>
-                <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
+                <h1 className="text-3xl font-bold text-black ml-10 mt-14 mb-10">Painel Geral Grupo Moura</h1>
               </div>
               
-              <div className="flex ml-20 mr-20 mt-10 space-x-24">
+              <div className="flex ml-10 mr-10 mt-10 justify-evenly">
                   {/* Componente de Custo Total */}
                   <Link href="/distribuidora">
                     <CustoTotal data={data}/>
@@ -62,10 +60,8 @@ export default function Home() {
                   <Link href="/licenca">
                     <LicencaAtiva data={data} />
                   </Link>
-              </div>
 
-              <div className="flex ml-20 mr-44 mt-10">
-                <div className="flex flex-col w-fit justify-center space-y-10">
+                  <div className="flex flex-col w-fit space-y-2">
                     {/* Componente de Número de Usuários */}
                     <Link href="/licenca">
                       <NumUsuarios data={data} />
@@ -75,23 +71,16 @@ export default function Home() {
                     <Link href="/licenca">
                       <CustoUsuario data={data} />
                     </Link>
-                    
-                </div>
-                {/* Componente Gráfico Mensal */}
-                <div className="min-w-fit w-3/4 ml-40">
-                  <GraficoMensal />
-                </div>
+                  </div>
               </div>
 
-              <div className="flex ml-20 mt-10 mb-10">
-                <div className="mr-3">
-                  {/* Componente Tabela de Licenças */}
-                  <TabelaLicenca />
-                </div>
-                <div className="min-w-fit ml-36 w-1/2">
-                  {/* Componente Quantidade de Licença */}
-                  <QuantLicenca />
-                </div>
+              <div className="flex ml-10 mr-10 mt-10 space-x-2">
+
+                {/* Componente Quantidade de Licença */}
+                <QuantLicenca />
+
+                {/* Componente Gráfico Mensal */}
+                <GraficoMensal />
               </div>
             </section>
           </div>

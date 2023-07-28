@@ -57,7 +57,7 @@ export default function TabelaLicenca() {
           <p className="font-bold">{dadosTabela.title}</p>
           <Text>{dadosTabela.tipo}</Text>
 
-          <List className="mt-4">
+          <List className="mt-4 flex flex-col">
             {dadosOrdenados.map((infoDado, index) => {
                 const selectCores = corArray[index % corArray.length];
                 return (
