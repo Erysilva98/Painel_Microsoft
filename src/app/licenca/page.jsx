@@ -115,7 +115,9 @@ export default function Licenca() {
               </form>
             </div>
             <div className="flex ml-20 mr-20 mt-5 mb-10">
-              <ListaLicenca data={dados} />
+              <Link href="/licenca/User">
+                <ListaLicenca data={dados} />
+              </Link>
             </div>
           </section>
         </div>
