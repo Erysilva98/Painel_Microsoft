@@ -1,25 +1,12 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Grafico from "@assets/IconGrafico.svg";
+import React from 'react';
 import Image from 'next/image';
 import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
 
-export default function CustoTotal() {
-    const [data, setData] = useState(null);
+// Imagens
+import Grafico from "@assets/IconGrafico.svg";
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:4000/');
-                setData(response.data);
-            } catch (error) {
-                console.error('Erro ao obter os valores calculados:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
+export default function CustoTotal({data}) {
     
     // Tratamento de dados para o componente Custo Total
     const valor = `R$ ${data?.mediaIdCustoLicenca || 0}`;
@@ -28,7 +15,7 @@ export default function CustoTotal() {
     const seta = "moderateIncrease";
 
     return (
-        <Card className="w-fit">
+        <Card className="w-fit hover:shadow-lg">
             <div>
                 <div>
                     <Image className='w-10 h-10' src={Grafico} alt="Gráfico" />

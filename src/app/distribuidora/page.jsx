@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
+import Image from "next/image";
 
 // Componentes
 import Sidebar from "@/components/sidebar";
@@ -16,12 +18,15 @@ export default function Distribuidora() {
 
     useEffect(() => {
         axios
-        .get("http://localhost:4000/distribuidoras")
-        .then((response) => setDistribuidoras(response.data))
-        .catch((error) => {
+          .get("http://localhost:4000/distribuidoras/")
+          .then((response) => {
+            setDistribuidoras(response.data);
+          })
+          .catch((error) => {
             console.error("Erro ao buscar as distribuidoras:", error);
-        });
-    }, []);
+          });
+      }, []);
+      
 
     return (
         <>

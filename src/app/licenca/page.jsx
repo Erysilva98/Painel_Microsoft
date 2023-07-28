@@ -95,7 +95,7 @@ export default function Licenca() {
           </div>
           <section className="flex-1">
             <div className="flex text-lg ml-20 mr-20 mt-10 items-center">
-              <Link href="/matriz">
+              <Link href="/distribuidora">
                 <Image src={Voltar} className="w-10 h-10" />
               </Link>
               <h1 className='ml-6 text-3xl font-bold text-black'>Licenca Grupo Moura</h1>
