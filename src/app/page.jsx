@@ -14,6 +14,7 @@ import CustoUsuario from "@/components/custoUsuario";
 import TabelaLicenca from "@/components/tabelaLicenca";
 import GraficoMensal from "@/components/graficoMensal";
 import QuantLicenca from "@/components/quantLicenca";
+import LicencaMensal from "@/components/licencaMensal";
 
 export default function Home() {
 
@@ -75,12 +76,24 @@ export default function Home() {
               </div>
 
               <div className="flex ml-10 mr-10 mt-10 space-x-2">
+                <div className="flex flex-col">
+                  {/* Componente Gráfico Mensal */}
+                  <GraficoMensal />
 
-                {/* Componente Quantidade de Licença */}
-                <QuantLicenca />
+                  {/* Componente Quantidade de Licença */}
+                  <QuantLicenca />
+                </div>
+                 
+                <div className="w-full">
+                  {/* Componente Tabela de Licenças  */}
+                  <TabelaLicenca data={data} />
+                </div>
+               
+              </div>
 
+              <div>
                 {/* Componente Gráfico Mensal */}
-                <GraficoMensal />
+                <LicencaMensal />
               </div>
             </section>
           </div>

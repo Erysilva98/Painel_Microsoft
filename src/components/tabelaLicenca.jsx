@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Card, Text, List, ListItem, ProgressBar, Grid } from "@tremor/react";
 
@@ -31,6 +30,32 @@ const dados = [
     name: "Microsoft Teams Exploratory Mobility",
     amount: 80.0,
   },
+  {
+    name: "Microsoft 365 Business Basic",
+    amount: 180.0,
+  },
+  {
+    name: "Windows 10 Enterprise E3",
+    amount: 320.0,
+  },
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licenca teste de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Online (Plan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Power Apps Per User",
+    amount: 90.0,
+  },
+  // Adicione mais licenças fictícias abaixo
+  // ...
 ];
 
 const tabela = [
@@ -40,11 +65,9 @@ const tabela = [
   },
 ];
 
-
 export default function TabelaLicenca() {
-
   const ordernaDados = dados.sort((a, b) => b.amount - a.amount);
-  const dadosOrdenados = ordernaDados.slice(0, 5);
+  const dadosOrdenados = ordernaDados.slice(0, 10);
   const valorTotal = dados.reduce((soma, valor) => soma + valor.amount, 0);
   console.log(valorTotal);
 
@@ -57,12 +80,12 @@ export default function TabelaLicenca() {
           <p className="font-bold">{dadosTabela.title}</p>
           <Text>{dadosTabela.tipo}</Text>
 
-          <List className="mt-4 flex flex-col">
+          <List className="mt-4 w-full flex flex-col">
             {dadosOrdenados.map((infoDado, index) => {
                 const selectCores = corArray[index % corArray.length];
                 return (
-                  <ListItem key={infoDado.name} style={{ marginBottom: '25px' }}>
-                    <div className="w-full">
+                  <ListItem key={infoDado.name} style={{ marginBottom: '5px' }}>
+                    <div className="w-fit">
                       <div className="flex justify-between">
                         <p className="font-bold">{infoDado.name}</p>
                         <Text>{"R$" + infoDado.amount}</Text>
