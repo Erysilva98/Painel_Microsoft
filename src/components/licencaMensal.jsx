@@ -1,173 +1,244 @@
-import React from "react";
-import { Card, Title } from "@tremor/react";
+import React, { useState } from "react";
+import { Card, AreaChart, Title } from "@tremor/react";
 
 const dados = [
   {
-    month: "Jan",
-    "Office 365 E3": 100,
-    "Enterprise Mobility": 150,
-    "Security E3": 75,
-    "Exchange Online (Plan 1)": 200,
-    "Microsoft Power Automate Free": 50,
-    "Power BI (free)": 120,
-    "Microsoft Teams Exploratory Mobility": 80,
+    Month: "Jan", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Feb",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Fev", Year: "2021",
+    Atual: 0, Anterior: 0,
+  },
+  { 
+    Month: "Mar", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Mar",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Abr", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Abr",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Mai", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Mai",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Jun", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Jun",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Jul", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Jul",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Ago", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Ago",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Set", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Set",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Out", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Out",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Nov", Year: "2021",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Nov",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Dez", Year: "2021",
+    Atual: 0, Anterior: 0,
+  },
+
+  {
+    Month: "Jan", Year: "2022",
+    Atual: 0, Anterior: 0,
   },
   {
-    month: "Dez",
-    "Office 365 E3": 120,
-    "Enterprise Mobility": 180,
-    "Security E3": 90,
-    "Exchange Online (Plan 1)": 220,
-    "Microsoft Power Automate Free": 60,
-    "Power BI (free)": 140,
-    "Microsoft Teams Exploratory Mobility": 100,
+    Month: "Fev", Year: "2022",
+    Atual: 0, Anterior: 0,
   },
-  // Adicione mais meses com seus respectivos valores...
+  {
+    Month: "Mar", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Abr", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Mai", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Jun", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Jul", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Ago", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Set", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Out", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Nov", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Dez", Year: "2022",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Jan", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Fev", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Mar", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Abr", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Mai", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Jun", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Jul", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Ago", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Set", Year: "2023",
+    Atual: 10, Anterior: 0,
+  },
+  {
+    Month: "Out", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Nov", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Dez", Year: "2023",
+    Atual: 0, Anterior: 0,
+  },
+
+  //TEste de varios anos
+  {
+    Month: "Jan", Year: "2024",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Fev", Year: "2024",
+    Atual: 0, Anterior: 0,
+  },
+
+  {
+    Month: "Mar", Year: "2025",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Abr", Year: "2025",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Mai", Year: "2026",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Jun", Year: "2026",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Jul", Year: "2027",
+    Atual: 0, Anterior: 0,
+  },
+  {
+    Month: "Ago", Year: "2027",
+    Atual: 0, Anterior: 0,
+  },
 ];
 
 export default function LicencaMensal() {
-  const nomesLicencas = Object.keys(dados[0]).filter((key) => key !== "month");
-  const meses = dados.map((item) => item.month);
+  const yearsList = [...new Set(dados.map((item) => item.Year))]; // Lista de anos únicos
+  const [selectedYears, setSelectedYears] = useState([yearsList[1], yearsList[2]]); // Anos selecionados por padrão
 
-  // Array de cores predefinido
-  const corArray = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue", "lime", "slate"];
+  // Filtrar os dados com base nos anos selecionados
+  const filteredData = dados.filter((item) =>
+    selectedYears.includes(item.Year)
+  );
 
-  // Objeto que associa cada licença a uma cor
-  const corPorLicenca = nomesLicencas.reduce((obj, licenca, index) => {
-    obj[licenca] = corArray[index % corArray.length];
-    return obj;
-  }, {});
+  const handleYearButtonClick = (year) => {
+    // Verifica se o ano já está selecionado
+    if (selectedYears.includes(year)) {
+      // Remove o ano da seleção
+      setSelectedYears(selectedYears.filter((y) => y !== year));
+    } else {
+      // Adiciona o ano à seleção (no máximo 2 anos)
+      setSelectedYears((prevSelectedYears) => {
+        if (prevSelectedYears.length >= 2) {
+          return [year];
+        } else {
+          return [...prevSelectedYears, year];
+        }
+      });
+    }
+  };
 
   return (
     <Card>
-      <Title>Variações do Preço das Licenças</Title>
-      <table className="table-auto mt-6">
-        <thead>
-          <tr>
-            <th className="px-4 py-2"></th>
-            {meses.map((mes) => (
-              <th key={mes} className="px-4 py-2">
-                {mes}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {nomesLicencas.map((nomeLicenca) => (
-            <tr key={nomeLicenca}>
-              <td className="border">{nomeLicenca}</td>
-              {meses.map((mes) => (
-                <td
-                  key={mes}
-                  className={`border ${corPorLicenca[nomeLicenca]}`} // Utiliza a cor correspondente à licença
-                >
-                  {dados.find((item) => item.month === mes)[nomeLicenca]}
-                </td>
-              ))}
-            </tr>
+      <div className="flex items-center mb-4 justify-between">
+        <Title>Custo Mensal</Title>
+        <div className="space-x-2">
+          {yearsList.slice(0, 5).map((year) => (
+            <button
+              key={year}
+              className={`p-2 border rounded ${
+                selectedYears.includes(year) ? "bg-blue-500 text-white" : "bg-white"
+              }`}
+              onClick={() => handleYearButtonClick(year)}
+            >
+              {year}
+            </button>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
+      <AreaChart
+        className="w-full h-60"
+        data={filteredData}
+        categories={["Atual", "Anterior"]}
+        index="Month"
+        colors={["indigo", "fuchsia"]}
+        yAxisWidth={60}
+        valueFormatter={(number) =>
+          `${Intl.NumberFormat("pt-br").format(number).toString()}`
+        }
+      />
     </Card>
   );
 }

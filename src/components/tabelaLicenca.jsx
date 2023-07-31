@@ -55,7 +55,167 @@ const dados = [
     amount: 90.0,
   },
   // Adicione mais licenças fictícias abaixo
-  // ...
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licenca teste de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Online (Plan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Power Apps Per User",
+    amount: 90.0,
+  },
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licenca teste de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Online (Plan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Power Apps Per User",
+    amount: 90.0,
+  },
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licenca teste de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Online (Plan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Power Apps Per User",
+    amount: 90.0,
+  },
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft teste de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint ine (Plan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Apps Per User",
+    amount: 90.0,
+  },
+  {
+    name: "Microsoft 5 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licen teste de muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint (P2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Power As Per User",
+    amount: 90.0,
+  },
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licenca teste de ",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Online )",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Power Apps ",
+    amount: 90.0,
+  },
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licenca teste de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Online (Plan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Power Apps Per User",
+    amount: 90.0,
+  },
+  {
+    name: "Microsoft 365 E5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licen de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Onlan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft PoPer User",
+    amount: 90.0,
+  },
+  {
+    name: "Micro5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licente de nome grande muito grande",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoi(Plan 2)",
+    amount: 180.0,
+  },
+  {
+    name: "MicrosoPer User",
+    amount: 90.0,
+  },
+  {
+    name: "Microso5",
+    amount: 420.0,
+  },
+  {
+    name: "Microsoft licenca test",
+    amount: 150.0,
+  },
+  {
+    name: "SharePoint Online 2)",
+    amount: 180.0,
+  },
+  {
+    name: "Microsoft Apps User",
+    amount: 90.0,
+  },
+
 ];
 
 const tabela = [
@@ -67,14 +227,14 @@ const tabela = [
 
 export default function TabelaLicenca() {
   const ordernaDados = dados.sort((a, b) => b.amount - a.amount);
-  const dadosOrdenados = ordernaDados.slice(0, 10);
+  const dadosOrdenados = ordernaDados;
   const valorTotal = dados.reduce((soma, valor) => soma + valor.amount, 0);
   console.log(valorTotal);
 
   const corArray = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue" , "lime", "slate"]; 
 
   return (
-    <Grid numItemsSm={1} className="gap-6">
+    <Grid numItemsSm={1} className="max-h-min gap-6">
       {tabela.map((dadosTabela) => (
         <Card key={dadosTabela.title} style={{ width: '325px', height: 'fit-content'}}>
           <p className="font-bold">{dadosTabela.title}</p>

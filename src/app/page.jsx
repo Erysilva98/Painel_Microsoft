@@ -75,26 +75,27 @@ export default function Home() {
                   </div>
               </div>
 
-              <div className="flex ml-10 mr-10 mt-10 space-x-2">
-                <div className="flex flex-col">
+              <div className="flex ml-10 mr-10 mt-10 mb-10 space-x-2">
+                <div className="flex flex-col w-9/12 space-y-2">
                   {/* Componente Gráfico Mensal */}
                   <GraficoMensal />
 
-                  {/* Componente Quantidade de Licença */}
-                  <QuantLicenca />
+                  <div className="z-20">
+                    {/* Componente Quantidade de Licença */}
+                    <QuantLicenca />
+                  </div>
+
+                  <div className="z-10">
+                    {/* Componente Gráfico Mensal */}
+                    <LicencaMensal />
+                  </div>
                 </div>
                  
-                <div className="w-full">
+                <div className="w-9/12">
                   {/* Componente Tabela de Licenças  */}
                   <TabelaLicenca data={data} />
-                </div>
-               
-              </div>
-
-              <div>
-                {/* Componente Gráfico Mensal */}
-                <LicencaMensal />
-              </div>
+                </div>               
+              </div>              
             </section>
           </div>
       </main>

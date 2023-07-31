@@ -45,7 +45,7 @@ export default function QuantLicenca () {
     <Card>
       <Title>As Licenças mais Utilizadas</Title>
       <BarChart
-        className="h-80 justify-center"
+        className="h-60 justify-center"
         data={dados}
         index="tipo"
         categories={categories}
