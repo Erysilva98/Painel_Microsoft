@@ -54,10 +54,10 @@ const dados = [
 export default function GraficoMensal() {
 
   return (
-      <Card>
-        <Title>Custo Mensal</Title>
+      <div className="bg-white w-2/5 rounded-xl">
+        <Title className="ml-3 mt-3">Custo Mensal</Title>
         <AreaChart
-          className="max-w-2xl max-h-64"
+          className="pr-3"
           data={dados}
           categories={["Atual", "Anterior"]}
           index="Month"
@@ -67,6 +67,6 @@ export default function GraficoMensal() {
             `${Intl.NumberFormat("pt-br").format(number).toString()}`
           }
         />
-      </Card>
+      </div>
   );
 }

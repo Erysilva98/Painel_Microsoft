@@ -7,35 +7,32 @@ import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
 //Icones 
 import Icone from "@assets/licencaIcon.svg";
 
-export default function LicencaAtiva({data}) {
+export default function LicencaAtiva({ data }) {
 
-     // Tratamento de dados para o componente Custo Total
-     const valor = `${(data?.quantidadeLicencas || 0)}`;
-     const texto = "Licenças Ativas";
-     const status = "Aumentou 2% em Relação ao Mês Anterior";
-     const seta = "moderateIncrease";
-    
+    // Tratamento de dados para o componente Custo Total
+    const valor = `${(data?.quantidadeLicencas || 0)}`;
+    const texto = "Licenças Ativas";
+    const status = "Aumentou 2% em Relação ao Mês Anterior";
+    const seta = "moderateIncrease";
+
     return (
-        <Card className="w-fit hover:shadow-lg">
-            <div>
+        <div className="flex flex-col bg-white w-96 h-56 hover:shadow-lg rounded-xl">
+            <div className='mt-6 ml-5'>
                 <div>
-                    <Image className='w-10 h-10' src={Icone} alt="Gráfico"/>
+                    <Image className='w-10 h-10 mb-3' src={Icone} alt="Gráfico" />
                 </div>
-                <Flex alignItems="start">
-                    <div>
-                        <Text>{texto}</Text>
-                        <Metric className='mb-2.5'>{valor}</Metric>
-                    </div>
-                </Flex>
+
+                <span>{texto}</span>
+                <Metric className='mb-2.5'>{valor}</Metric>
                 <BadgeDelta deltaType={seta}>{status}</BadgeDelta>
             </div>
-        </Card>
+        </div>
     );
 };
 
 // Defina os tipos das props utilizando PropTypes
 LicencaAtiva.propTypes = {
     params: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
     }).isRequired,
-  };
+};

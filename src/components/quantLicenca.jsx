@@ -19,16 +19,16 @@ export default function QuantLicenca () {
   const categories = Object.keys(dados[0]).filter((key) => key !== "tipo");
 
   return (
-    <Card>
-      <Title>As Licenças mais Utilizadas</Title>
+    <div className="bg-white w-2/5 rounded-xl">
+      <Title className="ml-3 mt-3">As Licenças mais Utilizadas</Title>
       <BarChart
-        className="max-w-2xl max-h-72 justify-center"
+        className="pr-3 pt-3"
         data={dados}
         index="tipo"
         categories={categories}
         colors={["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue" , "lime", "slate"]}
         yAxisWidth={48}
       />
-    </Card>
+    </div>
   )
 }
