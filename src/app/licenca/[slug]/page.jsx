@@ -7,8 +7,11 @@ import Link from "next/link";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import CustoTotal from "@/components/custoTotal";
+import LicencaAtiva from "@/components/licencaAtiva";
+import NumUsuarios from "@/components/numUsuarios";
+import CustoUsuario from "@/components/custoUsuario";
+import UserLicenca from "@/components/userLicenca";
 import GraficoMensal from "@/components/graficoMensal";
-import QuantLicenca from "@/components/quantLicenca";
 
 export default function User() {
 
@@ -45,22 +48,30 @@ export default function User() {
                             <h1 className="text-3xl font-bold text-black ml-10 mt-14 mb-10">Nome do Usuário</h1>
                         </div>
                         
-                        <div className="flex ml-10 mr-10 mt-10 justify-evenly">
+                       <div className="flex ml-10 mr-10 mt-10 justify-evenly">
+                           <div className="flex space-x-2">
                             {/* Componente de Custo Total */}
-                            <Link href="/distribuidora">
-                                <CustoTotal data={data}/>
-                            </Link>
-                            {/* Componente Grafico Mensal */}
-                            <Link href="/distribuidora">
-                                <GraficoMensal data={data}/>
-                            </Link>
+                            <CustoTotal data={data}/>
+               
+                            {/* Componente de Licenças */}
+                            <LicencaAtiva data={data} />
+                           </div>
+                          
+                            <div className="flex flex-col w-fit space-y-2">
+                                {/* Componente de Número de Usuários */}
+                                <NumUsuarios data={data} />
+
+                                {/* Componente de Custo por Usuário */}
+                                <CustoUsuario data={data} />
+                            </div>
                         </div>
-                        <div className="flex ml-10 mr-10 mt-10 justify-evenly">
-                            {/* Componente Tabela Licenca */}
-                            <Link href="/distribuidora">
-                                <QuantLicenca data={data}/>
-                            </Link>
+
+                        <div className="flex w-fit">
+                            {/* Tabela de Licenças do Usúario*/}
+                            <UserLicenca data={data} />
+            
                         </div>
+
                     </section>
                 </div>
             </main>

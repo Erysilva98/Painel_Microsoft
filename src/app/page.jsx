@@ -77,17 +77,13 @@ export default function Home() {
 
               <div className="flex ml-10 mr-10 mt-10 mb-10 space-x-2">
                 <div className="flex flex-col w-9/12 space-y-2">
-                  {/* Componente Gráfico Mensal */}
-                  <GraficoMensal />
-
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
                     <QuantLicenca />
                   </div>
-
                   <div className="z-10">
                     {/* Componente Gráfico Mensal */}
-                    <LicencaMensal />
+                    <GraficoMensal />
                   </div>
                 </div>
                  
@@ -95,7 +91,8 @@ export default function Home() {
                   {/* Componente Tabela de Licenças  */}
                   <TabelaLicenca data={data} />
                 </div>               
-              </div>              
+              </div>   
+                         
             </section>
           </div>
       </main>

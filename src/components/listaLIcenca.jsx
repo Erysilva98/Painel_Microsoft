@@ -5,7 +5,6 @@ import { Card, Title, Table, TableHead, TableHeaderCell, TableRow, TableBody, Ta
 export default function ListaLicenca ( { data }) {
   return (
     <Card>
-      <Title>Lsta de Licenca</Title>
       <Table className='mt-5'>
         <TableHead className='bg-tremor-brand-emphasis'>
           <TableRow>

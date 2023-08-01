@@ -101,18 +101,7 @@ export default function Licenca() {
               <h1 className='ml-6 text-3xl font-bold text-black'>Licenca Grupo Moura</h1>
             </div>
             <div className="flex justify-center items-center bg-white ml-20 mr-20 mt-10 h-16 rounded-lg">
-              <form>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <Image src={iconPesquisar} alt="Pesquisar" />
-                  </div>
-                  <input
-                    type="search" id="default-search"
-                    className="block w-80 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Pesquise aqui um Usuário"
-                  />
-                </div>
-              </form>
+              <h2>Tabela de Licença dos Usúarios</h2>
             </div>
             <div className="flex ml-20 mr-20 mt-5 mb-10">
               <Link href="/licenca/User">
