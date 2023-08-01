@@ -42,12 +42,12 @@ export default function Matriz() {
               
               <div className="flex ml-20 mr-20 mt-10 space-x-24">
                   {/* Componente de Custo Total */}
-                  <Link href="/licenca">
+                  <Link href="/usuario">
                     // <CustoTotal />
                   </Link>
                 
                   {/* Componente de Licenças */}
-                  <Link href="/licenca">
+                  <Link href="/usuario">
                     <LicencaAtiva />
                   </Link>
               </div>
@@ -55,12 +55,12 @@ export default function Matriz() {
               <div className="flex ml-20 mr-44 mt-10">
                 <div className="flex flex-col w-fit justify-center space-y-10">
                     {/* Componente de Número de Usuários */}
-                    <Link href="/licenca">
+                    <Link href="/usuario">
                       <NumUsuarios />
                     </Link>
 
                     {/* Componente de Custo por Usuário */}
-                    <Link href="/licenca">
+                    <Link href="/usuario">
                       <CustoUsuario />
                     </Link>
                     

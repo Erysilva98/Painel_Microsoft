@@ -11,6 +11,8 @@ const dados = [
   { ano: 2023, nome: "Painel", custo: 100.0 },
   { ano: 2023, nome: "Painel", custo: 700 },
   { ano: 2023, nome: "Painel", custo: 100.0 },
+  { ano: 2023, nome: "Painel", custo: 100.0 },
+  { ano: 2023, nome: "Painel", custo: 100.0 },
   // Adicione outros dados semelhantes aqui
 ];
 

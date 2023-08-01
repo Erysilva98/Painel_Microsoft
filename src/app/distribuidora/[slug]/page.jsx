@@ -12,7 +12,7 @@ import Voltar from '@assets/Circle.svg';
 import Header from '@/components/header';
 import Sidebar from '@/components/sidebar';
 import CustoTotal from '@/components/custoTotal';
-import LicencaAtiva from '@/components/licencaAtiva';
+import LicencaAtiva from '@/components/LicencaAtiva';
 import NumUsuarios from '@/components/numUsuarios';
 import CustoUsuario from '@/components/custoUsuario';
 import GraficoMensal from '@/components/graficoMensal';
@@ -56,23 +56,23 @@ export default function DistribuidoraSlug({ params }) {
               
               <div className="flex ml-10 mr-10 mt-10 justify-evenly">
                   {/* Componente de Custo Total */}
-                  <Link href="/licenca">
+                  <Link href="/usuario">
                     <CustoTotal data={data}/>
                   </Link>
                 
                   {/* Componente de Licenças */}
-                  <Link href="/licenca">
+                  <Link href="/usuario">
                     <LicencaAtiva data={data} />
                   </Link>
 
                   <div className="flex flex-col w-fit space-y-2">
                     {/* Componente de Número de Usuários */}
-                    <Link href="/licenca">
+                    <Link href="/usuario">
                       <NumUsuarios data={data} />
                     </Link>
 
                     {/* Componente de Custo por Usuário */}
-                    <Link href="/licenca">
+                    <Link href="/usuario">
                       <CustoUsuario data={data} />
                     </Link>
                   </div>

@@ -59,31 +59,44 @@ export default function Home() {
               </Link>
 
               {/* Componente de Licenças */}
-              <Link href="/licenca">
+              <Link href="/usuario">
                 <LicencaAtiva data={data} />
               </Link>
 
               <div className="flex flex-col w-fit space-y-2">
                 {/* Componente de Número de Usuários */}
-                <Link href="/licenca">
+                <Link href="/usuario">
                   <NumUsuarios data={data} />
                 </Link>
 
                 {/* Componente de Custo por Usuário */}
-                <Link href="/licenca">
+                <Link href="/usuario">
                   <CustoUsuario data={data} />
                 </Link>
               </div>
             </div>
 
-              <div className="flex ml-10 mr-10 mt-10 space-x-2">
-
-                {/* Componente Quantidade de Licença */}
-                <QuantLicenca />
-
-                {/* Componente Gráfico Mensal */}
-                <GraficoMensal />
-              </div>
+              <div className="flex ml-16 mt-5 mb-10">
+                <div className="flex flex-col w-9/12 space-y-2 ">
+                  <div className="z-20">
+                    {/* Componente Quantidade de Licença */}
+                    <QuantLicenca />
+                  </div>
+                  <div className="z-10">
+                    {/* Componente Gráfico Mensal */}
+                    <GraficoMensal />
+                  </div>
+                  <div>
+                    {/* Componente CustoAnual */}
+                    <CustoAnual />
+                  </div>
+                </div>
+                 
+                <div className="w-9/12 ml-20">
+                  {/* Componente Tabela de Licenças  */}
+                  <TabelaLicenca data={data} />
+                </div>               
+              </div>   
             </section>
           </div>
       </main>

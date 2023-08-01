@@ -54,7 +54,7 @@ const dados = [
 export default function GraficoMensal() {
 
   return (
-      <div className="bg-white w-2/5 rounded-xl">
+      <div className="bg-white rounded-xl">
         <Title className="ml-3 mt-3">Custo Mensal</Title>
         <AreaChart
           className="max-w-2xl max-h-64"

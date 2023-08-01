@@ -15,25 +15,6 @@ const dados = [
     "Enterprise Mobility": 180,
     // novas licenças
     "teste": 10,
-    "teste2": 20,
-    "teste3": 30,
-    "teste4": 40,
-    "teste5": 50,
-    "teste6": 60,
-    "teste7": 70,
-    "teste8": 80,
-    "teste9": 90,
-    "teste10": 100,
-    "teste11": 110,
-    "teste12": 120,
-    "teste13": 130,
-    "teste14": 140,
-    "teste15": 150,
-    "teste16": 160,
-    "teste17": 170,
-    "teste18": 180,
-    "teste19": 190,
-    "teste20": 200,    
   },
 ];
 
@@ -42,7 +23,7 @@ export default function QuantLicenca () {
   const categories = Object.keys(dados[0]).filter((key) => key !== "tipo");
 
   return (
-    <div className="bg-white w-2/5 rounded-xl">
+    <div className="bg-white rounded-xl">
       <Title className="ml-3 mt-3">As Licenças mais Utilizadas</Title>
       <BarChart
         className="max-w-2xl max-h-72 justify-center"

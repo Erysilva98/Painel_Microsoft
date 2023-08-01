@@ -1,7 +1,5 @@
 "use client";
 import React, {useEffect, useState} from "react";
-import Image from "next/image";
-import Link from "next/link";
 
 // Componentes
 import Header from "@/components/header";
@@ -11,7 +9,6 @@ import LicencaAtiva from "@/components/licencaAtiva";
 import NumUsuarios from "@/components/numUsuarios";
 import CustoUsuario from "@/components/custoUsuario";
 import UserLicenca from "@/components/userLicenca";
-import GraficoMensal from "@/components/graficoMensal";
 
 export default function User() {
 

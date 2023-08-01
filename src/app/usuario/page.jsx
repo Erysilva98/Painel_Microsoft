@@ -104,7 +104,7 @@ export default function Licenca() {
               <h2>Tabela de Licença dos Usúarios</h2>
             </div>
             <div className="flex ml-20 mr-20 mt-5 mb-10">
-              <Link href="/licenca/User">
+              <Link href="/usuario/User">
                 <ListaLicenca data={dados} />
               </Link>
             </div>
