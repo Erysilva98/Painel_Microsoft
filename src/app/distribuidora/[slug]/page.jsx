@@ -21,7 +21,6 @@ import TabelaLicenca from '@/components/tabelaLicenca';
 
 export default function DistribuidoraSlug({ params }) {
   const [data, setData] = useState([]);
-  const teste = params;
   useEffect(() => {
     async function fetchData() {
       try {
@@ -55,7 +54,7 @@ export default function DistribuidoraSlug({ params }) {
                 <h1 className="text-3xl font-bold text-black mb-10">{params.slug}</h1>   
               </div>
               
-              <div className="flex ml-20 mr-20 mt-10 space-x-24">
+              <div className="flex ml-10 mr-10 mt-10 justify-evenly">
                   {/* Componente de Custo Total */}
                   <Link href="/licenca">
                     <CustoTotal data={data}/>
@@ -65,10 +64,8 @@ export default function DistribuidoraSlug({ params }) {
                   <Link href="/licenca">
                     <LicencaAtiva data={data} />
                   </Link>
-              </div>
 
-              <div className="flex ml-20 mr-44 mt-10">
-                <div className="flex flex-col w-fit justify-center space-y-10">
+                  <div className="flex flex-col w-fit space-y-2">
                     {/* Componente de Número de Usuários */}
                     <Link href="/licenca">
                       <NumUsuarios data={data} />
@@ -78,22 +75,27 @@ export default function DistribuidoraSlug({ params }) {
                     <Link href="/licenca">
                       <CustoUsuario data={data} />
                     </Link>
-                </div>
-                {/* Componente Gráfico Mensal */}
-                <div className="min-w-fit w-3/4 ml-40">
-                  <GraficoMensal />
-                </div>
+                  </div>
               </div>
-              <div className="flex ml-20 mt-10 mb-10">
-                <div className="mr-3">
-                  {/* Componente Tabela de Licenças */}
-                  <TabelaLicenca />
+
+              <div className="flex ml-10 mr-10 mt-10 mb-10 space-x-2">
+                <div className="flex flex-col w-9/12 space-y-2">
+                  <div className="z-20">
+                    {/* Componente Quantidade de Licença */}
+                    <QuantLicenca />
+                  </div>
+                  <div className="z-10">
+                    {/* Componente Gráfico Mensal */}
+                    <GraficoMensal />
+                  </div>
                 </div>
-                <div className="min-w-fit ml-36 w-1/2">
-                  {/* Componente Quantidade de Licença */}
-                  <QuantLicenca />
-                </div>
-              </div>
+                 
+                <div className="w-9/12">
+                  {/* Componente Tabela de Licenças  */}
+                  <TabelaLicenca data={data} />
+                </div>               
+              </div>   
+              
             </section>
         </div>
       </main>

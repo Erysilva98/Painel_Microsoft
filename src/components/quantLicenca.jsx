@@ -4,13 +4,36 @@ import { Card, Title, BarChart} from "@tremor/react";
 const dados = [
   {
     tipo: "Office 365",
-    "Office 365 E3": 15,
-    "Enterprise Mobility": 5,
-    "Security E3": 10,
-    "Exchange Online (Plan 1 )": 4,
-    "Microsoft Power Automate Free": 2,
-    "Power BI (free)": 8,
-    "Microsoft Teams Exploratory Mobility": 1,
+    "Office 365 E3": 140,
+    "Enterprise Mobility": 50,
+    "Security E3": 105,
+    "Exchange Online (Plan 1 )": 40,
+    "Microsoft Power Automate Free": 20,
+    "Power BI (free)": 80,
+    "Microsoft Teams Exploratory Mobility": 150,
+    "Office 365 E3": 120,
+    "Enterprise Mobility": 180,
+    // novas licenças
+    "teste": 10,
+    "teste2": 20,
+    "teste3": 30,
+    "teste4": 40,
+    "teste5": 50,
+    "teste6": 60,
+    "teste7": 70,
+    "teste8": 80,
+    "teste9": 90,
+    "teste10": 100,
+    "teste11": 110,
+    "teste12": 120,
+    "teste13": 130,
+    "teste14": 140,
+    "teste15": 150,
+    "teste16": 160,
+    "teste17": 170,
+    "teste18": 180,
+    "teste19": 190,
+    "teste20": 200,    
   },
 ];
 
@@ -22,7 +45,7 @@ export default function QuantLicenca () {
     <div className="bg-white w-2/5 rounded-xl">
       <Title className="ml-3 mt-3">As Licenças mais Utilizadas</Title>
       <BarChart
-        className="pr-3 pt-3"
+        className="max-w-2xl max-h-72 justify-center"
         data={dados}
         index="tipo"
         categories={categories}

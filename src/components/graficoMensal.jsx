@@ -57,7 +57,7 @@ export default function GraficoMensal() {
       <div className="bg-white w-2/5 rounded-xl">
         <Title className="ml-3 mt-3">Custo Mensal</Title>
         <AreaChart
-          className="pr-3"
+          className="max-w-2xl max-h-64"
           data={dados}
           categories={["Atual", "Anterior"]}
           index="Month"
