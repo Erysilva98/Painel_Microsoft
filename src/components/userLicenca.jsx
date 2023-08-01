@@ -28,7 +28,7 @@ export default function UserLicenca() {
 
   return (
     <Card>
-      <Title>Variações do Preço das Licenças</Title>
+      <Title>Licenças do Usuário</Title>
       <table className="table-auto mt-6">
         <thead>
           <tr>

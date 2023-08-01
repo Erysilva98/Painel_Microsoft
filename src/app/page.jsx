@@ -15,6 +15,7 @@ import TabelaLicenca from "@/components/tabelaLicenca";
 import GraficoMensal from "@/components/graficoMensal";
 import QuantLicenca from "@/components/quantLicenca";
 import LicencaMensal from "@/components/licencaMensal";
+import CustoAnual from "@/components/custoAnual";
 
 export default function Home() {
 
@@ -84,6 +85,10 @@ export default function Home() {
                   <div className="z-10">
                     {/* Componente Gráfico Mensal */}
                     <GraficoMensal />
+                  </div>
+                  <div>
+                    {/* Componente CustoAnual */}
+                    <CustoAnual />
                   </div>
                 </div>
                  
