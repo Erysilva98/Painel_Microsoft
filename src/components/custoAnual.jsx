@@ -32,7 +32,7 @@ export default function CustoAnual() {
   const anoList = ordenarAno();
 
   return (
-    <Card>
+    <Card className="mb-36">
       <Text>Custo Anual por Licenças</Text>
       <TabGroup>
         <TabList className="mt-8">
@@ -40,7 +40,7 @@ export default function CustoAnual() {
             <Tab key={ano}>{ano}</Tab>
           ))}
         </TabList>
-        <TabPanels>
+        <TabPanels >
           {anoList.map((ano) => (
             <TabPanel key={ano}>
               <div className="mt-10">

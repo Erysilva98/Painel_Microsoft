@@ -12,7 +12,7 @@ export default function Valores() {
             <Header />
         </header>
         
-        <main className="bg-blue-background">
+        <main className="bg-blue-background min-w-max">
             <div className="flex">
                 {/* Componente do Sidebar */}
                 <div>

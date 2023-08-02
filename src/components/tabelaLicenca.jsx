@@ -141,14 +141,14 @@ export default function TabelaLicenca() {
   const corArray = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue" , "lime", "slate"]; 
 
   return (
-    <Grid numItemsSm={1} className="max-h-min gap-6">
+    <Grid numItemsSm={1} className="gap-6 w-96 max-h-max">
       {tabela.map((dadosTabela) => (
-        <Card key={dadosTabela.title} style={{ width: '325px', height: 'fit-content'}}>
+        <Card key={dadosTabela.title} className="min-w-fit">
           <p className="font-bold">{dadosTabela.title}</p>
           <Text>{dadosTabela.tipo}</Text>
 
-          <List className="mt-4 w-full flex flex-col">
-            {dadosOrdenados.slice(0,15).map((infoDado, index) => {
+          <List className="mt-4 flex-col">
+          {dadosOrdenados.slice(0,12).map((infoDado, index) => {
                 const selectCores = corArray[index % corArray.length];
                 return (
                   <ListItem key={infoDado.name} style={{ marginBottom: '5px' }}>

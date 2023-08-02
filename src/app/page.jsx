@@ -17,7 +17,6 @@ import QuantLicenca from "@/components/quantLicenca";
 import CustoAnual from "@/components/custoAnual";
 
 export default function Home() {
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -35,11 +34,11 @@ export default function Home() {
   return (
     <Layout>
       {/* Componente do Header */}
-      <header className="sticky">
+      <header className="min-w-max sticky ">
         <Header />
       </header>
 
-      <main className="bg-blue-background">
+      <main className="bg-blue-background min-w-max">
         <div className="flex">
           {/* Componente do Sidebar */}
           <div>
@@ -48,10 +47,10 @@ export default function Home() {
           <section className="flex-1">
             {/* Titulo da Página */}
             <div>
-              <h1 className="text-3xl font-bold text-black ml-10 mt-14 mb-10">Painel Geral Grupo Moura</h1>
+              <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
             </div>
 
-            <div className="flex mr-10 mt-10 justify-evenly items-center">
+            <div className="flex ml-20 mr-10 mt-10 space-x-2">
               {/* Componente de Custo Total */}
               <Link href="/distribuidora">
                 <CustoTotal data={data} />
@@ -75,8 +74,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex ml-16 mt-5 mb-10">
-                <div className="flex flex-col w-9/12 space-y-2 ">
+            <div className="flex ml-20 mt-5 mr-20 space-x-4">
+                <div className="flex flex-col w-9/12 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
                     <QuantLicenca />
@@ -85,20 +84,20 @@ export default function Home() {
                     {/* Componente Gráfico Mensal */}
                     <GraficoMensal />
                   </div>
-                  <div>
+                  <div className="h-max">
                   {/* Componente CustoAnual */}
                   <CustoAnual />
                   </div>
                 </div>
 
-                <div className="w-9/12 mt-4 ml-20">
+                <div className="h-screen mt-4">
                   {/* Componente Tabela de Licenças  */}
                   <TabelaLicenca data={data} />
                 </div>             
-              </div>   
+            </div>   
 
-            </section>
-          </div>
+          </section>
+        </div>
       </main>
     </Layout>
   )

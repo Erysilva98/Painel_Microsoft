@@ -5,7 +5,7 @@ import { Card, Title, Table, TableHead, TableHeaderCell, TableRow, TableBody, Ta
 export default function ListaLicenca ( { data }) {
   return (
     <Card>
-      <Table className='mt-5'>
+      <Table className='mt-5 w-auto'>
         <TableHead className='bg-tremor-brand-emphasis'>
           <TableRow>
             <TableHeaderCell className="border text-white">ID</TableHeaderCell>

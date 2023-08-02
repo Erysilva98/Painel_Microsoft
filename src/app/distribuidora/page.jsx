@@ -6,8 +6,8 @@ import Image from "next/image";
 
 // Componentes
 import Sidebar from "@/components/sidebar";
-import HeaderPesquisa from "@/components/headerPesquisa";
 import Card from "@/components/cards";
+import Header from "@/components/header";
 
 //Icones
 import Voltar from "@assets/Circle.svg";
@@ -31,23 +31,24 @@ export default function Distribuidora() {
     return (
         <>
             <header>
-                <HeaderPesquisa />
+                <Header />
             </header>
 
-            <main className="bg-blue-background">
+            <main className="bg-blue-background min-w-max">
                 <div className="flex">
                     <div>
                         <Sidebar />
                     </div>
                     <section className="flex-1">
                         {/* Titulo da Página com botão de ordenamento*/}
-                        <div className="flex ml-24 h-9 w-full mt-10 mb-10">
+                        <div className="flex ml-24 h-9 mt-10 mb-10">
                             <Link href="/">
                                 <Image src={Voltar} className="flex w-10 h-10 mr-6" />
                             </Link>
                             <h1 className="text-3xl font-bold text-black ">Distribuidoras</h1>   
                         </div>
-                        <div>
+                        
+                        <div className="flex ml-2 mr-20 mt-10">
                             <Card distribuidoras={distribuidoras}/>
                         </div>
                     </section>

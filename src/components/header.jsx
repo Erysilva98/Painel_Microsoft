@@ -1,22 +1,16 @@
 import React from "react";
-import Data from '@/components/data.jsx';
 import Logotipo from '@/components/logotipo.jsx';
-import Usuario from '@/components/usuario.jsx';
+import Data from '@/components/data.jsx';
 
 export default function Header() {
     return (
-        <nav className="flex w-full h-20">
-            <div className="flex flex-1 justify-between items-center">
+        <nav className="flex h-20 w-11/12 justify-between">
+            <div className="flex w-9/12 ml-10 items-center px-4">
                 {/* Componente Logotipo.jsx */}
-                <div className="ml-16">
-                    <Logotipo />
-                </div>
-                <div className="flex space-x-24 items-center mr-6">
-                    {/* Componente data.jsx */}
-                    <Data />
-                    {/* Componente usuario.jsx */}
-                    {/* <Usuario /> */}
-                </div>
+                <Logotipo />
+            </div>
+            <div className="flex">
+                <Data />
             </div>
         </nav>
     );

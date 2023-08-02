@@ -1,5 +1,5 @@
 "use client";
-import { Card, Title, BarChart} from "@tremor/react";
+import { Title, BarChart} from "@tremor/react";
 
 const dados = [
   {
@@ -15,39 +15,54 @@ const dados = [
     "Enterprise Mobility": 180,
     // novas licenças
     "teste": 200,
+    "teste2": 300,
+    "teste3": 400,
+    "teste4": 500,
+    "teste5": 600,
+
   },
 ];
 
-export default function QuantLicenca () {
-
+export default function QuantLicenca() {
   const categories = Object.keys(dados[0]).filter((key) => key !== "tipo");
 
   // Ordenar as licenças mais utilizadas
   const ordenarLista = categories.sort((a, b) => dados[0][b] - dados[0][a]);
 
   // Selecionar as 10 licenças mais utilizadas
-  const selecionarLista = ordenarLista.slice(0, 10);
+  const selecionarLista = ordenarLista.slice(0, 12);
 
   // Criar um novo objeto com as 10 licenças mais utilizadas
-  const exibirDados = [dados[0]].map((item) => {
-    selecionarLista.reduce((acc, licenca) => {
+  const exibirDados = dados.map((item) => {
+    const novoObjeto = selecionarLista.reduce((acc, licenca) => {
       acc[licenca] = item[licenca];
       return acc;
-    }, {tipo: item.tipo})
-    return item;
+    }, { tipo: item.tipo });
+    return novoObjeto;
   });
 
   return (
     <div className="bg-white rounded-xl">
       <Title className="ml-3 mt-3">As Licenças mais Utilizadas</Title>
       <BarChart
-        className="max-w-2xl max-h-72 justify-center"
+        className="w-full pl-2 pr-2 max-h-64"
         data={exibirDados}
         index="tipo"
         categories={categories}
-        colors={["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue" , "lime", "slate"]}
+        colors={[
+          "amber",
+          "indigo",
+          "sky",
+          "rose",
+          "emerald",
+          "violet",
+          "yellow",
+          "blue",
+          "lime",
+          "slate",
+        ]}
         yAxisWidth={48}
       />
     </div>
-  )
+  );
 }

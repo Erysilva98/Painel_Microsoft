@@ -18,6 +18,7 @@ import CustoUsuario from '@/components/custoUsuario';
 import GraficoMensal from '@/components/graficoMensal';
 import QuantLicenca from '@/components/quantLicenca';
 import TabelaLicenca from '@/components/tabelaLicenca';
+import CustoAnual from '@/components/custoAnual';
 
 export default function DistribuidoraSlug({ params }) {
   const [data, setData] = useState([]);
@@ -39,7 +40,7 @@ export default function DistribuidoraSlug({ params }) {
         {/* Componente do Header */}
         <Header />
       </header>
-      <main className='bg-blue-background'>
+      <main className="bg-blue-background min-w-max">
         <div className='flex'>
             {/* Componente do Sidebar */}
             <div>
@@ -47,38 +48,38 @@ export default function DistribuidoraSlug({ params }) {
             </div>
             <section className="flex-1">
               {/* Titulo da Página com botão de ordenamento*/}
-              <div className="flex ml-24 h-9 w-full mt-10 mb-10">
+              <div className="flex ml-24 h-9 mt-10 mb-10">
                 <Link href="/distribuidora">
                   <Image src={Voltar} className="flex w-10 h-10 mr-6" />
                 </Link>
                 <h1 className="text-3xl font-bold text-black mb-10">{params.slug}</h1>   
               </div>
               
-              <div className="flex ml-10 mr-10 mt-10 justify-evenly">
-                  {/* Componente de Custo Total */}
+              <div className="flex ml-20 mr-10 mt-10 space-x-2">
+                {/* Componente de Custo Total */}
+                <Link href="/usuario">
+                  <CustoTotal data={data} />
+                </Link>
+
+                {/* Componente de Licenças */}
+                <Link href="/usuario">
+                  <LicencaAtiva data={data} />
+                </Link>
+
+                <div className="flex flex-col w-fit space-y-2">
+                  {/* Componente de Número de Usuários */}
                   <Link href="/usuario">
-                    <CustoTotal data={data}/>
-                  </Link>
-                
-                  {/* Componente de Licenças */}
-                  <Link href="/usuario">
-                    <LicencaAtiva data={data} />
+                    <NumUsuarios data={data} />
                   </Link>
 
-                  <div className="flex flex-col w-fit space-y-2">
-                    {/* Componente de Número de Usuários */}
-                    <Link href="/usuario">
-                      <NumUsuarios data={data} />
-                    </Link>
-
-                    {/* Componente de Custo por Usuário */}
-                    <Link href="/usuario">
-                      <CustoUsuario data={data} />
-                    </Link>
-                  </div>
+                  {/* Componente de Custo por Usuário */}
+                  <Link href="/usuario">
+                    <CustoUsuario data={data} />
+                  </Link>
+                </div>
               </div>
 
-              <div className="flex ml-10 mr-10 mt-10 mb-10 space-x-2">
+              <div className="flex ml-20 mt-5 mr-20 space-x-4">
                 <div className="flex flex-col w-9/12 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
@@ -88,12 +89,16 @@ export default function DistribuidoraSlug({ params }) {
                     {/* Componente Gráfico Mensal */}
                     <GraficoMensal />
                   </div>
+                  <div className="h-max">
+                  {/* Componente CustoAnual */}
+                  <CustoAnual />
+                  </div>
                 </div>
-                 
-                <div className="w-9/12">
+
+                <div className="h-screen mt-4">
                   {/* Componente Tabela de Licenças  */}
                   <TabelaLicenca data={data} />
-                </div>               
+                </div>             
               </div>   
               
             </section>

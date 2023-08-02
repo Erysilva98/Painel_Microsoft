@@ -88,7 +88,7 @@ export default function Licenca() {
       <header>
         <Header />
       </header>
-      <main className="bg-blue-background">
+      <main className="bg-blue-background min-w-max">
         <div className="flex">
           <div>
             <Sidebar />
@@ -103,7 +103,7 @@ export default function Licenca() {
             <div className="flex justify-center items-center bg-white ml-20 mr-20 mt-10 h-16 rounded-lg">
               <h2>Tabela de Licença dos Usúarios</h2>
             </div>
-            <div className="flex ml-20 mr-20 mt-5 mb-10">
+            <div className="ml-20 mr-20 mt-5 mb-10">
               <Link href="/usuario/User">
                 <ListaLicenca data={dados} />
               </Link>
