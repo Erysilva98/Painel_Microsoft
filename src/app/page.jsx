@@ -14,7 +14,6 @@ import CustoUsuario from "@/components/custoUsuario";
 import TabelaLicenca from "@/components/tabelaLicenca";
 import GraficoMensal from "@/components/graficoMensal";
 import QuantLicenca from "@/components/quantLicenca";
-import LicencaMensal from "@/components/licencaMensal";
 import CustoAnual from "@/components/custoAnual";
 
 export default function Home() {
@@ -59,7 +58,7 @@ export default function Home() {
               </Link>
 
               {/* Componente de Licenças */}
-              <Link href="/usuario">
+              <Link href="/licenca">
                 <LicencaAtiva data={data} />
               </Link>
 
@@ -76,7 +75,7 @@ export default function Home() {
               </div>
             </div>
 
-              <div className="flex ml-16 mt-5 mb-10">
+            <div className="flex ml-16 mt-5 mb-10">
                 <div className="flex flex-col w-9/12 space-y-2 ">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
@@ -87,16 +86,17 @@ export default function Home() {
                     <GraficoMensal />
                   </div>
                   <div>
-                    {/* Componente CustoAnual */}
-                    <CustoAnual />
+                  {/* Componente CustoAnual */}
+                  <CustoAnual />
                   </div>
                 </div>
-                 
-                <div className="w-9/12 ml-20">
+
+                <div className="w-9/12 mt-4 ml-20">
                   {/* Componente Tabela de Licenças  */}
                   <TabelaLicenca data={data} />
-                </div>               
+                </div>             
               </div>   
+
             </section>
           </div>
       </main>

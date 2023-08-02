@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import PropTypes from 'prop-types';
-import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
+import { BadgeDelta, Metric,} from "@tremor/react";
 
 //Icones 
 import Icone from "@assets/licencaIcon.svg";
@@ -28,11 +27,4 @@ export default function LicencaAtiva({ data }) {
             </div>
         </div>
     );
-};
-
-// Defina os tipos das props utilizando PropTypes
-LicencaAtiva.propTypes = {
-    params: PropTypes.shape({
-        slug: PropTypes.string.isRequired,
-    }).isRequired,
 };

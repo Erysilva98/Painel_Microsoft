@@ -8,11 +8,13 @@ const dados = [
   { ano: 2020, nome: "Microsoft", custo: 200.0 },
   { ano: 2021, nome: "Outra Empresa", custo: 150.0 },
   { ano: 2022, nome: "Painel", custo: 100.0 },
-  { ano: 2023, nome: "Painel", custo: 100.0 },
-  { ano: 2023, nome: "Painel", custo: 700 },
-  { ano: 2023, nome: "Painel", custo: 100.0 },
-  { ano: 2023, nome: "Painel", custo: 100.0 },
-  { ano: 2023, nome: "Painel", custo: 100.0 },
+  { ano: 2023, nome: "0", custo: 100.0 },
+  { ano: 2023, nome: "1", custo: 700 },
+  { ano: 2023, nome: "2", custo: 100.0 },
+  { ano: 2023, nome: "3", custo: 100.0 },
+  { ano: 2023, nome: "4", custo: 100.0 },
+  { ano: 2023, nome: "5", custo: 100.0 },
+  { ano: 2023, nome: "6", custo: 100.0 },
   // Adicione outros dados semelhantes aqui
 ];
 
@@ -21,9 +23,9 @@ function selecionarAno(ano) {
 }
 
 function ordenarAno() {
-  const yearsList = dados.map((item) => item.ano);
-  const sortedYears = [...new Set(yearsList)].sort((a, b) => b - a);
-  return sortedYears.slice(0, 5);
+  const lista = dados.map((item) => item.ano);
+  const ordenarLista = [...new Set(lista)].sort((a, b) => b - a);
+  return ordenarLista.slice(0, 5);
 }
 
 export default function CustoAnual() {
@@ -42,7 +44,7 @@ export default function CustoAnual() {
           {anoList.map((ano) => (
             <TabPanel key={ano}>
               <div className="mt-10">
-                {selecionarAno(ano).map((item) => (
+                {selecionarAno(ano).slice(0,5).map((item) => (
                   <div key={item.nome} className="mt-4">
                     <Flex>
                       <Text className="w-full">{item.nome}</Text>
