@@ -90,7 +90,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="h-screen mt-4">
+                <div className="w-2/4 h-screen mt-4">
                   {/* Componente Tabela de Licenças  */}
                   <TabelaLicenca data={data} />
                 </div>             

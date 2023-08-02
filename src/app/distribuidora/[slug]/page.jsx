@@ -80,7 +80,7 @@ export default function DistribuidoraSlug({ params }) {
               </div>
 
               <div className="flex ml-20 mt-5 mr-20 space-x-4">
-                <div className="flex flex-col w-9/12 space-y-2">
+                <div className="flex flex-col w-3/5 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
                     <QuantLicenca />
@@ -95,7 +95,7 @@ export default function DistribuidoraSlug({ params }) {
                   </div>
                 </div>
 
-                <div className="h-screen mt-4">
+                <div className="w-2/4 h-screen mt-4">
                   {/* Componente Tabela de Licenças  */}
                   <TabelaLicenca data={data} />
                 </div>             

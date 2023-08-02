@@ -32,6 +32,7 @@ export default function Matriz() {
               <Sidebar />
             </div>
             <section className="flex-1"> 
+
               {/* Titulo da Página */}
               <div className="flex ml-20 mt-14 mb-10 items-center">
                 <Link href="/distribuidora">
@@ -40,47 +41,52 @@ export default function Matriz() {
                 <h1 className="flex text-3xl font-bold text-black">Painel Geral RM Pálacio Matriz</h1>
               </div>
               
-              <div className="flex ml-20 mr-20 mt-10 space-x-24">
-                  {/* Componente de Custo Total */}
-                  <Link href="/usuario">
-                    // <CustoTotal />
-                  </Link>
-                
-                  {/* Componente de Licenças */}
-                  <Link href="/usuario">
-                    <LicencaAtiva />
-                  </Link>
-              </div>
+              <div className="flex ml-20 mr-20 mt-10 justify-between">
+              {/* Componente de Custo Total */}
+              <Link href="/licenca">
+                <CustoTotal data={data} />
+              </Link>
 
-              <div className="flex ml-20 mr-44 mt-10">
-                <div className="flex flex-col w-fit justify-center space-y-10">
-                    {/* Componente de Número de Usuários */}
-                    <Link href="/usuario">
-                      <NumUsuarios />
-                    </Link>
+              {/* Componente de Licenças */}
+              <Link href="/licenca">
+                <LicencaAtiva data={data} />
+              </Link>
 
-                    {/* Componente de Custo por Usuário */}
-                    <Link href="/usuario">
-                      <CustoUsuario />
-                    </Link>
-                    
-                </div>
-                {/* Componente Gráfico Mensal */}
-                <div className="min-w-fit w-3/4 ml-40">
-                  <GraficoMensal />
-                </div>
-              </div>
+              <div className="flex flex-col w-fit space-y-2">
+                {/* Componente de Número de Usuários */}
+                <Link href="/usuario">
+                  <NumUsuarios data={data} />
+                </Link>
 
-              <div className="flex ml-20 mt-10 mb-10">
-                <div className="mr-3">
-                  {/* Componente Tabela de Licenças */}
-                  <TabelaLicenca />
-                </div>
-                <div className="min-w-fit ml-36 w-1/2">
-                  {/* Componente Quantidade de Licença */}
-                  <QuantLicenca />
-                </div>
+                {/* Componente de Custo por Usuário */}
+                <Link href="/usuario">
+                  <CustoUsuario data={data} />
+                </Link>
               </div>
+            </div>
+
+            <div className="flex ml-20 mt-5 mr-20 space-x-4">
+                <div className="flex flex-col w-3/5 space-y-2">
+                  <div className="z-20">
+                    {/* Componente Quantidade de Licença */}
+                    <QuantLicenca />
+                  </div>
+                  <div className="z-10">
+                    {/* Componente Gráfico Mensal */}
+                    <GraficoMensal />
+                  </div>
+                  <div className="h-max">
+                  {/* Componente CustoAnual */}
+                  <CustoAnual />
+                  </div>
+                </div>
+
+                <div className="w-2/4 h-screen mt-4">
+                  {/* Componente Tabela de Licenças  */}
+                  <TabelaLicenca data={data} />
+                </div>             
+              </div>   
+
             </section>
           </div>
       </main>

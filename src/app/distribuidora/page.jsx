@@ -34,7 +34,7 @@ export default function Distribuidora() {
                 <Header />
             </header>
 
-            <main className="bg-blue-background min-w-max">
+            <main className="bg-blue-background">
                 <div className="flex">
                     <div>
                         <Sidebar />
@@ -48,7 +48,7 @@ export default function Distribuidora() {
                             <h1 className="text-3xl font-bold text-black ">Distribuidoras</h1>   
                         </div>
                         
-                        <div className="flex ml-2 mr-20 mt-10">
+                        <div className="w-5/6 ml-32">
                             <Card distribuidoras={distribuidoras}/>
                         </div>
                     </section>

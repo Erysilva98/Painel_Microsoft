@@ -53,20 +53,6 @@ export default function User() {
                             {/* Componente de Licenças */}
                             <LicencaAtiva data={data} />
                            </div>
-                          
-                            <div className="flex flex-col w-fit space-y-2">
-                                {/* Componente de Número de Usuários */}
-                                <NumUsuarios data={data} />
-
-                                {/* Componente de Custo por Usuário */}
-                                <CustoUsuario data={data} />
-                            </div>
-                        </div>
-
-                        <div className="flex w-fit">
-                            {/* Tabela de Licenças do Usúario*/}
-                            <UserLicenca data={data} />
-            
                         </div>
 
                     </section>
