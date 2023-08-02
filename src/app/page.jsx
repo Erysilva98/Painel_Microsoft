@@ -50,7 +50,7 @@ export default function Home() {
               <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
             </div>
 
-            <div className="flex ml-20 mr-10 mt-10 space-x-2">
+            <div className="flex ml-20 mr-20 mt-10 justify-between">
               {/* Componente de Custo Total */}
               <Link href="/distribuidora">
                 <CustoTotal data={data} />
@@ -75,7 +75,7 @@ export default function Home() {
             </div>
 
             <div className="flex ml-20 mt-5 mr-20 space-x-4">
-                <div className="flex flex-col w-9/12 space-y-2">
+                <div className="flex flex-col w-3/5 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
                     <QuantLicenca />
