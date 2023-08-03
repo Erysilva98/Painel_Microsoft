@@ -18,13 +18,20 @@ import CustoAnual from "@/components/custoAnual";
 
 export default function Home() {
   const [data, setData] = useState([]);
-
+   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:4000")
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .then((Error) => console.log("Erro ao obter os Dados:", Error))
-  },[]);
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:4000/"); // Modifique a URL para o endpoint correto da sua API
+        setData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Erro ao obter os dados:", error);
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <Layout>
@@ -73,7 +80,7 @@ export default function Home() {
                 <div className="flex flex-col w-3/5 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
-                    <QuantLicenca data={data}/>
+                  {!loading && <QuantLicenca data={data} />}
                   </div>
                   <div className="z-10">
                     {/* Componente Gráfico Mensal */}
@@ -87,7 +94,7 @@ export default function Home() {
 
                 <div className="w-2/4 h-screen mt-4">
                   {/* Componente Tabela de Licenças  */}
-                  <TabelaLicenca data={data} />
+                {!loading && <TabelaLicenca data={data} />}
                 </div>             
             </div>   
 
