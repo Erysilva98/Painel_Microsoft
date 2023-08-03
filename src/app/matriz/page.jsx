@@ -16,7 +16,7 @@ import CustoUsuario from "@/components/custoUsuario";
 import GraficoMensal from "@/components/graficoMensal";
 import TabelaLicenca from "@/components/tabelaLicenca";
 import QuantLicenca from "@/components/quantLicenca";
-
+import CustoAnual from "@/components/custoAnual";
 export default function Matriz() {
   return (
     <>
@@ -44,23 +44,23 @@ export default function Matriz() {
               <div className="flex ml-20 mr-20 mt-10 justify-between">
               {/* Componente de Custo Total */}
               <Link href="/licenca">
-                <CustoTotal data={data} />
+                <CustoTotal />
               </Link>
 
               {/* Componente de Licenças */}
               <Link href="/licenca">
-                <LicencaAtiva data={data} />
+                <LicencaAtiva  />
               </Link>
 
               <div className="flex flex-col w-fit space-y-2">
                 {/* Componente de Número de Usuários */}
                 <Link href="/usuario">
-                  <NumUsuarios data={data} />
+                  <NumUsuarios />
                 </Link>
 
                 {/* Componente de Custo por Usuário */}
                 <Link href="/usuario">
-                  <CustoUsuario data={data} />
+                  <CustoUsuario />
                 </Link>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function Matriz() {
 
                 <div className="w-2/4 h-screen mt-4">
                   {/* Componente Tabela de Licenças  */}
-                  <TabelaLicenca data={data} />
+                  <TabelaLicenca  />
                 </div>             
               </div>   
 

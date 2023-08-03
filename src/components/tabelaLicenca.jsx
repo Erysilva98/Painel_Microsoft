@@ -9,7 +9,7 @@ const tabela = [
 ];
 
 export default function TabelaLicenca({ data }) {
-  const dados = data.valorTotalLicencasOrdenado;
+  const dados = data?.valorTotalLicencasOrdenado ?? {};
   const valorTotal = Object.values(dados).reduce((soma, valor) => soma + valor, 0);
   const exibirDados = Object.keys(dados).map((licenca) => {
     return { name: licenca, amount: dados[licenca] };

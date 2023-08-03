@@ -1,40 +1,39 @@
-"use client";
-import React from "react";
-import { Title, BarChart } from "@tremor/react";
+import { Card, Title, BarChart} from "@tremor/react";
 
-export default function QuantLicenca({ data }) {
-  const dados = data.listarLicencaOrdenada;
-  const categories = Object.keys(dados).filter((key) => key !== "tipo");
-  const selecionarLista = categories.slice(0, 10);
-  console.log("selecionarLista",selecionarLista);
+const dados = [
 
-  // Criar um novo objeto com os 10 primeiros itens da lista ordenada
-  const exibirDados = selecionarLista.map((licenca) => {
-    return { tipo: licenca, [licenca]: dados[licenca] };
-  });
-  console.log("dados",exibirDados);
+  {
+    tipo: "Microsoft", 
+    "Office 365 E3": 107,
+    "Enterprise Mobility": 82,
+    "Security E3": 82,
+    "Microsoft Power Automate Free": 26,
+    "Exchange Online (Plan 1)": 12,
+    "Power BI (free)": 5,
+    "Microsoft Teams Exploratory": 2,
+    "Azure Active Directory Premium P1": 54,
+    "Dynamics 365 Customer Insights Self-Service Trial": 10,
+    "Dynamics 365 Customer Insights vTrial": 10,
+    "Dynamics 365 Customer Service Enterprise vTrial": 10,
+    "Dynamics 365 Customer Voice Trial": 10,
+  },
+];
+
+export default function QuantLicenca () {
+
+  const categories = Object.keys(dados[0]).filter((key) => key !== "tipo");
+
   return (
-    <div className="bg-white rounded-xl">
-      <Title className="ml-3 mt-3">As Licenças mais Utilizadas</Title>
+    <Card>
+      <Title>As Licenças mais Utilizadas</Title>
       <BarChart
-        className="w-full pl-2 pr-2 max-h-64"
-        data={exibirDados}
+        className="max-w-2xl max-h-72 justify-center"
+        data={dados}
         index="tipo"
-        categories={selecionarLista}
-        colors={[
-          "amber",
-          "indigo",
-          "sky",
-          "rose",
-          "emerald",
-          "violet",
-          "yellow",
-          "blue",
-          "lime",
-          "slate",
-        ]}
+        categories={categories}
+        colors={["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue" , "lime", "slate"]}
         yAxisWidth={48}
       />
-    </div>
-  );
+    </Card>
+  )
 }

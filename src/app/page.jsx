@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:4000/"); // Modifique a URL para o endpoint correto da sua API
+        const response = await axios.get("http://localhost:4000/"); 
         setData(response.data);
         setLoading(false);
       } catch (error) {
@@ -80,21 +80,21 @@ export default function Home() {
                 <div className="flex flex-col w-3/5 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
-                  {!loading && <QuantLicenca data={data} />}
+                    {!loading && <QuantLicenca data={data} />}
                   </div>
                   <div className="z-10">
                     {/* Componente Gráfico Mensal */}
                     <GraficoMensal />
                   </div>
                   <div className="h-max">
-                  {/* Componente CustoAnual */}
-                  <CustoAnual data={data}/>
+                    {/* Componente CustoAnual */}
+                    <CustoAnual data={data}/>
                   </div>
                 </div>
 
                 <div className="w-2/4 h-screen mt-4">
                   {/* Componente Tabela de Licenças  */}
-                {!loading && <TabelaLicenca data={data} />}
+                  {!loading && <TabelaLicenca data={data} />}
                 </div>             
             </div>   
 

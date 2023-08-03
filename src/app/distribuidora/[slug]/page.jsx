@@ -12,7 +12,7 @@ import Voltar from '@assets/Circle.svg';
 import Header from '@/components/header';
 import Sidebar from '@/components/sidebar';
 import CustoTotal from '@/components/custoTotal';
-import LicencaAtiva from '@/components/LicencaAtiva';
+import LicencaAtiva from '@/components/licencaAtiva';
 import NumUsuarios from '@/components/numUsuarios';
 import CustoUsuario from '@/components/custoUsuario';
 import GraficoMensal from '@/components/graficoMensal';
