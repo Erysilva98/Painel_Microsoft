@@ -1,8 +1,8 @@
 "use client";
 import React from 'react';
-import { Card, Title, Table, TableHead, TableHeaderCell, TableRow, TableBody, TableCell } from '@tremor/react';
+import { Card, Table, TableHead, TableHeaderCell, TableRow, TableBody, TableCell } from '@tremor/react';
 
-export default function ListaLicenca ( { data }) {
+export default function ListaUsuario ( { data }) {
   return (
     <Card>
       <Table className='mt-5 w-auto'>

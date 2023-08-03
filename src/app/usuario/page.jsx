@@ -8,7 +8,7 @@ import Voltar from "@assets/Circle.svg";
 import iconPesquisar from "@assets/Search-s.svg";
 
 // Componentes
-import ListaLicenca from '@/components/listaLIcenca';
+import ListaLicenca from '@/components/listaUsuario';
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 

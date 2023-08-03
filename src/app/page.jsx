@@ -20,16 +20,13 @@ export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get("http://localhost:4000");
-        setData(response.data);
-      } catch (error) {
-        console.error('Erro ao obter os dados:', error);
-      }
-    }
-    fetchData();
+    fetch("http://localhost:4000")
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .then((Error) => console.log("Erro ao obter os Dados:", Error))
   }, []);
+
+  console.log(data.listarLicencaOrdenada);
 
   return (
     <Layout>
@@ -78,7 +75,7 @@ export default function Home() {
                 <div className="flex flex-col w-3/5 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
-                    <QuantLicenca />
+                    <QuantLicenca data={data}/>
                   </div>
                   <div className="z-10">
                     {/* Componente Gráfico Mensal */}
@@ -86,7 +83,7 @@ export default function Home() {
                   </div>
                   <div className="h-max">
                   {/* Componente CustoAnual */}
-                  <CustoAnual />
+                  <CustoAnual data={data}/>
                   </div>
                 </div>
 

@@ -4,7 +4,7 @@ import { Card, Metric, Text, BadgeDelta } from "@tremor/react";
 
 export default function CustoUsuario( {data} ) {
 
-    const numero =`${(data?.divisaoLicencasPorMedia || 0).toFixed(2)}`;
+    const numero =`${(data?.valorMedioPorUsuario || 0)}`;
     const status = "moderateDecrease";
     const valor = 18.7+'%';
   

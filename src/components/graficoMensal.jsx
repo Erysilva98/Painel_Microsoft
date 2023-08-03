@@ -73,9 +73,9 @@ export default function GraficoMensal() {
         <Title className="ml-3 mt-3">Custo Mensal</Title>
         <AreaChart
           className="w-full pr-4 max-h-64"
+          index="Month"
           data={dados}
           categories={["Atual", "Anterior"]}
-          index="Month"
           colors={["indigo", "fuchsia"]}
           yAxisWidth={60}
           valueFormatter={(number) =>

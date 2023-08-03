@@ -5,7 +5,7 @@ import { BadgeDelta, Card, Metric, Text } from '@tremor/react';
 
 export default function NumUsuarios({data}) {
 
-  const numero =`${(data?.quantidadeNomeExibicao || 0)}`;
+  const numero =`${(data?.quantidadeUsuarios || 0)}`;
   const status = 12 + '%';
 
   return (

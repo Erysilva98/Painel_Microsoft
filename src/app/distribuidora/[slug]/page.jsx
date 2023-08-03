@@ -25,7 +25,7 @@ export default function DistribuidoraSlug({ params }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:4000/distribuidora/${params.slug}`); // Substitua pela URL correta do back-end que fornece os dados
+        const response = await axios.get(`http://localhost:4000/distribuidora/${params.slug}`); 
         setData(response.data);
       } catch (error) {
         console.error('Erro ao obter os dados:', error);

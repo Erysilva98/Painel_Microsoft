@@ -9,7 +9,7 @@ import Icone from "@assets/licencaIcon.svg";
 export default function LicencaAtiva({ data }) {
 
     // Tratamento de dados para o componente Custo Total
-    const valor = `${(data?.quantidadeLicencas || 0)}`;
+    const valor = `${(data?.quantidadeLicencasAtivas || 0)}`;
     const texto = "Licenças Ativas";
     const status = "Aumentou 2% em Relação ao Mês Anterior";
     const seta = "moderateIncrease";
