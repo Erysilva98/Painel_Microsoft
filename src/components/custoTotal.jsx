@@ -9,7 +9,7 @@ import Grafico from "@assets/IconGrafico.svg";
 export default function CustoTotal({data}) {
     
     // Tratamento de dados para o componente Custo Total
-    const valor = `R$ ${data?.custoTotal || 0}`;
+    const valor = `${(data?.custoTotal || 0).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
     const texto = "Custo Total";
     const status = "12% de Aumento em Relação ao Mês Anterior";
     const seta = "moderateIncrease";

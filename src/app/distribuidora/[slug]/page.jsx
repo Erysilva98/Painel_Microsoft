@@ -91,7 +91,7 @@ export default function DistribuidoraSlug({ params }) {
                   </div>
                   <div className="h-max">
                   {/* Componente CustoAnual */}
-                  <CustoAnual />
+                  <CustoAnual data={data}/>
                   </div>
                 </div>
 

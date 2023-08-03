@@ -24,9 +24,7 @@ export default function Home() {
       .then((response) => response.json())
       .then((data) => setData(data))
       .then((Error) => console.log("Erro ao obter os Dados:", Error))
-  }, []);
-
-  console.log(data.listarLicencaOrdenada);
+  },[]);
 
   return (
     <Layout>

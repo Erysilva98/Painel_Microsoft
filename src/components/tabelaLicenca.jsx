@@ -154,7 +154,7 @@ export default function TabelaLicenca() {
                     <div className="w-full">
                       <div className="flex justify-between">
                         <p className="font-bold">{infoDado.name}</p>
-                        <Text>{" R$ " + infoDado.amount}</Text>
+                        <Text>{infoDado.amount.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</Text>
                       </div>
                       <ProgressBar
                         value={ (infoDado.amount / valorTotal) * 500} 

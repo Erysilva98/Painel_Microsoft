@@ -12,7 +12,6 @@ export default function CustoAnual({data}) {
   function ordenarPorAno(data) {
     const lista = data.map((item) => item.ano);
     const ordenarLista = [...new Set(lista)].sort((a, b) => b - a);
-    console.log(ordenarLista.slice(0, 5));
     return ordenarLista.slice(0, 5);
   }
 
@@ -42,7 +41,7 @@ export default function CustoAnual({data}) {
                     <Flex>
                       <Text className="w-full">{item.nome}</Text>
                       <Flex className="space-x-2" justifyContent="end">
-                        <Text>{`$ ${item.valor}`}</Text>
+                        <Text>{`${item.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`}</Text>
                       </Flex>
                     </Flex>
                     <ProgressBar value={100} className="mt-2" />
