@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { AreaChart, Title,} from "@tremor/react";
 

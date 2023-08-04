@@ -18,15 +18,15 @@ export default function Distribuidora() {
 
     useEffect(() => {
         axios
-          .get("http://localhost:4000/distribuidoras/")
-          .then((response) => {
-            setDistribuidoras(response.data);
-          })
-          .catch((error) => {
-            console.error("Erro ao buscar as distribuidoras:", error);
-          });
-      }, []);
-      
+            .get("http://localhost:4000/distribuidoras/")
+            .then((response) => {
+                setDistribuidoras(response.data);
+            })
+            .catch((error) => {
+                console.error("Erro ao buscar as distribuidoras:", error);
+            });
+    }, []);
+
 
     return (
         <>
@@ -45,14 +45,15 @@ export default function Distribuidora() {
                             <Link href="/">
                                 <Image src={Voltar} className="flex w-10 h-10 mr-6" />
                             </Link>
-                            <h1 className="text-3xl font-bold text-black ">Distribuidoras</h1>   
+                            <h1 className="text-3xl font-bold text-black ">Distribuidoras</h1>
                         </div>
-                        
+
                         <div className="w-5/6 ml-32">
-                            <Card distribuidoras={distribuidoras}/>
+                            <Card distribuidoras={distribuidoras} />
                         </div>
                     </section>
                 </div>
             </main>
         </>
-    )}
+    )
+}

@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import { Card, Table, TableHead, TableHeaderCell, TableRow, TableBody, TableCell } from '@tremor/react';
 

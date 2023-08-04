@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
-import { Card, Metric, Text, List, ListItem, ProgressBar, Grid } from "@tremor/react";
+import { Card, Metric, Text, List, ListItem, Grid } from "@tremor/react";
 
 // Icones
 import Grafico from "@assets/IconGrafico.svg";

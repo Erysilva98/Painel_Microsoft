@@ -1,11 +1,9 @@
-"use client";
 import React from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 
 //Icones
 import Voltar from "@assets/Circle.svg";
-import iconPesquisar from "@assets/Search-s.svg";
 
 // Componentes
 import ListaLicenca from '@/components/listaUsuario';

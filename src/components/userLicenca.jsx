@@ -47,7 +47,7 @@ export default function UserLicenca() {
               {meses.map((mes) => (
                 <td
                   key={mes}
-                  className={`border ${corPorLicenca[nomeLicenca]}`} // Utiliza a cor correspondente à licença
+                  className={`border ${corPorLicenca[nomeLicenca]}`} 
                 >
                   {dados.find((item) => item.month === mes)[nomeLicenca]}
                 </td>

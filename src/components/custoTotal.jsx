@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
+import { BadgeDelta, Metric } from "@tremor/react";
 
 // Imagens
 import Grafico from "@assets/IconGrafico.svg";

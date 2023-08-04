@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { BadgeDelta, Card, Metric, Text } from '@tremor/react';
 

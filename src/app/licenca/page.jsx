@@ -7,4 +7,4 @@ export default function Page() {
             <h1>Não Iniciada</h1>
         </div>
     );
-    }
+}
