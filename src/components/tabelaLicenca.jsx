@@ -11,9 +11,14 @@ const tabela = [
 export default function TabelaLicenca({ data }) {
   const dados = data?.valorTotalLicencasOrdenado ?? {};
   const valorTotal = Object.values(dados).reduce((soma, valor) => soma + valor, 0);
-  const exibirDados = Object.keys(dados).map((licenca) => {
+
+  // Ordenar as chaves (nomes de licenças) alfabeticamente
+  const licencasOrdenadas = Object.keys(dados).sort();
+
+  const exibirDados = licencasOrdenadas.map((licenca) => {
     return { name: licenca, amount: dados[licenca] };
   });
+
   const corArray = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue", "lime", "slate"];
 
   return (

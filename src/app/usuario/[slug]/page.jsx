@@ -76,7 +76,7 @@ export default function User() {
                         <div className='flex'>
                             {/* Custo Total */}
                             <div className="flex flex-col space-y-5 ml-10 mr-10">
-                                <div className="flex flex-col bg-white w-9 h-40 hover:shadow-lg rounded-xl">
+                                <div className="flex flex-col bg-white w-96 h-40 hover:shadow-lg rounded-xl">
                                     <div className='mt-6 ml-5'>
                                         <div>
                                             <Image className='w-10 h-10 mb-3' src={Grafico} alt="Gráfico" />

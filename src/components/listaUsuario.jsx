@@ -17,11 +17,11 @@ export default function ListaUsuario ( { data }) {
         <TableBody className='bg-gray-400'>
           {data.map((item, index) => (
             <TableRow key={index} className='hover:bg-tremor-brand-emphasis hover:text-white'>
-              <TableCell className="border">{item.Id}</TableCell>
-              <TableCell className="border">{item.usuario}</TableCell>
+              <TableCell className="border">{item.id}</TableCell>
+              <TableCell className="border">{item.nomeExibicao}</TableCell>
               <TableCell className="border">{item.licencas}</TableCell>
-              <TableCell className="border">{"R$ "+item.custo}</TableCell>
-              <TableCell className="border">{item.dataHora}</TableCell>
+              <TableCell className="border">{"R$ "+item.idCustoLicenca}</TableCell>
+              <TableCell className="border">{item.dataHoraCriacao}</TableCell>
             </TableRow>
           ))}
         </TableBody>

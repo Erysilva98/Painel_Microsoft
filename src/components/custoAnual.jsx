@@ -22,7 +22,7 @@ export default function CustoAnual({ data }) {
 
   return (
     <Card className="mb-36">
-      <Text>Custo Anual por Licenças</Text>
+      <Text>Valor das Licenças por Ano</Text>
       <TabGroup>
         <TabList className="mt-8">
           {anosMaisRecentes.map((ano) => (

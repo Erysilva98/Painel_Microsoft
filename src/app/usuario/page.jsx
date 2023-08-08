@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+import React, {useState, useEffect} from 'react';
+import axios from "axios";
 import Link from "next/link";
 import Image from 'next/image';
 
@@ -6,80 +8,25 @@ import Image from 'next/image';
 import Voltar from "@assets/Circle.svg";
 
 // Componentes
-import ListaLicenca from '@/components/listaUsuario';
+import ListaUsuario from '@/components/listaUsuario';
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 
-const dados = [
-  { Id: "001202901", usuario: 'Amanda Farias Silva/Palacio Matriz', licencas: "Office 365+Interprise Mobility+Security E3", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  // Adicione mais objetos ao array, se necessário
-
-  { Id: "001202901", usuario: 'Amanda Farias Silva/Palacio Matriz', licencas: "Office 365+Interprise Mobility+Security E3", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-
-  { Id: "001202901", usuario: 'Amanda Farias Silva/Palacio Matriz', licencas: "Office 365+Interprise Mobility+Security E3", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-
-  { Id: "001202901", usuario: 'Amanda Farias Silva/Palacio Matriz', licencas: "Office 365+Interprise Mobility+Security E3", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-
-
-  { Id: "001202901", usuario: 'Amanda Farias Silva/Palacio Matriz', licencas: "Office 365+Interprise Mobility+Security E3", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-  { Id: "001202901", usuario: 'João/Palacio Matriz', licencas: "Office 365 ", custo: 10000, dataHora: '2023/07/19' },
-  { Id: "090211313", usuario: 'Maria/Palacio Matriz', licencas: "Office 365 ", custo: 20000, dataHora: '2023/07/19' },
-  { Id: "900932300", usuario: 'Pedro/Palacio Matriz', licencas: "Office 365 ", custo: 20020, dataHora: '2023/07/19' },
-];
-
 export default function Licenca() {
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/listar/")
+      .then((response) => {
+        setDados(response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar as distribuidoras:", error);
+      });
+  }, []);
+
+
   return (
     <>
       {/* <ListaLicenca data={data} /> */}
@@ -103,7 +50,7 @@ export default function Licenca() {
             </div>
             <div className="ml-20 mr-20 mt-5 mb-10">
               <Link href="/usuario/User">
-                <ListaLicenca data={dados} />
+                <ListaUsuario data={dados} />
               </Link>
             </div>
           </section>
