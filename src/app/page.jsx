@@ -84,7 +84,7 @@ export default function Home() {
                   </div>
                   <div className="z-10">
                     {/* Componente Gráfico Mensal */}
-                    <GraficoMensal />
+                    <GraficoMensal data={data} />
                   </div>
                   <div className="h-max">
                     {/* Componente CustoAnual */}

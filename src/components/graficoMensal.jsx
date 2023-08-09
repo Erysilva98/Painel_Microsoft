@@ -1,86 +1,48 @@
 import React from "react";
-import { AreaChart, Title,} from "@tremor/react";
+import { Card, Title, LineChart } from "@tremor/react";
 
-const dados = [
-  {
-    Month: "01 Jan",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Feb",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Marc",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Abr",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Mai",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Jun",
-    Atual: 1505.0,
-    Anterior: 1070.0,
-  },
-  {
-    Month: "01 Jul",
-    Atual: 1659.9,
-    Anterior: 1505.0,
-  },
-  {
-    Month: "01 Ago",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Set",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Out",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Nov",
-    Atual: 0,
-    Anterior: 0,
-  },
-  {
-    Month: "01 Dez",
-    Atual: 0,
-    Anterior: 0,
-  },
-];
+export default function GraficoMensal({ data }) {
+  const calcularHistoricoCustoTotalAno = data.calcularHistoricoCustoTotalAno;
 
+  const tratarDados = (dados) => {
+    const exibirDados = [];
 
-export default function GraficoMensal() {
+    for (const ano in dados) {
+      const dadosAno = dados[ano];
+      const dadosMeses = Array.from({ length: 12 }, (_, index) => {
+        const mes = index + 1;
+        const dadoMesAtual = dadosAno.find((dado) => dado.mes === mes);
+        const dadoMesAnterior = dadosAno.find((dado) => dado.mes === mes - 1);
+
+        return {
+          Month: `${mes.toString().padStart(2, '0')}`,
+          Atual: dadoMesAtual ? dadoMesAtual.Total : 0,
+          Anterior: dadoMesAnterior ? dadoMesAnterior.Total : 0,
+        };
+      });
+
+      exibirDados.push(...dadosMeses);
+    }
+
+    return exibirDados;
+  };
+
+  const dadosTratados = tratarDados(calcularHistoricoCustoTotalAno);
+
+  const dataFormatter = (number) => `${Intl.NumberFormat("pt-br").format(number).toString()}`;
 
   return (
-      <div className="bg-white rounded-xl">
-        <Title className="ml-3 mt-3">Custo Mensal</Title>
-        <AreaChart
-          className="w-full pr-4 max-h-64"
-          index="Month"
-          data={dados}
-          categories={["Atual", "Anterior"]}
-          colors={["indigo", "fuchsia"]}
-          yAxisWidth={60}
-          valueFormatter={(number) =>
-            `${Intl.NumberFormat("pt-br").format(number).toString()}`
-          }
-        />
-      </div>
+    <Card>
+      <Title>Custo Mensal</Title>
+      <LineChart
+        className="mt-6"
+        data={dadosTratados}
+        index="Month"
+        categories={["Atual", "Anterior"]}
+        colors={["indigo", "fuchsia"]}
+        valueFormatter={dataFormatter}
+        yAxisWidth={60}
+      />
+    </Card>
   );
 }

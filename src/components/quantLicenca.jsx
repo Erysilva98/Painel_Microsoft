@@ -3,6 +3,9 @@ import { Card, Title, BarChart } from "@tremor/react";
 
 export default function QuantLicenca({ data }) {
   const recebo = data.listarLicencaOrdenada;
+
+  if (!recebo) return null;
+
   const selecionarLista = Object.entries(recebo)
     .slice(0, 10)
     .map(([tipo, quantidade]) => ({

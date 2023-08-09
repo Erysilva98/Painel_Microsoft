@@ -9,10 +9,19 @@ import Grafico from "@assets/IconGrafico.svg";
 export default function CustoTotal({data}) {
     
     // Tratamento de dados para o componente Custo Total
-    const valor = `${(data?.custoTotal || 0).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
+    const valor = `${(data?.custoTotal || 0)}`;
     const texto = "Custo Total";
-    const status = "12% de Aumento em Relação ao Mês Anterior";
-    const seta = "moderateIncrease";
+    
+    // Tratamento de dados para o componente BadgeDelta
+    let status = data?.diferencaDoMesAtualComPassado || 0;
+    let seta = status >= 0 ? "moderateIncrease" : "moderateDecrease"
+
+    // Texto do componente BadgeDelta
+    if (status !== 0) {
+        status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "de Aumento" : "de Redução"} em Relação ao Mês Anterior`;
+    } else {
+        status = "Sem Alteração em Relação ao Mês Anterior";
+    }
 
     return (
         <div className="flex flex-col bg-white w-96 h-56 hover:shadow-lg rounded-xl">
@@ -22,7 +31,7 @@ export default function CustoTotal({data}) {
                 </div>
                     <div>
                         <span>{texto}</span>
-                        <Metric className='mb-2.5'>{valor}</Metric>
+                        <Metric className='mb-2.5'>R$ {valor}</Metric>
                     </div>
                 <BadgeDelta deltaType={seta}>{status}</BadgeDelta>
             </div>

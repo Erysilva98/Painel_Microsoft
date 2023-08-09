@@ -13,7 +13,7 @@ export default function TabelaLicenca({ data }) {
   const valorTotal = Object.values(dados).reduce((soma, valor) => soma + valor, 0);
 
   // Ordenar as chaves (nomes de licenças) alfabeticamente
-  const licencasOrdenadas = Object.keys(dados).sort();
+  const licencasOrdenadas = Object.keys(dados);
 
   const exibirDados = licencasOrdenadas.map((licenca) => {
     return { name: licenca, amount: dados[licenca] };

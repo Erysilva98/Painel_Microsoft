@@ -19,7 +19,7 @@ export default function ListaUsuario ( { data }) {
             <TableRow key={index} className='hover:bg-tremor-brand-emphasis hover:text-white'>
               <TableCell className="border">{item.id}</TableCell>
               <TableCell className="border">{item.nomeExibicao}</TableCell>
-              <TableCell className="border">{item.licencas}</TableCell>
+              <TableCell className="border">{item.licencas.slice(0, 40)}</TableCell>
               <TableCell className="border">{"R$ "+item.idCustoLicenca}</TableCell>
               <TableCell className="border">{item.dataHoraCriacao}</TableCell>
             </TableRow>

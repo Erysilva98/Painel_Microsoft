@@ -10,8 +10,16 @@ export default function LicencaAtiva({ data }) {
     // Tratamento de dados para o componente Custo Total
     const valor = `${(data?.quantidadeLicencasAtivas || 0)}`;
     const texto = "Licenças Ativas";
-    const status = "Aumentou 2% em Relação ao Mês Anterior";
-    const seta = "moderateIncrease";
+    let status = data?.diferencaLicecasAtuaisEAnteriores || 0;
+    let seta = status >= 0 ? "moderateIncrease" : "moderateDecrease";
+
+    // Texto do componente BadgeDelta
+    if (status !== 0) {
+        status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "de Aumento" : "de Redução"} em Relação ao Mês Anterior`;
+    } else {
+        status = "Sem Alteração em Relação ao Mês Anterior";
+        seta = "unchanged";
+    }
 
     return (
         <div className="flex flex-col bg-white w-96 h-56 hover:shadow-lg rounded-xl">
