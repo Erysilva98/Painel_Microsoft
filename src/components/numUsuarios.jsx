@@ -11,7 +11,7 @@ export default function NumUsuarios({ data }) {
   if (status !== 0) {
     status = `${Math.abs(status).toFixed(2)}%`;
   } else {
-    status = "0 %";
+    status = "ESTÁVEL";
   }
 
   return (

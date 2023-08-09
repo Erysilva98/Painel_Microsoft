@@ -14,7 +14,7 @@ export default function CustoTotal({data}) {
     
     // Tratamento de dados para o componente BadgeDelta
     let status = data?.diferencaDoMesAtualComPassado || 0;
-    let seta = status >= 0 ? "moderateIncrease" : "moderateDecrease"
+    let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
 
     // Texto do componente BadgeDelta
     if (status !== 0) {

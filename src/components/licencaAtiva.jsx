@@ -11,14 +11,13 @@ export default function LicencaAtiva({ data }) {
     const valor = `${(data?.quantidadeLicencasAtivas || 0)}`;
     const texto = "Licenças Ativas";
     let status = data?.diferencaLicecasAtuaisEAnteriores || 0;
-    let seta = status >= 0 ? "moderateIncrease" : "moderateDecrease";
+    let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
 
     // Texto do componente BadgeDelta
     if (status !== 0) {
         status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "de Aumento" : "de Redução"} em Relação ao Mês Anterior`;
     } else {
         status = "Sem Alteração em Relação ao Mês Anterior";
-        seta = "unchanged";
     }
 
     return (
