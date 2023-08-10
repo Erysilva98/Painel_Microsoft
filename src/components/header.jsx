@@ -5,7 +5,7 @@ import Data from '@/components/data.jsx';
 export default function Header() {
     return (
         <nav className="flex h-20 w-11/12 justify-between">
-            <div className="flex w-9/12 ml-10 items-center px-4">
+            <div className="flex ml-10 items-center px-4">
                 {/* Componente Logotipo.jsx */}
                 <Logotipo />
             </div>

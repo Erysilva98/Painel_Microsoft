@@ -3,6 +3,8 @@ import { BadgeDelta, Card, Metric, Text } from '@tremor/react';
 
 export default function NumUsuarios({ data }) {
 
+  if(!data) return null;
+
   const numero = `${(data?.quantidadeUsuarios || 0)}`;
   let status = data?.diferencaLicecasAtuaisEAnteriores;
   let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";

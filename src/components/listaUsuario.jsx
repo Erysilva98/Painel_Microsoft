@@ -2,6 +2,9 @@ import React from 'react';
 import { Card, Table, TableHead, TableHeaderCell, TableRow, TableBody, TableCell } from '@tremor/react';
 
 export default function ListaUsuario ( { data }) {
+
+  if(!data) return null;
+
   return (
     <Card>
       <Table className='mt-5 w-auto'>

@@ -7,6 +7,8 @@ import { BadgeDelta, Metric } from "@tremor/react";
 import Grafico from "@assets/IconGrafico.svg";
 
 export default function CustoTotal({data}) {
+
+    if(!data) return null;
     
     // Tratamento de dados para o componente Custo Total
     const valor = `${(data?.custoTotal || 0)}`;

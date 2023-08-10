@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
-import { Card, Metric, Text, List, ListItem, Grid } from "@tremor/react";
+import { Card, Metric, List, ListItem, Grid } from "@tremor/react";
 
 // Icones
 import Grafico from "@assets/IconGrafico.svg";
@@ -107,7 +107,7 @@ export default function User() {
                                         {tabela.map((dadosTabela) => (
                                             <Card key={dadosTabela.title} style={{ width: '325px', height: 'fit-content' }}>
                                                 <p className="font-bold">{dadosTabela.title}</p>
-                                                <Text>{dadosTabela.tipo}</Text>
+                                                <p>{dadosTabela.tipo}</p>
 
                                                 <List className="mt-4">
                                                     {dados.map((infoDado, index) => {
@@ -117,7 +117,7 @@ export default function User() {
                                                                 <div className="w-full">
                                                                     <div className="flex justify-between">
                                                                         <p className="font-bold">{infoDado.name}</p>
-                                                                        <Text>{"R$" + infoDado.amount}</Text>
+                                                                        <p>{"R$" + infoDado.amount}</p>
                                                                     </div>
                                                                 </div>
                                                             </ListItem>

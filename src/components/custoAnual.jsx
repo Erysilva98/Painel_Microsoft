@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ProgressBar, Card, Flex, Text, TabList, Tab, TabGroup, TabPanels, TabPanel } from "@tremor/react";
+import { ProgressBar, Card, Flex, TabList, Tab, TabGroup, TabPanels, TabPanel } from "@tremor/react";
 
 export default function CustoAnual({ data }) {
   if (!data.licencasPorAno) return null;
@@ -22,7 +22,7 @@ export default function CustoAnual({ data }) {
 
   return (
     <Card className="mb-36">
-      <Text>Valor das Licenças por Ano</Text>
+      <p>Valor das Licenças por Ano</p>
       <TabGroup>
         <TabList className="mt-8">
           {anosMaisRecentes.map((ano) => (
@@ -36,9 +36,9 @@ export default function CustoAnual({ data }) {
                 {obterDadosDoAno(ano).map((item) => (
                   <div key={item.nome} className="mt-4">
                     <Flex>
-                      <Text className="w-full">{item.nome}</Text>
+                      <p className="w-full">{item.nome}</p>
                       <Flex className="space-x-2" justifyContent="end">
-                        <Text>{`${item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}</Text>
+                        <p>{`${item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`}</p>
                       </Flex>
                     </Flex>
                     <ProgressBar value={100} className="mt-2" />

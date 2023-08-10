@@ -7,6 +7,8 @@ import Icone from "@assets/licencaIcon.svg";
 
 export default function LicencaAtiva({ data }) {
 
+    if(!data) return null;
+    
     // Tratamento de dados para o componente Custo Total
     const valor = `${(data?.quantidadeLicencasAtivas || 0)}`;
     const texto = "Licenças Ativas";
