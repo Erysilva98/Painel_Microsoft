@@ -14,7 +14,7 @@ export default function AlterarValor() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get("http://localhost:4000/valoreslicenca"); // Substitua pela URL correta do back-end que fornece os dados
+                const response = await axios.get("http://localhost:4000/valoreslicenca");
                 setLicencas(response.data);
             } catch (error) {
                 console.error("Erro ao obter os dados:", error);
@@ -41,15 +41,13 @@ export default function AlterarValor() {
 
     const enviarDados = async (event) => {
         event.preventDefault();
-        // Verifica se há dados no formulário antes de enviar
         if (licencas.length > 0) {
             try {
                 console.log(licencas);
                 console.log("formulário enviado")
-                // Substitua a URL abaixo pela rota 'enviardados' correta
                 const response = await axios.post("http://localhost:4000/valoreslicenca", { licencas });
-                console.log(response.data); // Resposta da API (opcional, você pode fazer o que desejar com a resposta)
-                setEnviado(true); // Atualiza o estado para indicar que os dados foram enviados
+                // Atualiza o estado para indicar que os dados foram enviados
+                setEnviado(true);
             } catch (error) {
                 console.error("Erro ao enviar os dados:", error);
             }
@@ -93,11 +91,14 @@ export default function AlterarValor() {
                                             Valor da Licença
                                         </label>
                                         <input
-                                            type="text"
+                                            type="number"
                                             id={`valor-${index}`}
                                             name={`valor-${index}`}
                                             value={licenca.valor}
-                                            onChange={(e) => atualizarLicenca(index, 'valor', e.target.value)}
+                                            onChange={(e) => {
+                                                const novoValor = e.target.value.replace(/[^0-9]/g, ''); // Remove caracteres não numéricos
+                                                atualizarLicenca(index, 'valor', novoValor);
+                                            }}
                                             required
                                             className="mt-2 border border-black rounded-md w-full  pl-3 pt-2 pb-2"
                                             placeholder="  Ex: 100"

@@ -1,12 +1,10 @@
-"use client";
 import React from 'react';
-import { Card, Title, Table, TableHead, TableHeaderCell, TableRow, TableBody, TableCell } from '@tremor/react';
+import { Card, Table, TableHead, TableHeaderCell, TableRow, TableBody, TableCell } from '@tremor/react';
 
-export default function ListaLicenca ( { data }) {
+export default function ListaUsuario ( { data }) {
   return (
     <Card>
-      <Title>Lsta de Licenca</Title>
-      <Table className='mt-5'>
+      <Table className='mt-5 w-auto'>
         <TableHead className='bg-tremor-brand-emphasis'>
           <TableRow>
             <TableHeaderCell className="border text-white">ID</TableHeaderCell>
@@ -19,11 +17,11 @@ export default function ListaLicenca ( { data }) {
         <TableBody className='bg-gray-400'>
           {data.map((item, index) => (
             <TableRow key={index} className='hover:bg-tremor-brand-emphasis hover:text-white'>
-              <TableCell className="border">{item.Id}</TableCell>
-              <TableCell className="border">{item.usuario}</TableCell>
-              <TableCell className="border">{item.licencas}</TableCell>
-              <TableCell className="border">{"R$ "+item.custo}</TableCell>
-              <TableCell className="border">{item.dataHora}</TableCell>
+              <TableCell className="border">{item.id}</TableCell>
+              <TableCell className="border">{item.nomeExibicao}</TableCell>
+              <TableCell className="border">{item.licencas.slice(0, 40)}</TableCell>
+              <TableCell className="border">{"R$ "+item.idCustoLicenca}</TableCell>
+              <TableCell className="border">{item.dataHoraCriacao}</TableCell>
             </TableRow>
           ))}
         </TableBody>

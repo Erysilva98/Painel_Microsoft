@@ -1,4 +1,3 @@
-"use client"
 import React from "react";
 import Image from "next/image";
 
@@ -19,7 +18,7 @@ export default function Upload() {
                 <Header />
             </header>
 
-            <main className="bg-blue-background">
+            <main className="bg-blue-background min-w-max">
                 <div className="flex">
                     {/* Componente do Sidebar */}
                     <div>
@@ -31,7 +30,8 @@ export default function Upload() {
                                 <div className="flex flex-col space-y-7 mt-14 items-center justify-center border border-gray-400 w-1/2 h-1/2">
                                     <Image src={IconeUp}/>
                                     <p className="text-sm">Selecione um arquivo XLSX, CSV, ODS ou TSV tamanho do arquivo não superior a 10 MB</p>
-                                    <ArqUpload />
+                                    {/* endpoint para envio do arquivo */}
+                                    <ArqUpload endpoint="http://localhost:4000/importar" /> 
                                     
                                 </div>
                             </div>

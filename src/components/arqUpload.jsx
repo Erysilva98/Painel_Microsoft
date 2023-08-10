@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import { React, useState } from "react";
 
-export default function ArqUpload () {
-  const [arquivo, setarquivo] = useState(null);
+export default function ArqUpload ({ endpoint }) {
+  const [arquivo, setArquivo] = useState(null);
 
   const atualizarArq = (event) => {
-    setarquivo(event.target.files[0]);
+    setArquivo(event.target.files[0]);
   };
 
   const selecionarArq = async () => {
@@ -14,18 +14,18 @@ export default function ArqUpload () {
       return;
     }
 
-    const formDados = new FormDados();
-    formDados.append("file", arquivo);
+    const formData = new FormData();
+    formData.append("file", arquivo);
 
     try {
-      const response = await fetch("/api/upload", {
+      const response = await fetch(endpoint, {
         method: "POST",
         body: formData,
       });
 
       if (response.ok) {
         console.log("Arquivo enviado com sucesso!");
-        setarquivo(null);
+        setArquivo(null);
       } else {
         console.log("Erro ao enviar o arquivo.");
       }
@@ -43,4 +43,3 @@ export default function ArqUpload () {
     </div>
   );
 };
-

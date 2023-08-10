@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { BadgeDelta, Card, Flex, Metric, Text } from "@tremor/react";
+import { BadgeDelta, Metric } from "@tremor/react";
 
 // Imagens
 import Grafico from "@assets/IconGrafico.svg";
@@ -9,25 +9,32 @@ import Grafico from "@assets/IconGrafico.svg";
 export default function CustoTotal({data}) {
     
     // Tratamento de dados para o componente Custo Total
-    const valor = `R$ ${data?.mediaIdCustoLicenca || 0}`;
+    const valor = `${(data?.custoTotal || 0)}`;
     const texto = "Custo Total";
-    const status = "12% de Aumento em Relação ao Mês Anterior";
-    const seta = "moderateIncrease";
+    
+    // Tratamento de dados para o componente BadgeDelta
+    let status = data?.diferencaDoMesAtualComPassado || 0;
+    let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
+
+    // Texto do componente BadgeDelta
+    if (status !== 0) {
+        status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "de Aumento" : "de Redução"} em Relação ao Mês Anterior`;
+    } else {
+        status = "Sem Alteração em Relação ao Mês Anterior";
+    }
 
     return (
-        <Card className="w-fit hover:shadow-lg">
-            <div>
+        <div className="flex flex-col bg-white w-96 h-56 hover:shadow-lg rounded-xl">
+            <div className='mt-6 ml-5'>
                 <div>
-                    <Image className='w-10 h-10' src={Grafico} alt="Gráfico" />
+                    <Image className='w-10 h-10 mb-3' src={Grafico} alt="Gráfico" />
                 </div>
-                <Flex alignItems="start">
                     <div>
-                        <Text>{texto}</Text>
-                        <Metric className='mb-2.5'>{valor}</Metric>
+                        <span>{texto}</span>
+                        <Metric className='mb-2.5'>R$ {valor}</Metric>
                     </div>
-                </Flex>
                 <BadgeDelta deltaType={seta}>{status}</BadgeDelta>
             </div>
-        </Card>
+        </div>
     );
 }
