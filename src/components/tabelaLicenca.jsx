@@ -41,7 +41,7 @@ export default function TabelaLicenca({ data }) {
                       <p className="font-bold">{infoDado.name}</p>
                       <p>{infoDado.amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
                     </div>
-                    <ProgressBar value={(infoDado.amount / valorTotal) * 500} color={selectCores} className="mt-3" />
+                    <ProgressBar value={(infoDado.amount / valorTotal) * 100} color={selectCores} className="mt-3" />
                   </div>
                 </ListItem>
               );

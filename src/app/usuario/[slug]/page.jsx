@@ -101,34 +101,34 @@ export default function User() {
                                     </div>
                                 </div>
                             </div>
-                                {/* Tabela c Licenças */}
-                                <div>
-                                    <Grid numItemsSm={1} className="gap-6">
-                                        {tabela.map((dadosTabela) => (
-                                            <Card key={dadosTabela.title} style={{ width: '325px', height: 'fit-content' }}>
-                                                <p className="font-bold">{dadosTabela.title}</p>
-                                                <p>{dadosTabela.tipo}</p>
+                            {/* Tabela c Licenças */}
+                            <div>
+                                <Grid numItemsSm={1} className="gap-6">
+                                    {tabela.map((dadosTabela) => (
+                                        <Card key={dadosTabela.title} style={{ width: '325px', height: 'fit-content' }}>
+                                            <p className="font-bold">{dadosTabela.title}</p>
+                                            <p>{dadosTabela.tipo}</p>
 
-                                                <List className="mt-4">
-                                                    {dados.map((infoDado, index) => {
-                                                        const selectCores = corArray[index % corArray.length];
-                                                        return (
-                                                            <ListItem key={infoDado.name} style={{ marginBottom: '25px' }}>
-                                                                <div className="w-full">
-                                                                    <div className="flex justify-between">
-                                                                        <p className="font-bold">{infoDado.name}</p>
-                                                                        <p>{"R$" + infoDado.amount}</p>
-                                                                    </div>
+                                            <List className="mt-4">
+                                                {dados.map((infoDado, index) => {
+                                                    const selectCores = corArray[index % corArray.length];
+                                                    return (
+                                                        <ListItem key={infoDado.name} style={{ marginBottom: '25px' }}>
+                                                            <div className="w-full">
+                                                                <div className="flex justify-between">
+                                                                    <p className="font-bold">{infoDado.name}</p>
+                                                                    <p>{"R$" + infoDado.amount}</p>
                                                                 </div>
-                                                            </ListItem>
-                                                        )
-                                                    })}
-                                                </List>
-                                            </Card>
-                                        ))}
-                                    </Grid>
-                                </div>
-                            
+                                                            </div>
+                                                        </ListItem>
+                                                    )
+                                                })}
+                                            </List>
+                                        </Card>
+                                    ))}
+                                </Grid>
+                            </div>
+
                         </div>
 
                     </section>

@@ -59,7 +59,7 @@ export default function Home() {
               </Link>
 
               {/* Componente de Licenças */}
-              <Link href="/licenca">
+              <Link href="/usuario">
                 <LicencaAtiva data={data} />
               </Link>
 

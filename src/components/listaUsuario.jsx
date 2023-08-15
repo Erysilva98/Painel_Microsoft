@@ -10,7 +10,7 @@ export default function ListaUsuario ( { data }) {
       <Table className='mt-5 w-auto'>
         <TableHead className='bg-tremor-brand-emphasis'>
           <TableRow>
-            <TableHeaderCell className="border text-white">ID</TableHeaderCell>
+            <TableHeaderCell className="border text-white">Num</TableHeaderCell>
             <TableHeaderCell className="border text-white">Usuário</TableHeaderCell>
             <TableHeaderCell className="border text-white">Licenças</TableHeaderCell>
             <TableHeaderCell className="border text-white">Custo</TableHeaderCell>
