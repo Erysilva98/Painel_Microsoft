@@ -27,7 +27,6 @@ export default function Distribuidora() {
             });
     }, []);
 
-
     return (
         <>
             <header>
