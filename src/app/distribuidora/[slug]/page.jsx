@@ -19,8 +19,29 @@ import GraficoMensal from '@/components/graficoMensal';
 import CustoAnual from '@/components/custoAnual';
 import TabelaLicenca from '@/components/tabelaLicenca';
 
+async function getIdDistribuidoraFromSlug(slug) {
+  try {
+    const response = await axios.get("http://localhost:4000/distribuidoras/");
+    const distribuidoras = response.data;
+    const distribuidora = distribuidoras.find(d => d.slug === slug);
+    return distribuidora ? distribuidora.idDistribuidora : null;
+  } catch (error) {
+    console.error("Erro ao buscar as distribuidoras:", error);
+    return null;
+  }
+}
+
 export default function DistribuidoraSlug({ params }) {
   const [data, setData] = useState([]);
+  const [idDistribuidora, setIdDistribuidora] = useState(null);
+  useEffect(() => {
+    async function fetchData() {
+      const distribuidoraId  = await getIdDistribuidoraFromSlug(params.slug);
+      setIdDistribuidora(distribuidoraId);
+      // Aqui você pode fazer qualquer outra operação com idDistribuidora
+    }
+    fetchData();
+  }, [params.slug]);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -32,7 +53,6 @@ export default function DistribuidoraSlug({ params }) {
     }
     fetchData();
   }, []);
-
   return (
     <>
       <header className='sticky'>
@@ -51,7 +71,7 @@ export default function DistribuidoraSlug({ params }) {
               <Link href="/distribuidora">
                 <Image src={Voltar} className="flex w-10 h-10 mr-6" />
               </Link>
-              <h1 className="text-3xl font-bold text-black mb-10">{params.slug}</h1>
+              <h1 className="text-3xl font-bold text-black mb-10">{idDistribuidora}</h1>
             </div>
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
