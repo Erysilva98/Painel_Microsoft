@@ -34,9 +34,10 @@ async function getIdDistribuidoraFromSlug(slug) {
 export default function DistribuidoraSlug({ params }) {
   const [data, setData] = useState([]);
   const [idDistribuidora, setIdDistribuidora] = useState(null);
+  const [slug, setSlug] = useState(params.slug);
   useEffect(() => {
     async function fetchData() {
-      const distribuidoraId  = await getIdDistribuidoraFromSlug(params.slug);
+      const distribuidoraId = await getIdDistribuidoraFromSlug(params.slug);
       setIdDistribuidora(distribuidoraId);
       // Aqui você pode fazer qualquer outra operação com idDistribuidora
     }
@@ -76,25 +77,24 @@ export default function DistribuidoraSlug({ params }) {
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
               {/* Componente do Custo Total */}
-              <Link href="/licencas">
-                <CustoTotal data={data} />
-              </Link>
+
+              <CustoTotal data={data} />
+
 
               {/* Componente de Licenças */}
-              <Link href="/licencas">
+              <Link href={`${slug}/licencas/`}>
                 <LicencaAtiva data={data} />
               </Link>
 
               <div className="flex flex-col w-fit space-y-2">
                 {/* Componente de Número de Usuários */}
-                <Link href="/licencas">
-                  <NumUsuarios data={data} />
-                </Link>
+
+                <NumUsuarios data={data} />
 
                 {/* Componente de Custo por Usuário */}
-                <Link href="/licencas">
-                  <CustoUsuario data={data} />
-                </Link>
+
+                <CustoUsuario data={data} />
+
               </div>
             </div>
 

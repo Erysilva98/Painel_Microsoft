@@ -33,12 +33,6 @@ export default function AlterarValor() {
         setLicencas(updatedLicencas);
     };
 
-    const removerLicenca = (index) => {
-        const updatedLicencas = [...licencas];
-        updatedLicencas.splice(index, 1);
-        setLicencas(updatedLicencas);
-    };
-
     const enviarDados = async (event) => {
         event.preventDefault();
         if (licencas.length > 0) {
@@ -72,7 +66,7 @@ export default function AlterarValor() {
                         ) : (
                             <form className="justify-center" onSubmit={enviarDados}>
                                 {licencas.map((licenca, index) => (
-                                    <div key={index}>
+                                    <div key={index} className="mb-10"> 
                                         <label htmlFor={`nome-${index}`} className="block text-sm font-medium text-gray-700 mt-2">
                                             Nome da Licença
                                         </label>
@@ -103,13 +97,6 @@ export default function AlterarValor() {
                                             className="mt-2 border border-black rounded-md w-full  pl-3 pt-2 pb-2"
                                             placeholder="  Ex: 100"
                                         />
-                                        <div className="flex justify-end">
-                                            <button
-                                                type="button" onClick={() => removerLicenca(index)}
-                                                className="mt-4 mr-5 text-white bg-red-500 hover:bg-red-600 font-bold py-1 px-3 rounded m-2 ">
-                                                <span>Remover</span>
-                                            </button>
-                                        </div>
                                     </div>
                                 ))}
                                 <div className="flex justify-center mt-4">
