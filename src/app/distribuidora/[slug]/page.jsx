@@ -76,23 +76,23 @@ export default function DistribuidoraSlug({ params }) {
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
               {/* Componente do Custo Total */}
-              <Link href="/distribuidora">
+              <Link href="/licencas">
                 <CustoTotal data={data} />
               </Link>
 
               {/* Componente de Licenças */}
-              <Link href="/usuario">
+              <Link href="/licencas">
                 <LicencaAtiva data={data} />
               </Link>
 
               <div className="flex flex-col w-fit space-y-2">
                 {/* Componente de Número de Usuários */}
-                <Link href="/usuario">
+                <Link href="/licencas">
                   <NumUsuarios data={data} />
                 </Link>
 
                 {/* Componente de Custo por Usuário */}
-                <Link href="/usuario">
+                <Link href="/licencas">
                   <CustoUsuario data={data} />
                 </Link>
               </div>

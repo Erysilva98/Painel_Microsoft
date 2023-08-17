@@ -59,18 +59,18 @@ export default function Home() {
               </Link>
 
               {/* Componente de Licenças */}
-              <Link href="/usuario">
+              <Link href="/licencas">
                 <LicencaAtiva data={data} />
               </Link>
 
               <div className="flex flex-col w-fit space-y-2">
                 {/* Componente de Número de Usuários */}
-                <Link href="/usuario">
+                <Link href="/licencas">
                   <NumUsuarios data={data} />
                 </Link>
 
                 {/* Componente de Custo por Usuário */}
-                <Link href="/usuario">
+                <Link href="/licencas">
                   <CustoUsuario data={data} />
                 </Link>
               </div>
