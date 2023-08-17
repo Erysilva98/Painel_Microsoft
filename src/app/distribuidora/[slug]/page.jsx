@@ -76,7 +76,7 @@ export default function DistribuidoraSlug({ params }) {
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
               {/* Componente do Custo Total */}
-              <Link href="/usuario">
+              <Link href="/distribuidora">
                 <CustoTotal data={data} />
               </Link>
 

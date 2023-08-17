@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Link from "next/link";
 import Image from 'next/image';
@@ -17,9 +17,10 @@ export default function Licenca() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/listar/")
+      .get("http://localhost:4000/usuarios")
       .then((response) => {
         setDados(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("Erro ao buscar as distribuidoras:", error);
@@ -40,7 +41,7 @@ export default function Licenca() {
           </div>
           <section className="flex-1">
             <div className="flex text-lg ml-20 mr-20 mt-10 items-center">
-              <Link href="/distribuidora">
+              <Link href="/">
                 <Image src={Voltar} className="w-10 h-10" />
               </Link>
               <h1 className='ml-6 text-3xl font-bold text-black'>Licenca Grupo Moura</h1>
@@ -49,9 +50,7 @@ export default function Licenca() {
               <h2>Tabela de Licença dos Usúarios</h2>
             </div>
             <div className="ml-20 mr-20 mt-5 mb-10">
-              <Link href="/usuario/User">
-                <ListaUsuario data={dados} />
-              </Link>
+              <ListaUsuario dados={dados} />
             </div>
           </section>
         </div>
