@@ -1,7 +1,9 @@
 import React from 'react';
-import { Card, Metric, Text, BadgeDelta } from "@tremor/react";
+import { Card, Metric, BadgeDelta } from "@tremor/react";
 
 export default function CustoUsuario({ data }) {
+
+  if(!data) return null;
 
   const numero = `${(data?.valorMedioPorUsuario || 0)}`;
 
@@ -20,7 +22,7 @@ export default function CustoUsuario({ data }) {
     <Card className="w-80 h-28 hover:shadow-lg">
       <div>
         <div className='flex flex-col'>
-          <Text>Valor médio por usuário</Text>
+          <p>Valor médio por usuário</p>
           <div className='flex space-x-3'>
             <Metric>R$ {numero}</Metric>
             <BadgeDelta deltaType={seta} size="xs">

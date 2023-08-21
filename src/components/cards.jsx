@@ -3,6 +3,16 @@ import Link from "next/link";
 
 export default function Card({ distribuidoras }) {
 
+  if(!distribuidoras) {
+    return (
+      <div className="flex justify-center">
+        <p className="text-gray-700 text-base">
+          Nenhuma distribuidora encontrada
+        </p>
+      </div>
+    )
+  }
+
   return (
     <div className="flex justify-between flex-wrap">
       {distribuidoras.map((distribuidora) => (

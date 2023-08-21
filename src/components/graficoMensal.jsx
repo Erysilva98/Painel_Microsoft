@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import { Card, Title, LineChart } from "@tremor/react";
 
 export default function GraficoMensal({ data }) {
+  if (!data.calcularHistoricoCustoTotalAno) return null;
+
   const calcularHistoricoCustoTotalAno = data.calcularHistoricoCustoTotalAno;
 
   const tratarDados = (dados) => {

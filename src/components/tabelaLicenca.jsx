@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Text, List, ListItem, ProgressBar, Grid } from "@tremor/react";
+import { Card, List, ListItem, ProgressBar, Grid } from "@tremor/react";
 
 const tabela = [
   {
@@ -9,6 +9,9 @@ const tabela = [
 ];
 
 export default function TabelaLicenca({ data }) {
+
+  if (!data) return null;
+
   const dados = data?.valorTotalLicencasOrdenado ?? {};
   const valorTotal = Object.values(dados).reduce((soma, valor) => soma + valor, 0);
 
@@ -26,7 +29,7 @@ export default function TabelaLicenca({ data }) {
       {tabela.map((dadosTabela) => (
         <Card key={dadosTabela.title} className="min-w-fit">
           <p className="font-bold">{dadosTabela.title}</p>
-          <Text>{dadosTabela.tipo}</Text>
+          <p>{dadosTabela.tipo}</p>
 
           <List className="mt-4 flex-col">
             {exibirDados.slice(0, 12).map((infoDado, index) => {
@@ -36,9 +39,9 @@ export default function TabelaLicenca({ data }) {
                   <div className="w-full">
                     <div className="flex justify-between">
                       <p className="font-bold">{infoDado.name}</p>
-                      <Text>{infoDado.amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</Text>
+                      <p>{infoDado.amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
                     </div>
-                    <ProgressBar value={(infoDado.amount / valorTotal) * 500} color={selectCores} className="mt-3" />
+                    <ProgressBar value={(infoDado.amount / valorTotal) * 100} color={selectCores} className="mt-3" />
                   </div>
                 </ListItem>
               );

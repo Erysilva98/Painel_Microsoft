@@ -1,7 +1,9 @@
 import React from 'react';
-import { BadgeDelta, Card, Metric, Text } from '@tremor/react';
+import { BadgeDelta, Card, Metric } from '@tremor/react';
 
 export default function NumUsuarios({ data }) {
+
+  if(!data) return null;
 
   const numero = `${(data?.quantidadeUsuarios || 0)}`;
   let status = data?.diferencaLicecasAtuaisEAnteriores;
@@ -18,7 +20,7 @@ export default function NumUsuarios({ data }) {
     <Card className="w-80 h-28 hover:shadow-lg">
       <div>
         <div className='flex flex-col'>
-          <Text>Usuários</Text>
+          <p>Usuários</p>
           <div className='flex flex-row space-x-4'>
             <Metric>{numero}</Metric>
             <BadgeDelta deltaType={seta} size="xs">

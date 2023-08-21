@@ -8,8 +8,10 @@ export default function Logotipo() {
         <div className="flex">
             <Image
             src={logoMoura}
-            className="w-44 h-12"
+            className="w-auto h-auto"
             alt="Logo Moura"
+            // priority dar prioridade para carregar a imagem
+            priority
             />
         </div>
     )

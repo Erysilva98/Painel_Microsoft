@@ -59,18 +59,18 @@ export default function Home() {
               </Link>
 
               {/* Componente de Licenças */}
-              <Link href="/licenca">
+              <Link href="/licencas">
                 <LicencaAtiva data={data} />
               </Link>
 
               <div className="flex flex-col w-fit space-y-2">
                 {/* Componente de Número de Usuários */}
-                <Link href="/usuario">
+                <Link href="/licencas">
                   <NumUsuarios data={data} />
                 </Link>
 
                 {/* Componente de Custo por Usuário */}
-                <Link href="/usuario">
+                <Link href="/licencas">
                   <CustoUsuario data={data} />
                 </Link>
               </div>
@@ -80,7 +80,7 @@ export default function Home() {
                 <div className="flex flex-col w-3/5 space-y-2">
                   <div className="z-20">
                     {/* Componente Quantidade de Licença */}
-                    {!loading && <QuantLicenca data={data} />}
+                    <QuantLicenca data={data} />
                   </div>
                   <div className="z-10">
                     {/* Componente Gráfico Mensal */}
