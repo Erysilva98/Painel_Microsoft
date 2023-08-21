@@ -10,6 +10,8 @@ export default function Logotipo() {
             src={logoMoura}
             className="w-auto h-auto"
             alt="Logo Moura"
+            // priority dar prioridade para carregar a imagem
+            priority
             />
         </div>
     )

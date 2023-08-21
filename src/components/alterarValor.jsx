@@ -37,8 +37,6 @@ export default function AlterarValor() {
         event.preventDefault();
         if (licencas.length > 0) {
             try {
-                console.log(licencas);
-                console.log("formulário enviado")
                 const response = await axios.post("http://localhost:4000/valoreslicenca", { licencas });
                 // Atualiza o estado para indicar que os dados foram enviados
                 setEnviado(true);

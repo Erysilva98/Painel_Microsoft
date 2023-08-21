@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Title, BarChart } from "@tremor/react";
 
-export default function QuantLicenca({ data }) {
-  const recebo = data.listarLicencaOrdenada;
+export default function QuantLicenca({ data = {} }) {
+  const recebo = data.listarLicencaOrdenada || {};
 
   if (!recebo) return null;
 
@@ -19,15 +19,17 @@ export default function QuantLicenca({ data }) {
 
   const categories = Object.keys(dados).filter((key) => key !== "tipo");
 
+  const colorList = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue", "lime", "slate"];
+
   return (
     <Card>
       <Title>As Licenças mais Utilizadas</Title>
       <BarChart
         className="max-w-2xl max-h-72 justify-center"
         data={[dados]}
-        index="tipo"
+        index={"tipo"}
         categories={categories}
-        colors={["amber","indigo","sky","rose","emerald","violet","yellow","blue","lime","slate",]}
+        colors={colorList.map((color) => color)}
         yAxisWidth={48}
       />
     </Card>

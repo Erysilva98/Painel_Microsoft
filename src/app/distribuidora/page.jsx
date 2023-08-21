@@ -4,13 +4,13 @@ import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 
+//Icones
+import Voltar from "@assets/Circle.svg";
+
 // Componentes
 import Sidebar from "@/components/sidebar";
 import Card from "@/components/cards";
 import Header from "@/components/header";
-
-//Icones
-import Voltar from "@assets/Circle.svg";
 
 export default function Distribuidora() {
 

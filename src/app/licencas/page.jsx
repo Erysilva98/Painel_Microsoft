@@ -50,6 +50,7 @@ export default function Licenca() {
               <h2>Tabela de Licença dos Usúarios</h2>
             </div>
             <div className="ml-20 mr-20 mt-5 mb-10">
+              {/* Componente ListaUsuario */}
               <ListaUsuario dados={dados} />
             </div>
           </section>

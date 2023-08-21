@@ -1,15 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
+//Icones
+import IconeUp from "@assets/upload.svg"
+
 // Componentes
 import Header from "@/components/header";
 import ArqUpload from "@/components/arqUpload";
 import Sidebar from "@/components/sidebar";
 
-//Imagens
-import IconeUp from "@assets/upload.svg"
-
-// Pagina Upload
 export default function Upload() {
 
     return (

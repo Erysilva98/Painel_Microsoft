@@ -67,7 +67,6 @@ export default function DistribuidoraSlug({ params }) {
             <Sidebar />
           </div>
           <section className="flex-1">
-            {/* Titulo da Página com botão de ordenamento*/}
             <div className="flex ml-24 h-9 mt-10 mb-10">
               <Link href="/distribuidora">
                 <Image src={Voltar} className="flex w-10 h-10 mr-6" />
@@ -76,10 +75,9 @@ export default function DistribuidoraSlug({ params }) {
             </div>
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
+
               {/* Componente do Custo Total */}
-
               <CustoTotal data={data} />
-
 
               {/* Componente de Licenças */}
               <Link href={`${slug}/licencas/`}>
@@ -88,36 +86,39 @@ export default function DistribuidoraSlug({ params }) {
 
               <div className="flex flex-col w-fit space-y-2">
                 {/* Componente de Número de Usuários */}
-
                 <NumUsuarios data={data} />
 
                 {/* Componente de Custo por Usuário */}
-
                 <CustoUsuario data={data} />
-
               </div>
+
             </div>
 
             <div className="flex ml-20 mt-5 mr-20 space-x-4">
               <div className="flex flex-col w-3/5 space-y-2">
+
                 <div className="z-20">
                   {/* Componente Quantidade de Licença */}
                   <QuantLicenca data={data} />
                 </div>
+
                 <div className="z-10">
                   {/* Componente Gráfico Mensal */}
                   <GraficoMensal data={data} />
                 </div>
+
                 <div className="h-max">
                   {/* Componente CustoAnual */}
                   <CustoAnual data={data} />
                 </div>
+
               </div>
 
               <div className="w-2/4 h-screen mt-4">
                 {/* Componente Tabela de Licenças  */}
                 <TabelaLicenca data={data} />
               </div>
+              
             </div>
 
           </section>
