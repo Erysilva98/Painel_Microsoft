@@ -12,6 +12,7 @@ import ListaUsuario from '@/components/listaUsuario';
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 
+// Função para buscar os dados da Distribuidora a partir do slug
 async function getIdDistribuidoraFromSlug(slug) {
   try {
     const response = await axios.get("http://localhost:4000/distribuidoras/");
@@ -24,11 +25,11 @@ async function getIdDistribuidoraFromSlug(slug) {
   }
 }
 
-
 export default function Licenca({params}) {
   const [dados, setDados] = useState([]);
   const [idDistribuidora, setIdDistribuidora] = useState(null);
-  const slug = params.slug; // Extrai o slug das props
+  // Extrai o slug das props
+  const slug = params.slug; 
   useEffect(() => {
     async function fetchData() {
       const distribuidoraId  = await getIdDistribuidoraFromSlug(params.slug);
@@ -37,27 +38,28 @@ export default function Licenca({params}) {
     }
     fetchData();
   }, [params.slug]);
+  // Busca os dados do usuário da distribuidora a partir do slug
   useEffect(() => {
     axios
       .get(`http://localhost:4000/distribuidora/${slug}/usuarios`)
       .then((response) => {
         setDados(response.data);
-        console.log("responde.data aqui",response.data);
       })
       .catch((error) => {
         console.error("Erro ao buscar os usuários:", error);
       });
   }, [slug]);
 
-
   return (
     <>
       <header>
+        {/* Componente Header */}
         <Header />
       </header>
       <main className="bg-blue-background min-w-max">
         <div className="flex">
           <div>
+            {/* Componente Sidebar */}
             <Sidebar />
           </div>
           <section className="flex-1">
@@ -65,10 +67,7 @@ export default function Licenca({params}) {
               <Link href={`../${slug}`}>
                 <Image src={Voltar} className="w-10 h-10" />
               </Link>
-              <h1 className='ml-6 text-3xl font-bold text-black'>{idDistribuidora}</h1>
-            </div>
-            <div className="flex justify-center items-center bg-white ml-20 mr-20 mt-10 h-16 rounded-lg">
-              <h2>Tabela de Licença dos Usúarios</h2>
+              <h1 className='ml-6 text-2xl font-bold text-black'>LICENÇAS {idDistribuidora}</h1>
             </div>
             <div className="ml-20 mr-20 mt-5 mb-10">
               {/* Componente ListaUsuario */}

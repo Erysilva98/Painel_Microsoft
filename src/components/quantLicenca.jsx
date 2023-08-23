@@ -23,7 +23,7 @@ export default function QuantLicenca({ data = {} }) {
 
   return (
     <Card>
-      <Title>As Licenças mais Utilizadas</Title>
+      <Title>Licenças mais Utilizadas</Title>
       <BarChart
         className="max-w-2xl max-h-72 justify-center"
         data={[dados]}

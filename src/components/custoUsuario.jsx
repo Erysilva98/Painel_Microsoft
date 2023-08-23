@@ -22,7 +22,7 @@ export default function CustoUsuario({ data }) {
     <Card className="w-80 h-28 hover:shadow-lg">
       <div>
         <div className='flex flex-col'>
-          <p>Valor médio por usuário</p>
+          <p>Valor Médio por Usuário</p>
           <div className='flex space-x-3'>
             <Metric>R$ {numero}</Metric>
             <BadgeDelta deltaType={seta} size="xs">

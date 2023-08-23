@@ -11,7 +11,7 @@ export default function LicencaAtiva({ data }) {
     
     // Tratamento de dados para o componente Custo Total
     const valor = `${(data?.quantidadeLicencasAtivas || 0)}`;
-    const texto = "Licenças Ativas";
+    const texto = "Licenças Ativas no Mês Atual";
     let status = data?.diferencaLicecasAtuaisEAnteriores || 0;
     let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
 

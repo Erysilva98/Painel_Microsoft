@@ -20,7 +20,7 @@ export default function NumUsuarios({ data }) {
     <Card className="w-80 h-28 hover:shadow-lg">
       <div>
         <div className='flex flex-col'>
-          <p>Usuários</p>
+          <p>Número de Usuários</p>
           <div className='flex flex-row space-x-4'>
             <Metric>{numero}</Metric>
             <BadgeDelta deltaType={seta} size="xs">

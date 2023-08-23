@@ -12,7 +12,7 @@ export default function CustoTotal({data}) {
     
     // Tratamento de dados para o componente Custo Total
     const valor = `${(data?.custoTotal || 0)}`;
-    const texto = "Custo Total";
+    const texto = "Custo Total no Mês Atual";
     
     // Tratamento de dados para o componente BadgeDelta
     let status = data?.diferencaDoMesAtualComPassado || 0;

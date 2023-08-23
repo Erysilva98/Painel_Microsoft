@@ -19,6 +19,7 @@ import GraficoMensal from '@/components/graficoMensal';
 import CustoAnual from '@/components/custoAnual';
 import TabelaLicenca from '@/components/tabelaLicenca';
 
+// Função para buscar os dados das Distribuidora
 async function getIdDistribuidoraFromSlug(slug) {
   try {
     const response = await axios.get("http://localhost:4000/distribuidoras/");
@@ -71,7 +72,7 @@ export default function DistribuidoraSlug({ params }) {
               <Link href="/distribuidora">
                 <Image src={Voltar} className="flex w-10 h-10 mr-6" />
               </Link>
-              <h1 className="text-3xl font-bold text-black mb-10">{idDistribuidora}</h1>
+              <h1 className="text-2xl font-bold text-black mb-10">PAINEL - {idDistribuidora}</h1>
             </div>
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
@@ -114,7 +115,7 @@ export default function DistribuidoraSlug({ params }) {
 
               </div>
 
-              <div className="w-2/4 h-screen mt-4">
+              <div className="w-2/4 h-screen">
                 {/* Componente Tabela de Licenças  */}
                 <TabelaLicenca data={data} />
               </div>

@@ -49,7 +49,7 @@ export default function Home() {
           <section className="flex-1">
             {/* Titulo da Página */}
             <div>
-              <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
+              <h1 className="text-2xl font-bold text-black ml-20 mt-14 mb-10">PAINEL DE CUSTO MICROSFOT - GERAL</h1>
             </div>
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
@@ -74,6 +74,7 @@ export default function Home() {
                   <CustoUsuario data={data} />
                 </Link>
               </div>
+
             </div>
 
             <div className="flex ml-20 mt-5 mr-20 space-x-4">
@@ -92,9 +93,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="w-2/4 h-screen mt-4">
+                <div className="w-2/4 h-screen">
                   {/* Componente Tabela de Licenças  */}
-                  {!loading && <TabelaLicenca data={data} />}
+                  <TabelaLicenca data={data} />
                 </div>             
             </div>   
 

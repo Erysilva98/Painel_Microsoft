@@ -12,11 +12,11 @@ export default function ListaUsuario({ dados }) {
       <Table className='mt-5 w-auto'>
         <TableHead className='bg-tremor-brand-emphasis'>
           <TableRow>
-            <TableHeaderCell className="border text-white">Num</TableHeaderCell>
-            <TableHeaderCell className="border text-white">Usuário</TableHeaderCell>
-            <TableHeaderCell className="border text-white">Licenças</TableHeaderCell>
-            <TableHeaderCell className="border text-white">Custo</TableHeaderCell>
-            <TableHeaderCell className="border text-white">Data</TableHeaderCell>
+            <TableHeaderCell className="border text-white">NUM</TableHeaderCell>
+            <TableHeaderCell className="border text-white">USUÁRIO</TableHeaderCell>
+            <TableHeaderCell className="border text-white">LICENÇAS</TableHeaderCell>
+            <TableHeaderCell className="border text-white">CUSTO</TableHeaderCell>
+            <TableHeaderCell className="border text-white">DATA</TableHeaderCell>
           </TableRow>
         </TableHead>
         <TableBody className='bg-gray-400'>

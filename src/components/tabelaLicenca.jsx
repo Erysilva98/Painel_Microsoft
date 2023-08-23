@@ -3,8 +3,7 @@ import { Card, List, ListItem, ProgressBar, Grid } from "@tremor/react";
 
 const tabela = [
   {
-    title: "Tabela de Custos por Licença",
-    tipo: "Valor geral da Licença",
+    title: "Custo Total por Licenças",
   },
 ];
 
@@ -29,7 +28,6 @@ export default function TabelaLicenca({ data }) {
       {tabela.map((dadosTabela) => (
         <Card key={dadosTabela.title} className="min-w-fit">
           <p className="font-bold">{dadosTabela.title}</p>
-          <p>{dadosTabela.tipo}</p>
 
           <List className="mt-4 flex-col">
             {exibirDados.slice(0, 12).map((infoDado, index) => {
