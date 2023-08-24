@@ -1,5 +1,5 @@
 import React from 'react';
-import { BadgeDelta, Card, Metric } from '@tremor/react';
+import { Badge, Card, Metric } from '@tremor/react';
 
 export default function NumUsuarios({ data }) {
 
@@ -7,13 +7,12 @@ export default function NumUsuarios({ data }) {
 
   const numero = `${(data?.quantidadeUsuarios || 0)}`;
   let status = data?.diferencaLicecasAtuaisEAnteriores;
-  let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
 
   // Texto do componente BadgeDelta
   if (status !== 0) {
     status = `${Math.abs(status).toFixed(2)}%`;
   } else {
-    status = "ESTÁVEL";
+    status = "Estável";
   }
 
   return (
@@ -23,9 +22,7 @@ export default function NumUsuarios({ data }) {
           <p>Número de Usuários</p>
           <div className='flex flex-row space-x-4'>
             <Metric>{numero}</Metric>
-            <BadgeDelta deltaType={seta} size="xs">
-              {status} 
-            </BadgeDelta>
+            <Badge className='text-xs'>{status}</Badge>
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function GraficoMensal({ data }) {
 
   return (
     <Card>
-      <Title>Custo Total Licenças no Ano</Title>
+      <Title>Custo Total das Licenças por Mês</Title>
       <LineChart
         className="mt-6"
         data={dadosTratados}
