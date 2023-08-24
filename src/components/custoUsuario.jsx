@@ -15,12 +15,21 @@ export default function CustoUsuario({ data }) {
   // Tratamento de dados para o componente BadgeDelta
   let status = data?.diferencaUsuarioAtualComPassado || 0;
 
-  // Texto do componente BadgeDelta
+  // Formatação do componente Badge
   if (status !== 0) {
-    status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "%" : "%"}`;
+    if (status < 0) {
+      status = `${Math.abs(status).toFixed(2)}% de Redução`;
+      badgeCor = "teal";
+    }
+    else {
+      status = `${Math.abs(status).toFixed(2)}% de Aumento`;
+      badgeCor = "red";
+    }
+
   } else {
     status = "Estável";
   }
+
 
   return (
     <Card className="w-80 h-28 hover:shadow-lg">

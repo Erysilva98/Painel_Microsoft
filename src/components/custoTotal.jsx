@@ -21,10 +21,19 @@ export default function CustoTotal({ data }) {
 
     // Tratamento de dados para o componente Badge
     let status = data?.diferencaDoMesAtualComPassado || 0;
+    let badgeCor = "";
 
-    // Texto do componente Badge
+    // Formatação do componente Badge
     if (status !== 0) {
-        status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "de Aumento" : "de Redução em Relação ao Mês Anterior"} `;
+        if (status < 0) {
+            status = `${Math.abs(status).toFixed(2)}% de Redução em Relação ao Mês Anterior `;
+            badgeCor = "teal";
+        }
+        else{
+            status = `${Math.abs(status).toFixed(2)}% de Aumento em Relação ao Mês Anterior `;
+            badgeCor = "red";
+        }
+
     } else {
         status = "Sem Alteração em Relação ao Mês Anterior";
     }
@@ -40,7 +49,7 @@ export default function CustoTotal({ data }) {
                     <Metric className='mb-2.5'>{valor}</Metric>
                 </div>
                 {/* Status do componente */}
-                <Badge className='text-xs'>{status}</Badge>
+                <Badge className='text-xs' color={badgeCor}>{status}</Badge>
             </div>
         </div>
     );

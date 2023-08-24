@@ -12,11 +12,21 @@ export default function LicencaAtiva({ data }) {
     // Tratamento de dados para o componente Custo Total
     const valor = `${(data?.quantidadeLicencasAtivas || 0)}`;
     const texto = "Licenças Ativas no Mês Atual";
-    let status = data?.diferencaLicecasAtuaisEAnteriores || 0;
 
-    // Texto do componente Badge
+    let status = data?.diferencaLicecasAtuaisEAnteriores || 0;
+    let badgeCor = "";
+
+    // Formatação do componente Badge
     if (status !== 0) {
-        status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "de Aumento" : "de Redução"} em Relação ao Mês Anterior`;
+        if (status < 0) {
+            status = `${Math.abs(status).toFixed(2)}% de Redução em Relação ao Mês Anterior `;
+            badgeCor = "teal";
+        }
+        else{
+            status = `${Math.abs(status).toFixed(2)}% de Aumento em Relação ao Mês Anterior `;
+            badgeCor = "red";
+        }
+
     } else {
         status = "Sem Alteração em Relação ao Mês Anterior";
     }

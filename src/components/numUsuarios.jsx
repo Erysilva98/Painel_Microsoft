@@ -3,17 +3,28 @@ import { Badge, Card, Metric } from '@tremor/react';
 
 export default function NumUsuarios({ data }) {
 
-  if(!data) return null;
+  if (!data) return null;
 
   const numero = `${(data?.quantidadeUsuarios || 0)}`;
-  let status = data?.diferencaLicecasAtuaisEAnteriores;
 
-  // Texto do componente BadgeDelta
+  let status = data?.diferencaLicecasAtuaisEAnteriores;
+  let badgeCor = "";
+
+  // Formatação do componente Badge
   if (status !== 0) {
-    status = `${Math.abs(status).toFixed(2)}%`;
+    if (status < 0) {
+      status = `${Math.abs(status).toFixed(2)}% de Redução `;
+      badgeCor = "teal";
+    }
+    else {
+      status = `${Math.abs(status).toFixed(2)}% de Aumento `;
+      badgeCor = "red";
+    }
+
   } else {
     status = "Estável";
   }
+
 
   return (
     <Card className="w-80 h-28 hover:shadow-lg">
