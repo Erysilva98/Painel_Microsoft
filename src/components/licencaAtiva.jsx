@@ -26,7 +26,6 @@ export default function LicencaAtiva({ data }) {
             status = `${Math.abs(status).toFixed(2)}% de Aumento em Relação ao Mês Anterior `;
             badgeCor = "red";
         }
-
     } else {
         status = "Sem Alteração em Relação ao Mês Anterior";
     }

@@ -6,6 +6,7 @@ export default function QuantLicenca({ data = {} }) {
 
   if (!recebo) return null;
 
+  // Obter os 10 primeiros itens 
   const selecionarLista = Object.entries(recebo)
     .slice(0, 10)
     .map(([tipo, quantidade]) => ({

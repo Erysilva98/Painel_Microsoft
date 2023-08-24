@@ -11,6 +11,7 @@ export default function AlterarValor() {
     const [licencas, setLicencas] = useState([]);
     const [enviado, setEnviado] = useState(false);
 
+    // Obtém os dados dos valores das licenças no Banco de Dados
     useEffect(() => {
         async function fetchData() {
             try {
@@ -33,6 +34,7 @@ export default function AlterarValor() {
         setLicencas(updatedLicencas);
     };
 
+    // Envia os dados para o Banco de Dados
     const enviarDados = async (event) => {
         event.preventDefault();
         if (licencas.length > 0) {

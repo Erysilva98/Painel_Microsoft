@@ -14,6 +14,7 @@ export default function Upload() {
     return (
         <>
             <header>
+                {/* Componente do Header */}
                 <Header />
             </header>
 
@@ -21,6 +22,7 @@ export default function Upload() {
                 <div className="flex">
                     {/* Componente do Sidebar */}
                     <div>
+                        {/* Componente do Sidebar */}
                         <Sidebar />
                     </div>
                     <section className="flex-1">
@@ -29,7 +31,7 @@ export default function Upload() {
                                 <div className="flex flex-col space-y-7 mt-14 items-center justify-center border border-gray-400 w-1/2 h-1/2">
                                     <Image src={IconeUp}/>
                                     <p className="text-sm">Selecione um arquivo XLSX, CSV, ODS ou TSV tamanho do arquivo não superior a 10 MB</p>
-                                    {/* endpoint para envio do arquivo */}
+                                    {/* Endpoint para envio do arquivo */}
                                     <ArqUpload endpoint="http://localhost:4000/importar" /> 
                                     
                                 </div>

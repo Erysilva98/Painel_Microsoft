@@ -5,6 +5,7 @@ export default function CustoUsuario({ data }) {
 
   if (!data) return null;
 
+  // Tratamento de dados para o formato de moeda Brasil
   const valor = parseFloat(data?.valorMedioPorUsuario || 0).toLocaleString('pt-BR', {
     style: 'currency',
     currency: 'BRL',

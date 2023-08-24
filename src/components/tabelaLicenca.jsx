@@ -21,6 +21,7 @@ export default function TabelaLicenca({ data }) {
     return { name: licenca, amount: dados[licenca] };
   });
 
+  // Array de cores para a barra de progresso
   const corArray = ["amber", "indigo", "sky", "rose", "emerald", "violet", "yellow", "blue", "lime", "slate"];
 
   return (
@@ -39,6 +40,7 @@ export default function TabelaLicenca({ data }) {
                       <p className="font-bold">{infoDado.name}</p>
                       <p>{infoDado.amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}</p>
                     </div>
+                    {/* Barra de Progresso */}
                     <ProgressBar value={(infoDado.amount / valorTotal) * 100} color={selectCores} className="mt-3" />
                   </div>
                 </ListItem>
