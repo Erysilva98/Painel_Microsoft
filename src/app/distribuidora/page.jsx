@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-
+import api from "@/services/api"
 //Icones
 import Voltar from "@assets/Circle.svg";
 
@@ -18,15 +18,14 @@ export default function Distribuidora() {
 
     // Função para buscar os dados de cada Distribuidora
     useEffect(() => {
-        axios
-            .get("http://localhost:4000/distribuidoras/")
-            .then((response) => {
-                setDistribuidoras(response.data);
-            })
-            .catch((error) => {
-                console.error("Erro ao buscar as distribuidoras:", error);
-            });
-    }, []);
+    api.get("/distribuidoras/") 
+      .then((response) => {
+        setDistribuidoras(response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar as distribuidoras:", error);
+      });
+  }, []);
 
     return (
         <>

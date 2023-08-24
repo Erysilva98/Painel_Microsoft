@@ -18,11 +18,12 @@ import QuantLicenca from '@/components/quantLicenca';
 import GraficoMensal from '@/components/graficoMensal';
 import CustoAnual from '@/components/custoAnual';
 import TabelaLicenca from '@/components/tabelaLicenca';
-
+import api from "@/services/api";
 // Função para buscar os dados das Distribuidora
 async function getIdDistribuidoraFromSlug(slug) {
   try {
-    const response = await axios.get("http://localhost:4000/distribuidoras/");
+    
+    const response = await api.get("/distribuidoras/");
     const distribuidoras = response.data;
     const distribuidora = distribuidoras.find(d => d.slug === slug);
     return distribuidora ? distribuidora.idDistribuidora : null;
@@ -40,14 +41,13 @@ export default function DistribuidoraSlug({ params }) {
     async function fetchData() {
       const distribuidoraId = await getIdDistribuidoraFromSlug(params.slug);
       setIdDistribuidora(distribuidoraId);
-      // Aqui você pode fazer qualquer outra operação com idDistribuidora
     }
     fetchData();
   }, [params.slug]);
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:4000/distribuidora/${params.slug}`);
+        const response = await api.get(`/distribuidora/${params.slug}`);
         setData(response.data);
       } catch (error) {
         console.error('Erro ao obter os dados:', error);

@@ -1,14 +1,14 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Image from 'next/image';
-
+import Image from "next/image";
+import api from "@/services/api";
 //Icones
 import Voltar from "@assets/Circle.svg";
 
 // Componentes
-import ListaUsuario from '@/components/listaUsuario';
+import ListaUsuario from "@/components/listaUsuario";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 
@@ -17,17 +17,15 @@ export default function Licenca() {
 
   // Função para buscar os dados de todos os usuários
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/usuarios")
+    api
+      .get("/usuarios") 
       .then((response) => {
         setDados(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
-        console.error("Erro ao buscar as distribuidoras:", error);
+        console.error("Erro ao buscar os usuários:", error);
       });
   }, []);
-
 
   return (
     <>
@@ -46,7 +44,9 @@ export default function Licenca() {
               <Link href="/">
                 <Image src={Voltar} className="w-10 h-10" />
               </Link>
-              <h1 className='ml-6 text-2xl font-bold text-black'>LICENÇAS GERAL</h1>
+              <h1 className="ml-6 text-2xl font-bold text-black">
+                LICENÇAS GERAL
+              </h1>
             </div>
             <div className="flex justify-center items-center bg-white ml-20 mr-20 mt-10 h-16 rounded-lg">
               <h2>Tabela de Licença dos Usúarios</h2>
@@ -59,5 +59,5 @@ export default function Licenca() {
         </div>
       </main>
     </>
-  )
+  );
 }
