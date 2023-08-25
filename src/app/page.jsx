@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./layout";
 import Link from "next/link";
-import axios from "axios";
 import api from "@/services/api";
 // Componentes
 import Header from "@/components/header";

@@ -2,14 +2,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Swal from "sweetalert2";
+
 //Icones
 import IconeUp from "@assets/upload.svg";
 
 // Componentes
 import Header from "@/components/header";
-import ArqUpload from "@/components/arqUpload";
 import Sidebar from "@/components/sidebar";
 import api from "@/services/api";
+
 export default function Upload() {
   const [arquivo, setArquivo] = useState(null);
   const atualizarArq = (event) => {
@@ -25,9 +26,10 @@ export default function Upload() {
     const formData = new FormData();
     formData.append("excelData", arquivo);
 
+    // Enviar o arquivo para o backend
     try {
       const response = await api.post("/importar", formData);
-
+      // Verificar se o arquivo foi enviado com sucesso
       if (response.status === 200) {
         Swal.fire({
           position: "center",
@@ -70,10 +72,9 @@ export default function Upload() {
             <div className="flex flex-col items-center m-20 h-3/4 bg-white">
               <span className="font-bold text-3xl mt-16">Importar dados</span>
               <div className="flex flex-col space-y-7 mt-14 items-center justify-center border border-gray-400 w-1/2 h-1/2">
-                <Image src={IconeUp} />
+                <Image src={IconeUp} alt="Upload Icone" />
                 <p className="text-sm">
-                  Selecione um arquivo XLSX, CSV, ODS ou TSV tamanho do arquivo
-                  não superior a 10 MB
+                  Selecione um arquivo XLSX, CSV, ODS ou TSV 
                 </p>
                 {/* Endpoint para envio do arquivo */}
                 <div className="flex flex-col items-center">

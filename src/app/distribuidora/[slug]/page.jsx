@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -70,7 +69,7 @@ export default function DistribuidoraSlug({ params }) {
           <section className="flex-1">
             <div className="flex ml-24 h-9 mt-10 mb-10">
               <Link href="/distribuidora">
-                <Image src={Voltar} className="flex w-10 h-10 mr-6" />
+                <Image src={Voltar} alt="Retorna para a Distribuidora" className="flex w-10 h-10 mr-6" />
               </Link>
               <h1 className="text-2xl font-bold text-black mb-10">PAINEL - {idDistribuidora}</h1>
             </div>

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import api from "@/services/api";
@@ -42,7 +41,7 @@ export default function Licenca() {
           <section className="flex-1">
             <div className="flex text-lg ml-20 mr-20 mt-10 items-center">
               <Link href="/">
-                <Image src={Voltar} className="w-10 h-10" />
+                <Image src={Voltar} alt="Retorna para o Início" className="w-10 h-10" />
               </Link>
               <h1 className="ml-6 text-2xl font-bold text-black">
                 LICENÇAS GERAL
