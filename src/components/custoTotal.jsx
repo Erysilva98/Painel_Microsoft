@@ -36,6 +36,7 @@ export default function CustoTotal({ data }) {
 
     } else {
         status = "Sem Alteração em Relação ao Mês Anterior";
+        badgeCor = "gray";
     }
 
     return (

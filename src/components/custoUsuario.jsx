@@ -29,6 +29,7 @@ export default function CustoUsuario({ data }) {
     }
   } else {
     status = "Estável";
+    badgeCor = "gray";
   }
 
   return (
@@ -38,7 +39,7 @@ export default function CustoUsuario({ data }) {
           <p>Valor Médio por Usuário</p>
           <div className="flex space-x-3">
             <Metric>{valor}</Metric>
-            <Badge className="text-xs">{status}</Badge>
+            <Badge className="text-xs" color={badgeCor}>{status}</Badge>
           </div>
         </div>
       </div>

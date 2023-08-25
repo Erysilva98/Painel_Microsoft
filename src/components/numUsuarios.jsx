@@ -23,6 +23,7 @@ export default function NumUsuarios({ data }) {
 
   } else {
     status = "Estável";
+    badgeCor = "gray";
   }
 
 
@@ -33,7 +34,7 @@ export default function NumUsuarios({ data }) {
           <p>Número de Usuários</p>
           <div className='flex flex-row space-x-4'>
             <Metric>{numero}</Metric>
-            <Badge className='text-xs'>{status}</Badge>
+            <Badge className='text-xs' color={badgeCor}>{status}</Badge>
           </div>
         </div>
       </div>

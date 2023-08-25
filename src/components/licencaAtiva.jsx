@@ -28,6 +28,7 @@ export default function LicencaAtiva({ data }) {
         }
     } else {
         status = "Sem Alteração em Relação ao Mês Anterior";
+        badgeCor = "gray";
     }
 
     return (
@@ -39,7 +40,7 @@ export default function LicencaAtiva({ data }) {
 
                 <span>{texto}</span>
                 <Metric className='mb-2.5'>{valor}</Metric>
-                <Badge className='text-xs'>{status}</Badge>
+                <Badge className='text-xs' color={badgeCor}>{status}</Badge>
             </div>
         </div>
     );

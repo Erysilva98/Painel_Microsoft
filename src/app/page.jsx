@@ -49,7 +49,7 @@ export default function Home() {
             {/* Titulo da Página */}
             <div>
               <h1 className="text-2xl font-bold text-black ml-20 mt-14 mb-10">
-                PAINEL DE CUSTO MICROSFOT - GERAL
+                PAINEL DE CUSTO MICROSOFT - GERAL
               </h1>
             </div>
 
