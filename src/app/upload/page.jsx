@@ -51,7 +51,6 @@ export default function Upload() {
     } catch (error) {
       console.log("Erro ao enviar o arquivo:", error);
     }
-    console.log(response.status);
   };
 
   return (
