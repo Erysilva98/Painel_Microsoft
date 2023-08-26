@@ -1,4 +1,4 @@
-<img src="./public/icon/readme.png">
+<img src="./public/readme.png">
 
 #
 # Painel de Custo Microsoft
