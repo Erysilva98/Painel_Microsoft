@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "@tremor/react";
 import Image from 'next/image';
-import axios from "axios";
+import api from "@/services/api";
 
 // Imagens
 import Moeda from "@assets/moeda.svg";
@@ -11,10 +11,11 @@ export default function AlterarValor() {
     const [licencas, setLicencas] = useState([]);
     const [enviado, setEnviado] = useState(false);
 
+    // Obtém os dados dos valores das licenças no Banco de Dados
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get("http://localhost:4000/valoreslicenca");
+                const response = await api.get("/valoreslicenca");
                 setLicencas(response.data);
             } catch (error) {
                 console.error("Erro ao obter os dados:", error);
@@ -33,6 +34,7 @@ export default function AlterarValor() {
         setLicencas(updatedLicencas);
     };
 
+    // Envia os dados para o Banco de Dados
     const enviarDados = async (event) => {
         event.preventDefault();
         if (licencas.length > 0) {

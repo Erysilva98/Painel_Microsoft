@@ -1,33 +1,45 @@
-import React from 'react';
-import { Card, Metric, BadgeDelta } from "@tremor/react";
+import React from "react";
+import { Card, Metric, Badge } from "@tremor/react";
 
 export default function CustoUsuario({ data }) {
+  if (!data) return null;
 
-  if(!data) return null;
-
-  const numero = `${(data?.valorMedioPorUsuario || 0)}`;
+  // Tratamento de dados para o formato de moeda Brasil
+  const valor = parseFloat(data?.valorMedioPorUsuario || 0).toLocaleString(
+    "pt-BR",
+    {
+      style: "currency",
+      currency: "BRL",
+      minFracionar: 2,
+      maxFracionar: 2,
+    }
+  );
 
   // Tratamento de dados para o componente BadgeDelta
   let status = data?.diferencaUsuarioAtualComPassado || 0;
-  let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
-
-  // Texto do componente BadgeDelta
+  let badgeCor = "";
+  // Formatação do componente Badge
   if (status !== 0) {
-    status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "%" : "%"}`;
+    if (status < 0) {
+      status = `${Math.abs(status).toFixed(2)}% de Redução`;
+      badgeCor = "teal";
+    } else {
+      status = `${Math.abs(status).toFixed(2)}% de Aumento`;
+      badgeCor = "red";
+    }
   } else {
-    status = "ESTÁVEL";
+    status = "Estável";
+    badgeCor = "gray";
   }
 
   return (
     <Card className="w-80 h-28 hover:shadow-lg">
       <div>
-        <div className='flex flex-col'>
-          <p>Valor médio por usuário</p>
-          <div className='flex space-x-3'>
-            <Metric>R$ {numero}</Metric>
-            <BadgeDelta deltaType={seta} size="xs">
-              {status}
-            </BadgeDelta>
+        <div className="flex flex-col">
+          <p>Valor Médio por Usuário</p>
+          <div className="flex space-x-3">
+            <Metric>{valor}</Metric>
+            <Badge className="text-xs" color={badgeCor}>{status}</Badge>
           </div>
         </div>
       </div>

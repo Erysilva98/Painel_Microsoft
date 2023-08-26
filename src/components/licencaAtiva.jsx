@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { BadgeDelta, Metric,} from "@tremor/react";
+import { Badge, Metric,} from "@tremor/react";
 
 //Icones 
 import Icone from "@assets/licencaIcon.svg";
@@ -11,15 +11,24 @@ export default function LicencaAtiva({ data }) {
     
     // Tratamento de dados para o componente Custo Total
     const valor = `${(data?.quantidadeLicencasAtivas || 0)}`;
-    const texto = "Licenças Ativas";
-    let status = data?.diferencaLicecasAtuaisEAnteriores || 0;
-    let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
+    const texto = "Licenças Ativas no Mês Atual";
 
-    // Texto do componente BadgeDelta
+    let status = data?.diferencaLicecasAtuaisEAnteriores || 0;
+    let badgeCor = "";
+
+    // Formatação do componente Badge
     if (status !== 0) {
-        status = `${Math.abs(status).toFixed(2)}% ${status >= 0 ? "de Aumento" : "de Redução"} em Relação ao Mês Anterior`;
+        if (status < 0) {
+            status = `${Math.abs(status).toFixed(2)}% de Redução em Relação ao Mês Anterior `;
+            badgeCor = "teal";
+        }
+        else{
+            status = `${Math.abs(status).toFixed(2)}% de Aumento em Relação ao Mês Anterior `;
+            badgeCor = "red";
+        }
     } else {
         status = "Sem Alteração em Relação ao Mês Anterior";
+        badgeCor = "gray";
     }
 
     return (
@@ -31,7 +40,7 @@ export default function LicencaAtiva({ data }) {
 
                 <span>{texto}</span>
                 <Metric className='mb-2.5'>{valor}</Metric>
-                <BadgeDelta deltaType={seta}>{status}</BadgeDelta>
+                <Badge className='text-xs' color={badgeCor}>{status}</Badge>
             </div>
         </div>
     );

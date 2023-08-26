@@ -1,11 +1,12 @@
 import React from "react";
 import { Card, Title, BarChart } from "@tremor/react";
 
-export default function QuantLicenca({ data = {} }) {
+export default function QuantLicenca( {data}) {
   const recebo = data.listarLicencaOrdenada || {};
 
   if (!recebo) return null;
 
+  // Obter os 10 primeiros itens 
   const selecionarLista = Object.entries(recebo)
     .slice(0, 10)
     .map(([tipo, quantidade]) => ({
@@ -23,7 +24,7 @@ export default function QuantLicenca({ data = {} }) {
 
   return (
     <Card>
-      <Title>As Licenças mais Utilizadas</Title>
+      <Title>Licenças mais Utilizadas</Title>
       <BarChart
         className="max-w-2xl max-h-72 justify-center"
         data={[dados]}

@@ -7,6 +7,7 @@ export default function GraficoMensal({ data }) {
 
   const calcularHistoricoCustoTotalAno = data.calcularHistoricoCustoTotalAno;
 
+  // Tratamento de dados para o componente LineChart
   const tratarDados = (dados) => {
     const exibirDados = [];
 
@@ -36,7 +37,7 @@ export default function GraficoMensal({ data }) {
 
   return (
     <Card>
-      <Title>Custo Mensal</Title>
+      <Title>Custo Total das Licenças por Mês</Title>
       <LineChart
         className="mt-6"
         data={dadosTratados}

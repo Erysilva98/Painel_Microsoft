@@ -5,7 +5,7 @@
       "@assets*": ["./public/assets*"],
       "@icon*": ["./public/icon*"],
       "@docs*": ["./public/docs*"],
-      "@api": ["./src/api"],
+      "@api": ["./src/services/api"]
     }
   }
 }

@@ -1,31 +1,40 @@
 import React from 'react';
-import { BadgeDelta, Card, Metric } from '@tremor/react';
+import { Badge, Card, Metric } from '@tremor/react';
 
 export default function NumUsuarios({ data }) {
 
-  if(!data) return null;
+  if (!data) return null;
 
   const numero = `${(data?.quantidadeUsuarios || 0)}`;
-  let status = data?.diferencaLicecasAtuaisEAnteriores;
-  let seta = status > 0 ? "moderateIncrease" : status < 0 ? "moderateDecrease" : "unchanged";
 
-  // Texto do componente BadgeDelta
+  let status = data?.diferencaLicecasAtuaisEAnteriores;
+  let badgeCor = "";
+
+  // Formatação do componente Badge
   if (status !== 0) {
-    status = `${Math.abs(status).toFixed(2)}%`;
+    if (status < 0) {
+      status = `${Math.abs(status).toFixed(2)}% de Redução `;
+      badgeCor = "teal";
+    }
+    else {
+      status = `${Math.abs(status).toFixed(2)}% de Aumento `;
+      badgeCor = "red";
+    }
+
   } else {
-    status = "ESTÁVEL";
+    status = "Estável";
+    badgeCor = "gray";
   }
+
 
   return (
     <Card className="w-80 h-28 hover:shadow-lg">
       <div>
         <div className='flex flex-col'>
-          <p>Usuários</p>
+          <p>Número de Usuários</p>
           <div className='flex flex-row space-x-4'>
             <Metric>{numero}</Metric>
-            <BadgeDelta deltaType={seta} size="xs">
-              {status} 
-            </BadgeDelta>
+            <Badge className='text-xs' color={badgeCor}>{status}</Badge>
           </div>
         </div>
       </div>

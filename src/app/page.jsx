@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./layout";
 import Link from "next/link";
-import axios from "axios";
-
+import api from "@/services/api";
 // Componentes
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
@@ -18,11 +17,11 @@ import CustoAnual from "@/components/custoAnual";
 
 export default function Home() {
   const [data, setData] = useState([]);
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:4000/"); 
+        const response = await api.get("/");
         setData(response.data);
         setLoading(false);
       } catch (error) {
@@ -49,7 +48,9 @@ export default function Home() {
           <section className="flex-1">
             {/* Titulo da Página */}
             <div>
-              <h1 className="text-3xl font-bold text-black ml-20 mt-14 mb-10">Painel Geral Grupo Moura</h1>
+              <h1 className="text-2xl font-bold text-black ml-20 mt-14 mb-10">
+                PAINEL DE CUSTO MICROSOFT - GERAL
+              </h1>
             </div>
 
             <div className="flex ml-20 mr-20 mt-10 justify-between">
@@ -77,30 +78,29 @@ export default function Home() {
             </div>
 
             <div className="flex ml-20 mt-5 mr-20 space-x-4">
-                <div className="flex flex-col w-3/5 space-y-2">
-                  <div className="z-20">
-                    {/* Componente Quantidade de Licença */}
-                    <QuantLicenca data={data} />
-                  </div>
-                  <div className="z-10">
-                    {/* Componente Gráfico Mensal */}
-                    <GraficoMensal data={data} />
-                  </div>
-                  <div className="h-max">
-                    {/* Componente CustoAnual */}
-                    <CustoAnual data={data}/>
-                  </div>
+              <div className="flex flex-col w-3/5 space-y-2">
+                <div className="z-20">
+                  {/* Componente Quantidade de Licença */}
+                  <QuantLicenca data={data} />
                 </div>
+                <div className="z-10">
+                  {/* Componente Gráfico Mensal */}
+                  <GraficoMensal data={data} />
+                </div>
+                <div className="h-max">
+                  {/* Componente CustoAnual */}
+                  <CustoAnual data={data} />
+                </div>
+              </div>
 
-                <div className="w-2/4 h-screen mt-4">
-                  {/* Componente Tabela de Licenças  */}
-                  {!loading && <TabelaLicenca data={data} />}
-                </div>             
-            </div>   
-
+              <div className="w-2/4 h-screen">
+                {/* Componente Tabela de Licenças  */}
+                <TabelaLicenca data={data} />
+              </div>
+            </div>
           </section>
         </div>
       </main>
     </Layout>
-  )
+  );
 }
