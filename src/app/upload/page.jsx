@@ -82,10 +82,9 @@ export default function Upload() {
             <div className="flex flex-col items-center m-20 h-3/4 bg-white">
               <span className="font-bold text-3xl mt-16">Importar dados</span>
               <div className="flex flex-col space-y-7 mt-14 items-center justify-center border border-gray-400 w-1/2 h-1/2">
-                <Image src={IconeUp} />
+                <Image src={IconeUp} alt="Icone de Upload" />
                 <p className="text-sm">
-                  Selecione um arquivo XLSX, CSV, ODS ou TSV tamanho do arquivo
-                  não superior a 10 MB
+                  Selecione um arquivo XLSX, CSV, ODS ou TSV 
                 </p>
                 {/* Endpoint para envio do arquivo */}
                 <div className="flex flex-col items-center">

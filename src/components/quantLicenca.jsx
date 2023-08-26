@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Title, BarChart } from "@tremor/react";
 
-export default function QuantLicenca({ data = {} }) {
+export default function QuantLicenca( {data}) {
   const recebo = data.listarLicencaOrdenada || {};
 
   if (!recebo) return null;
