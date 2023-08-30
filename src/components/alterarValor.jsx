@@ -39,7 +39,7 @@ export default function AlterarValor() {
         event.preventDefault();
         if (licencas.length > 0) {
             try {
-                const response = await axios.post("http://localhost:4000/valoreslicenca", { licencas });
+                const response = await api.post("/valoreslicenca", { licencas });
                 // Atualiza o estado para indicar que os dados foram enviados
                 setEnviado(true);
             } catch (error) {
