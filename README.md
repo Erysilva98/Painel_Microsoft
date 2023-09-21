@@ -20,4 +20,12 @@
 - <a href="https://github.com/igornayan" target="_blank">Igor Nayan</a>
 
 
-#
+# DockerFile
+
+    Criando Img Docker
+
+    docker build -t pcm .
+
+    Rodar a imagem
+
+    docker run -p 3000:3000 pcm
