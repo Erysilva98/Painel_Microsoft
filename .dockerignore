@@ -1,0 +1,7 @@
+# adicione aqui a sintaxe git-ignore de coisas que você não deseja copiar na imagem do docker
+
+.next
+.git
+*Dockerfile*
+*docker-compose*
+node_modules
